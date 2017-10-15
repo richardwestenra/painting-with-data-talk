@@ -1,4 +1,14 @@
 @import "../fontello/css/fontello.css";
+$backgroundColor: #111;
+
+$mainFont: 'Open Sans', sans-serif;
+$linkColor: #e7ad52;
+$linkColorHover: lighten( $linkColor, 20% );
+$headingFont: 'Montserrat', Impact, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: 0;
+$headingTextTransform: none;
+$selectionBackgroundColor: #e7ad52;
 
 .twitter-handle {
   position: fixed;
@@ -6,9 +16,11 @@
   left: 40px;
   font-size: 1.6em;
   z-index: 100;
-  font-family: 'Open Sans', sans-serif;
-  color: #e7ad52;
+  font-family: $mainFont;
+  color: $linkColor;
+  font-weight: 600;
 }
+
 
 .reveal {
   section {
@@ -33,7 +45,7 @@
 
       &:before {
         content: '';
-        border: 0.15em solid #e7ad52;
+        border: 0.15em solid $linkColor;
         border-radius: 50%;
         height: 0.7em;
         width: 6em;
@@ -41,8 +53,30 @@
         transform: rotate(10deg);
         top: 0em;
         right: -0.7em;
-        box-shadow: 0 0 0.2em #e7ad52, 0 0 0.2em #e7ad52 inset;
+        box-shadow: 0 0 0.2em $linkColor, 0 0 0.2em $linkColor inset;
         animation: rotate 2s infinite alternate ease-in-out;
+      }
+    }
+
+    .conan {
+      margin-top: 11em;
+      text-transform: uppercase;
+      font-family: $headingFont;
+    }
+
+    #obligatoryspacejam {
+      margin-top: 7em;
+      background: rgba(0,0,0,0.8);
+      padding: 0.1em 0.4em;
+      display: inline-block;
+    }
+
+    .ethics {
+      dd {
+        font-size: 0.8em;
+        margin-bottom: 1em;
+        font-style: italic;
+        color: rgba(#fff, 0.7);
       }
     }
 
@@ -70,10 +104,10 @@
 
 @keyframes rotate {
   from {
-    transform: rotate(10deg) scale(1);
+    transform: rotate(10deg) translateY(0em);
   }
 
   to {
-    transform: rotate(11deg) scale(1.02);
+    transform: rotate(10deg) translateY(-0.15em);
   }
 }

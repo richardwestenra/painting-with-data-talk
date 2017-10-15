@@ -5,8 +5,9 @@
   left: 40px;
   font-size: 1.6em;
   z-index: 100;
-  font-family: 'Open Sans', sans-serif;
-  color: #e7ad52; }
+  font-family: "Open Sans", sans-serif;
+  color: #e7ad52;
+  font-weight: 600; }
 
 .reveal section .title {
   position: relative;
@@ -31,6 +32,23 @@
     box-shadow: 0 0 0.2em #e7ad52, 0 0 0.2em #e7ad52 inset;
     animation: rotate 2s infinite alternate ease-in-out; }
 
+.reveal section .conan {
+  margin-top: 11em;
+  text-transform: uppercase;
+  font-family: "Montserrat", Impact, sans-serif; }
+
+.reveal section #obligatoryspacejam {
+  margin-top: 7em;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.1em 0.4em;
+  display: inline-block; }
+
+.reveal section .ethics dd {
+  font-size: 0.8em;
+  margin-bottom: 1em;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7); }
+
 .reveal section img.plain {
   background: none; }
 
@@ -47,6 +65,6 @@
 
 @keyframes rotate {
   from {
-    transform: rotate(10deg) scale(1); }
+    transform: rotate(10deg) translateY(0em); }
   to {
-    transform: rotate(11deg) scale(1.02); } }
+    transform: rotate(10deg) translateY(-0.15em); } }
