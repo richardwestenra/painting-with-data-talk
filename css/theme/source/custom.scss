@@ -58,11 +58,11 @@ $selectionBackgroundColor: #e7ad52;
       }
     }
 
-    .conan {
-      margin-top: 11em;
-      text-transform: uppercase;
-      font-family: $headingFont;
-    }
+    // .conan {
+    //   margin-top: 11em;
+    //   text-transform: uppercase;
+    //   font-family: $headingFont;
+    // }
 
     #obligatoryspacejam {
       margin-top: 7em;
@@ -77,6 +77,28 @@ $selectionBackgroundColor: #e7ad52;
         margin-bottom: 1em;
         font-style: italic;
         color: rgba(#fff, 0.7);
+      }
+    }
+
+    .vw p {
+      background: rgba(0,0,0,0.6);
+      padding: 0.5em 1em;
+      text-align: left;
+    }
+
+    .code-of-ethics {
+      padding: 1em 1.4em;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: left;
+      
+      h3 {
+        font-size: 0.7em;
+      }
+      
+      li {
+        font-size: 0.5em;
+        margin: 0.7em 0;
       }
     }
 

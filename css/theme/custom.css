@@ -32,11 +32,6 @@
     box-shadow: 0 0 0.2em #e7ad52, 0 0 0.2em #e7ad52 inset;
     animation: rotate 2s infinite alternate ease-in-out; }
 
-.reveal section .conan {
-  margin-top: 11em;
-  text-transform: uppercase;
-  font-family: "Montserrat", Impact, sans-serif; }
-
 .reveal section #obligatoryspacejam {
   margin-top: 7em;
   background: rgba(0, 0, 0, 0.8);
@@ -48,6 +43,22 @@
   margin-bottom: 1em;
   font-style: italic;
   color: rgba(255, 255, 255, 0.7); }
+
+.reveal section .vw p {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.5em 1em;
+  text-align: left; }
+
+.reveal section .code-of-ethics {
+  padding: 1em 1.4em;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left; }
+  .reveal section .code-of-ethics h3 {
+    font-size: 0.7em; }
+  .reveal section .code-of-ethics li {
+    font-size: 0.5em;
+    margin: 0.7em 0; }
 
 .reveal section img.plain {
   background: none; }
