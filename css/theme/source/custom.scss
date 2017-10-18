@@ -64,11 +64,20 @@ $selectionBackgroundColor: #e7ad52;
     //   font-family: $headingFont;
     // }
 
-    #obligatoryspacejam {
-      margin-top: 7em;
+    .hashtag {
       background: rgba(0,0,0,0.8);
       padding: 0.1em 0.4em;
       display: inline-block;
+
+      &:first-of-type {
+        margin-top: 7em;
+      }
+
+    }
+
+    h4.hashtag {
+      font-size: 1.4em;
+      margin: 0 0.2em;
     }
 
     .ethics {
