@@ -68,6 +68,20 @@
 .reveal section img.plain {
   background: none; }
 
+.reveal section .grumpy {
+  margin: 2em -0.5em 0 0;
+  text-align: right;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.6); }
+
+.reveal section .emoji {
+  font-size: 1.5em;
+  line-height: 1; }
+  .reveal section .emoji--gap {
+    margin-top: 1.2em; }
+
+.reveal section .list li {
+  margin: 0.4em 0; }
+
 .reveal section .social {
   display: block;
   position: relative;
