@@ -3,7 +3,7 @@
   position: fixed;
   bottom: 40px;
   left: 40px;
-  font-size: 1.6em;
+  font-size: 1.7em;
   z-index: 100;
   font-family: "Open Sans", sans-serif;
   color: #e7ad52;
@@ -31,6 +31,9 @@
     right: -0.7em;
     box-shadow: 0 0 0.2em #e7ad52, 0 0 0.2em #e7ad52 inset;
     animation: rotate 2s infinite alternate ease-in-out; }
+
+.reveal section .actually {
+  font-size: 1.35em; }
 
 .reveal section .hashtag {
   background: rgba(0, 0, 0, 0.8);
@@ -80,7 +83,7 @@
     margin-top: 1.2em; }
 
 .reveal section .list li {
-  margin: 0.4em 0; }
+  margin: 0.6em 0; }
 
 .reveal section .social {
   display: block;
@@ -92,6 +95,11 @@
   .reveal section .social b {
     color: #f3d7ac;
     font-weight: normal; }
+
+.reveal .speaker-notes {
+  padding: 10px 30px;
+  max-height: 25%;
+  font-size: 20px; }
 
 @keyframes rotate {
   from {
