@@ -12,14 +12,21 @@ $selectionBackgroundColor: #e7ad52;
 
 .twitter-handle {
   position: fixed;
-  bottom: 40px;
-  left: 40px;
-  font-size: 1.7em;
+  bottom: 20px;
+  left: 20px;
+  font-size: 0.8em;
   z-index: 100;
   font-family: $mainFont;
   color: $linkColor;
   font-weight: 600;
+
+  @media (min-width: 700px) {
+    font-size: 1.7em;
+    bottom: 40px;
+    left: 40px;
+  }
 }
+
 
 
 .reveal {
