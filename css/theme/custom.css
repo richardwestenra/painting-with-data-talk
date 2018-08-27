@@ -51,6 +51,12 @@
   font-size: 1.4em;
   margin: 0 0.2em; }
 
+.reveal section .vonbraun {
+  background: rgba(0, 0, 0, 0.65);
+  font-style: normal;
+  margin-top: 200px;
+  text-shadow: 0 0 10px #000; }
+
 .reveal section .ethics dd {
   font-size: 0.8em;
   margin-bottom: 1em;
@@ -63,6 +69,7 @@
   text-align: left; }
 
 .reveal section .code-of-ethics {
+  font-style: normal;
   padding: 1em 1.4em;
   width: 100%;
   box-sizing: border-box;

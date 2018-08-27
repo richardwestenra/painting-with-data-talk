@@ -91,6 +91,13 @@ $selectionBackgroundColor: #e7ad52;
       margin: 0 0.2em;
     }
 
+    .vonbraun {
+      background: rgba(#000, 0.65);
+      font-style: normal;
+      margin-top: 200px;
+      text-shadow: 0 0 10px #000;
+    }
+
     .ethics {
       dd {
         font-size: 0.8em;
@@ -107,6 +114,7 @@ $selectionBackgroundColor: #e7ad52;
     }
 
     .code-of-ethics {
+      font-style: normal;
       padding: 1em 1.4em;
       width: 100%;
       box-sizing: border-box;
