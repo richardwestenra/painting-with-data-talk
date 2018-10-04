@@ -19,6 +19,8 @@ $selectionBackgroundColor: #e7ad52;
   font-family: $mainFont;
   color: $linkColor;
   font-weight: 600;
+  color: white;
+  text-shadow: 0 0 10px rgba(#000, 0.3);
 
   @media (min-width: 700px) {
     font-size: 1.7em;
@@ -32,48 +34,15 @@ $selectionBackgroundColor: #e7ad52;
 .reveal {
   section {
     .title {
-      position: relative;
-
-      color: #31639C;
-      font-size: 2.3em;
-      // font-size: 3.3em;
-      line-height: 0.8;
-      // text-align: left;
-
-      span {
-        margin-left: -3.5em;
-      }
+      font-size: 2em;
+      line-height: 1.3;
 
       b {
-        // text-align: center;
         display: block;
-        font-size: 2em;
-      }
-
-      &:before {
-        content: '';
-        border: 0.15em solid $linkColor;
-        border-radius: 50%;
-        height: 0.7em;
-        width: 6em;
-        position: absolute;
-        transform: rotate(10deg);
-        top: 0em;
-        right: -0.7em;
-        box-shadow: 0 0 0.2em $linkColor, 0 0 0.2em $linkColor inset;
-        animation: rotate 2s infinite alternate ease-in-out;
+        font-size: 1.8em;
+        white-space: nowrap;
       }
     }
-
-    .actually {
-      font-size: 1.35em;
-    }
-
-    // .conan {
-    //   margin-top: 11em;
-    //   text-transform: uppercase;
-    //   font-family: $headingFont;
-    // }
 
     .hashtag {
       background: rgba(0,0,0,0.8);
@@ -91,44 +60,6 @@ $selectionBackgroundColor: #e7ad52;
       margin: 0 0.2em;
     }
 
-    .vonbraun {
-      background: rgba(#000, 0.8);
-      font-style: normal;
-      margin-top: 200px;
-      text-shadow: 0 0 10px #000;
-    }
-
-    .ethics {
-      dd {
-        font-size: 0.8em;
-        margin-bottom: 1em;
-        font-style: italic;
-        color: rgba(#fff, 0.7);
-      }
-    }
-
-    .vw p {
-      background: rgba(0,0,0,0.6);
-      padding: 0.5em 1em;
-      text-align: left;
-    }
-
-    .code-of-ethics {
-      font-style: normal;
-      padding: 1em 1.4em;
-      width: 100%;
-      box-sizing: border-box;
-      text-align: left;
-      
-      h3 {
-        font-size: 0.7em;
-      }
-      
-      li {
-        font-size: 0.5em;
-        margin: 0.7em 0;
-      }
-    }
 
     img.plain {
       background: none;
@@ -151,7 +82,7 @@ $selectionBackgroundColor: #e7ad52;
 
     .list {
       li {
-        margin: 0.6em 0;
+        margin: 0.8em 0;
       }
     }
 
@@ -179,12 +110,7 @@ $selectionBackgroundColor: #e7ad52;
   }
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(10deg) translateY(0em);
-  }
-
-  to {
-    transform: rotate(10deg) translateY(-0.15em);
-  }
+#voronoi {
+  position: absolute;
+  transition: opacity ease 0.4s;
 }

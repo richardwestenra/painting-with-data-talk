@@ -7,7 +7,9 @@
   z-index: 100;
   font-family: "Open Sans", sans-serif;
   color: #e7ad52;
-  font-weight: 600; }
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
   @media (min-width: 700px) {
     .twitter-handle {
       font-size: 1.7em;
@@ -15,30 +17,12 @@
       left: 40px; } }
 
 .reveal section .title {
-  position: relative;
-  color: #31639C;
-  font-size: 2.3em;
-  line-height: 0.8; }
-  .reveal section .title span {
-    margin-left: -3.5em; }
+  font-size: 2em;
+  line-height: 1.3; }
   .reveal section .title b {
     display: block;
-    font-size: 2em; }
-  .reveal section .title:before {
-    content: '';
-    border: 0.15em solid #e7ad52;
-    border-radius: 50%;
-    height: 0.7em;
-    width: 6em;
-    position: absolute;
-    transform: rotate(10deg);
-    top: 0em;
-    right: -0.7em;
-    box-shadow: 0 0 0.2em #e7ad52, 0 0 0.2em #e7ad52 inset;
-    animation: rotate 2s infinite alternate ease-in-out; }
-
-.reveal section .actually {
-  font-size: 1.35em; }
+    font-size: 1.8em;
+    white-space: nowrap; }
 
 .reveal section .hashtag {
   background: rgba(0, 0, 0, 0.8);
@@ -50,35 +34,6 @@
 .reveal section h4.hashtag {
   font-size: 1.4em;
   margin: 0 0.2em; }
-
-.reveal section .vonbraun {
-  background: rgba(0, 0, 0, 0.8);
-  font-style: normal;
-  margin-top: 200px;
-  text-shadow: 0 0 10px #000; }
-
-.reveal section .ethics dd {
-  font-size: 0.8em;
-  margin-bottom: 1em;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.7); }
-
-.reveal section .vw p {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 0.5em 1em;
-  text-align: left; }
-
-.reveal section .code-of-ethics {
-  font-style: normal;
-  padding: 1em 1.4em;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: left; }
-  .reveal section .code-of-ethics h3 {
-    font-size: 0.7em; }
-  .reveal section .code-of-ethics li {
-    font-size: 0.5em;
-    margin: 0.7em 0; }
 
 .reveal section img.plain {
   background: none; }
@@ -95,7 +50,7 @@
     margin-top: 1.2em; }
 
 .reveal section .list li {
-  margin: 0.6em 0; }
+  margin: 0.8em 0; }
 
 .reveal section .social {
   display: block;
@@ -113,8 +68,6 @@
   max-height: 25%;
   font-size: 20px; }
 
-@keyframes rotate {
-  from {
-    transform: rotate(10deg) translateY(0em); }
-  to {
-    transform: rotate(10deg) translateY(-0.15em); } }
+#voronoi {
+  position: absolute;
+  transition: opacity ease 0.4s; }
