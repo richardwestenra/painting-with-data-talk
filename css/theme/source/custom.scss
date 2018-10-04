@@ -63,6 +63,8 @@ $selectionBackgroundColor: #e7ad52;
 
     img.plain {
       background: none;
+      border: none;
+      box-shadow: none;
     }
 
     .grumpy {
@@ -103,10 +105,109 @@ $selectionBackgroundColor: #e7ad52;
     }
   }
 
+  .chartlibs {
+    min-height: 15em;
+    min-width: 20em;
+  }
+
+  .chartlib {
+    position: fixed;
+    height: auto;
+    width: 10em;
+
+    &:nth-child(1) {
+      left: 0;
+      top: 0;
+      transform: rotate(-10deg);
+    }
+
+    &:nth-child(2) {
+      right: 0;
+      top: 0;
+      transform: rotate(10deg);
+      width: 8em;
+    }
+
+    &:nth-child(3) {
+      left: 10%;
+      top: 20%;
+      transform: rotate(-5deg);
+      width: 6em;
+    }
+
+    &:nth-child(4) {
+      right: 30%;
+      top: 10%;
+      transform: rotate(2deg);
+    }
+
+    &:nth-child(5) {
+      right: 0;
+      top: 50%;
+      transform: rotate(2deg);
+    }
+
+    &:nth-child(6) {
+      right: 0;
+      top: 30%;
+      transform: rotate(-5deg);
+    }
+
+    &:nth-child(7) {
+      right: 20%;
+      top: 60%;
+      width: 6em;
+      transform: rotate(15deg);
+    }
+
+    &:nth-child(8) {
+      left: -10%;
+      top: 50%;
+      transform: rotate(-5deg);
+    }
+
+    &:nth-child(9) {
+      left: 20%;
+      top: 50%;
+      width: 7em;
+      transform: rotate(5deg);
+    }
+
+    &:nth-child(10) {
+      left: -10%;
+      top: 50%;
+    }
+
+    &:nth-child(11) {
+      right: -10%;
+      top: 50%;
+      transform: rotate(20deg);
+    }
+
+    &:nth-child(12) {
+      right: 20%;
+      top: 50%;
+      transform: rotate(2deg);
+    }
+
+    &:nth-child(13) {
+      left: -15%;
+      top: 8%;
+      transform: rotate(-5deg);
+      width: 11em;
+    }
+  }
+
   .speaker-notes {
     padding: 10px 30px;
     max-height: 25%;
     font-size: 20px;
+  }
+
+  .d3-apis b {
+    white-space: nowrap;
+    font-weight: normal;
+    font-size: 0.9em;
   }
 }
 

@@ -53,25 +53,46 @@
 <div class="slides">
 <section>
   <section data-id="title">
-    <h1 class="title">Developing <b><span id="adjective">delightful</span></b> dataviz for diverse devices with d3.js</h1>
+    <h1 class="title">Developing <b><span id="adjective">delightful</span></b> dataviz for diverse devices with D3.js</h1>
     <aside class="notes">
-      <p>Hey, I'm Richard. I'm a creative front-end dev, I make a lot of interactive charts and data visualisations in React and d3 at QuantumBlack. We're hiring, yada yada.</p>
-      <p>Today I'm going to take you through the basics of working with d3.</p>
+      <p>Hey, I'm Richard. I'm a creative front-end dev, I make a lot of interactive charts and data visualisations in React and D3 at QuantumBlack. We're hiring, yada yada.</p>
+      <p>Today I'm going to take you through the basics of working with D3 and React.</p>
     </aside>
   </section>
 </section>
 
-<section data-background="img/d3.jpg" data-background-size="contain">
+<section data-background="img/decision.jpg" data-background-size="cover">
+	<div class="chartlibs">
+		<img class="chartlib fragment" src="img/libs/highcharts.png" alt="highcharts logo" />
+		<img class="chartlib fragment" src="img/libs/chartist.gif" alt="chartist logo" />
+		<img class="chartlib fragment plain" src="img/libs/chartjs.svg" alt="chartjs logo" />
+		<img class="chartlib fragment plain" src="img/libs/plotly.png" alt="plotly logo" />
+		<img class="chartlib fragment plain" src="img/libs/victory.svg" alt="Victory logo" />
+		<img class="chartlib fragment" src="img/libs/c3.png" alt="C3 logo" />
+		<img class="chartlib fragment plain" src="img/libs/r2d3.png" alt="r2d3 logo" />
+		<img class="chartlib fragment" src="img/libs/nvd3.png" alt="nvd3 logo" />
+		<img class="chartlib fragment" src="img/libs/rjd2.jpg" alt="rjd2" />
+		<img class="chartlib fragment plain" src="img/libs/d20.png" alt="d20" />
+		<img class="chartlib fragment plain" src="img/libs/c4.png" alt="c4" />
+		<img class="chartlib fragment plain" src="img/libs/r2d2.png" alt="r2d2" />
+		<img class="chartlib fragment" src="img/libs/nva.jpg" alt="nva" />
+	</div>
+	<aside class="notes">
+		<p>Common problem: Choosing what to build it in.</p>
+		<p>Charting libraries like Highcharts, Chartist, and Chartjs. Charting libraries built on top of d3, like Plotly, Formidable's Victory Charts (built in React), C3, R2D3, NVD3, RJD2, D20, C4, R2D2, and the NVA.</p>
+	</aside>
+</section>
+
+<section data-background="img/d3.jpg" data-background-size="contain" data-background-color="white">
   <aside class="notes">
-    <p>d3 is very powerful and flexible, but has a steep learning curve and requires bit more setup compared to libraries like Highcharts.</p>
-    <p>It enforces separation of concerns between data and presentation.</p>
-    <p>It can be a little counterintuitive at first, but it's a really powerful way of programming once you get your head around it.</p>
-    <p>Loads of examples available online. Read them to get used to the style of coding.</p>
+		<p>Low-level library, more like jQuery or Underscore than charting libraries.</p>
+		<p>Very large. Lots of different APIs. Huge file size if you import the whole thing, but it's modular as of V4 so you can just import the bits you want.</p>
+    <p>It's designed to enforce separation of concerns between data and presentation, just like the web was traditonally supposed to with HTML & CSS. I know that's not a popular idea now that we have CSS in JS, but it can still be a useful .</p>
   </aside>
 </section>
 
 <section>
-  <h2>Pros of using d3:</h2>
+  <h2>Pros of using D3:</h2>
   <ul class="list">
     <li class="fragment">Powerful</li>
     <li class="fragment">Flexible</li>
@@ -81,12 +102,67 @@
 </section>
 
 <section>
-  <h2>Cons of using d3:</h2>
+  <h2>Cons of using D3:</h2>
   <ul class="list">
     <li class="fragment">Steeper learning curve</li>
     <li class="fragment">More complex</li>
     <li class="fragment">Takes longer to make a basic chart</li>
+    <li class="fragment">Have to give talks about using d3 + React</li>
   </ul>
+</section>
+</section>
+
+<section>
+  <h2>Pros of using charting libraries:</h2>
+  <ul class="list">
+    <li class="fragment">Fast</li>
+    <li class="fragment">Simpler to learn</li>
+    <li class="fragment">More readable</li>
+  </ul>
+	<aside class="notes">
+		Good for prototyping
+	</aside>
+</section>
+
+<section>
+  <h2>Cons of using charting libraries:</h2>
+  <ul class="list">
+    <li class="fragment">Limited features</li>
+    <li class="fragment">Restrictive APIs</li>
+    <li class="fragment">Unnecessary features -> bloat</li>
+    <li class="fragment">Variable performance</li>
+  </ul>
+	<aside class="notes">
+		It can take some time to work out whether the API will suit your needs
+	</aside>
+</section>
+
+<section>
+	<img class="plain" src="img/react.svg" alt="React logo" width=350 />
+	<h1>D3 + React?</h1>
+	<aside class="notes">
+		What shall we use for the DOM? React is good for DOM rendering, but so is D3.
+		D3 is great for animation and has some great out-of-the-box SVG helpers for tricky things like axes. But using just D3 can make your chart less structured by putting the whole chart in one component, leading to tight-coupling between the individual parts. It's also a bit less readable than React's declarative syntax.
+	</aside>
+</section>
+
+<section data-background="img/why-not-both.gif" data-background-size="contain">
+	<aside class="notes">
+		The Hybrid Approach. I prefer the structure and readability that comes by using React components, but I also like using the transitions directly on the DOM elements. So what I do is I combine both approaches: Let React render static components, and use D3 for everything that needs to be animated. Mix and match, see what works for you.
+	</aside>
+</section>
+
+<section data-background="img/d3-apis.png" data-background-size="contain" data-background-color="white">
+  <aside class="notes">
+  </aside>
+</section>
+
+<section>
+	<h3>22/30 of the D3 modules don’t touch the DOM:</h3>
+	<p class="d3-apis"><b>d3-array,</b> <b>d3-chord,</b> <b>d3-collection,</b> <b>d3-color,</b> <b>d3-dispatch,</b> <b>d3-dsv,</b> <b>d3-ease,</b> <b>d3-force,</b> <b>d3-format,</b> <b>d3-hierarchy,</b> <b>d3-interpolate,</b> <b>d3-path,</b> <b>d3-polygon,</b> <b>d3-quadtree,</b> <b>d3-queue,</b> <b>d3-random,</b> <b>d3-request,</b> <b>d3-scale,</b> <b>d3-time,</b> <b>d3-time-format,</b> <b>d3-timer,</b> <b>d3-voronoi</b></p>
+  <aside class="notes">
+		Most (22/30) of the D3 APIs don’t have any functions that come in direct contact with the DOM!
+  </aside>
 </section>
 
 <section>

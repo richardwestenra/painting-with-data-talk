@@ -36,7 +36,9 @@
   margin: 0 0.2em; }
 
 .reveal section img.plain {
-  background: none; }
+  background: none;
+  border: none;
+  box-shadow: none; }
 
 .reveal section .grumpy {
   margin: 2em -0.5em 0 0;
@@ -63,10 +65,80 @@
     color: #f3d7ac;
     font-weight: normal; }
 
+.reveal .chartlibs {
+  min-height: 15em;
+  min-width: 20em; }
+
+.reveal .chartlib {
+  position: fixed;
+  height: auto;
+  width: 10em; }
+  .reveal .chartlib:nth-child(1) {
+    left: 0;
+    top: 0;
+    transform: rotate(-10deg); }
+  .reveal .chartlib:nth-child(2) {
+    right: 0;
+    top: 0;
+    transform: rotate(10deg);
+    width: 8em; }
+  .reveal .chartlib:nth-child(3) {
+    left: 10%;
+    top: 20%;
+    transform: rotate(-5deg);
+    width: 6em; }
+  .reveal .chartlib:nth-child(4) {
+    right: 30%;
+    top: 10%;
+    transform: rotate(2deg); }
+  .reveal .chartlib:nth-child(5) {
+    right: 0;
+    top: 50%;
+    transform: rotate(2deg); }
+  .reveal .chartlib:nth-child(6) {
+    right: 0;
+    top: 30%;
+    transform: rotate(-5deg); }
+  .reveal .chartlib:nth-child(7) {
+    right: 20%;
+    top: 60%;
+    width: 6em;
+    transform: rotate(15deg); }
+  .reveal .chartlib:nth-child(8) {
+    left: -10%;
+    top: 50%;
+    transform: rotate(-5deg); }
+  .reveal .chartlib:nth-child(9) {
+    left: 20%;
+    top: 50%;
+    width: 7em;
+    transform: rotate(5deg); }
+  .reveal .chartlib:nth-child(10) {
+    left: -10%;
+    top: 50%; }
+  .reveal .chartlib:nth-child(11) {
+    right: -10%;
+    top: 50%;
+    transform: rotate(20deg); }
+  .reveal .chartlib:nth-child(12) {
+    right: 20%;
+    top: 50%;
+    transform: rotate(2deg); }
+  .reveal .chartlib:nth-child(13) {
+    left: -15%;
+    top: 8%;
+    transform: rotate(-5deg);
+    width: 11em; }
+
 .reveal .speaker-notes {
   padding: 10px 30px;
   max-height: 25%;
   font-size: 20px; }
+
+.reveal .d3-apis b {
+  white-space: nowrap;
+  font-weight: normal;
+  font-size: 0.9em; }
 
 #voronoi {
   position: absolute;
