@@ -37,11 +37,6 @@
     box-shadow: 0 0 0.2em #e7ad52, 0 0 0.2em #e7ad52 inset;
     animation: rotate 2s infinite alternate ease-in-out; }
 
-.reveal section .cw {
-  position: absolute;
-  width: 100%;
-  color: #31639C; }
-
 .reveal section .actually {
   font-size: 1.35em; }
 
