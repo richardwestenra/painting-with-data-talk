@@ -140,6 +140,12 @@
   font-weight: normal;
   font-size: 0.9em; }
 
+.reveal .fin {
+  background: rgba(0, 0, 0, 0.6);
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 1em 0; }
+
 canvas {
   position: absolute;
   transition: opacity ease 0.4s;
