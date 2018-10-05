@@ -56,6 +56,7 @@
     <h1 class="title">Developing <b><span id="adjective">delightful</span></b> dataviz for diverse devices with D3.js</h1>
     <aside class="notes">
       <p>Hey, I'm Richard. I'm a creative front-end dev, I make a lot of interactive charts and data visualisations in React and D3 at QuantumBlack. We're hiring, yada yada.</p>
+			<p class="meta">SLOW DOWN</p>
       <p>Today I'm going to take you through the basics of working with D3 and React.</p>
     </aside>
   </section>
@@ -79,6 +80,7 @@
 	</div>
 	<aside class="notes">
 		<p>Common problem: Choosing what to build it in.</p>
+		<p class="meta">SLOW DOWN</p>
 		<p>Charting libraries like Highcharts, Chartist, and Chartjs. Charting libraries built on top of d3, like Plotly, Formidable's Victory Charts (built in React), C3, R2D3, NVD3, RJD2, D20, C4, R2D2, and the NVA.</p>
 	</aside>
 </section>
@@ -170,16 +172,31 @@
 	<p>Exit, Enter, Update:</p>
 	<svg class="chart" id="update"></svg>
 	<p><small><code id="updateArray"></code></small></p>
+  <aside class="notes">
+		<p>I like d3 for the flexibility with transitions.</p>
+		<p>If you'd prefer to use React for the DOM and you want sophisticated animations than just CSS, you can use something like Greensock or React-Transition-Group.</p>
+  </aside>
 </section>
 
-<section>
-  <h2>Making it responsive</h2>
-  <img src="img/devices.gif" alt="">
+<section data-background="img/devices.gif" data-background-size="cover">
   <aside class="notes">
-    <p>Detect resize events with event listeners and then update with width/height values and use the update the values.</p>
+		<p>	Resizing the SVG with CSS can work (because vector) but only if you don’t include any text.</p>
+		<p>You need to manually set chart width/height when initialising the chart. Get container dimensions with this.ref.getBoundingBox and pass that to the chart when initialising.</p>
+  </aside>
+</section>
+
+<section data-background="img/resize.gif" data-background-size="contain" data-background-color="white">
+  <aside class="notes">
+		<p>If you want to ensure that it works when resizing the screen, then add an event listener for window resize.</p>
+  </aside>
+</section>
+<!-- 
+<section>
+  <aside class="notes">
     <p>Choose charts with modular designs, so that elements can be rearranged. Keep it minimalist.</p>
   </aside>
 </section>
+-->
 
 <section>
   <h1>Thanks!</h1>
@@ -189,7 +206,7 @@
   <a class="social" style="left:0em" href="mailto:richard@richardwestenra.com"> <i class="icon-email"></i> richard@<b>richardwestenra</b>.com</a>
   <a class="social" style="left:2.17em" href="http://richardwestenra.com"> <i class="icon-home"></i> <b>richardwestenra</b>.com</a>
   <aside class="notes">
-    <p>By the way if you have any questions or suggestions, please come chat to me afterwards, or get in touch online using any of my imaginative usernames.</p>
+    <p>If you have any questions, please come chat to me afterwards, or get in touch online using any of my imaginative usernames.</p>
   </aside>
 </section>
 </div>
