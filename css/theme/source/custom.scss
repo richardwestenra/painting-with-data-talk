@@ -211,7 +211,9 @@ $selectionBackgroundColor: #e7ad52;
   }
 }
 
-#voronoi {
+canvas {
   position: absolute;
   transition: opacity ease 0.4s;
+  top: 0;
+  left: 0;
 }
