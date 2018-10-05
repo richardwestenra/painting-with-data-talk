@@ -165,6 +165,13 @@
   </aside>
 </section>
 
+<section data-id="update">
+	<h2>Transitions</h2>
+	<p>Exit, Enter, Update:</p>
+	<svg class="chart" id="update"></svg>
+	<p><small><code id="updateArray"></code></small></p>
+</section>
+
 <section>
   <h2>Making it responsive</h2>
   <img src="img/devices.gif" alt="">
@@ -192,24 +199,23 @@
 <script src="lib/js/topojson.js"></script>
 <script src="lib/js/d3.min.js"></script>
 <script src="js/reveal.js"></script>
+<script src="js/utils.js"></script>
 <script src="js/adjectives.js"></script>
 <script src="js/voronoi.js"></script>
+<script src="js/update.js"></script>
 <script src="js/slides.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				history: true,
-				showNotes: window.location.search.match(/showNotes/gi),
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+<script>
+	Reveal.initialize({
+		history: true,
+		showNotes: window.location.search.match(/showNotes/gi),
+		dependencies: [
+			{ src: 'plugin/markdown/marked.js' },
+			{ src: 'plugin/markdown/markdown.js' },
+			{ src: 'plugin/notes/notes.js', async: true },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+		]
+	});
+</script>
+</body>
 </html>
