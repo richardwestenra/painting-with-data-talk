@@ -137,9 +137,9 @@
 
 <section data-background="img/d3.jpg" data-background-size="contain" data-background-color="white">
   <aside class="notes">
-		<p>But some of you might be wondering what D3 is, and why I didn't include it in the list. After all, it's a data visualisation library too. But unlike the others, it's much more low-level, enough so to be a whole different sort of animal. It's a bit more like jQuery or Underscore than a true charting library, and in fact the syntax looks pretty similar. So if you like method chaining, you'll love it.</p>
-		<p>Rather than giving you ready-built charts or chart components that you can configure, it gives you the tools to build your own custom charts from scratch, along with a set of best practices.</p>
-    <p>D3 is also designed to enforce separation of concerns between data and presentation, just like the web was traditonally supposed to with HTML & CSS. I know that's not a popular idea these days, what with CSS in JS and all, but it's still a useful model IMO.</p>
+		<p>But some of you might be wondering what D3 is, and why I didn't include it in the list. After all, it's a data visualisation library too. But unlike the others, it's much more low-level, enough so to be a whole different sort of animal. It's a bit more like jQuery or Underscore than a true charting library, in the sense that, rather than giving you ready-built charts or chart components that you can configure, it gives you the tools to build your own custom charts from scratch, along with a set of best practices.</p>
+		<p>And in fact the syntax looks pretty similar to jQuery too. So if you like method chaining, you'll love it</p>
+    <p>D3 is also designed to enforce separation of concerns between data and presentation, just like the web was traditonally supposed to with HTML & CSS. I know that's not a popular idea these days, what with CSS in JS and all, but it can still be a useful model at times. Fight me.</p>
   </aside>
 </section>
 
@@ -153,7 +153,7 @@
   </ul>
 	<aside class="notes">
 		<p>There are several advantages to using D3 over other charting libraries:</p>
-		<p class="meta">DOWN</p>
+		<p class="meta">DOWN _ _ _ _ Slow down!</p>
 		<p>1. D3 gives you full control over how things look, and has so many different tools and algorithms that you can mix and match to create really cool effects. I've been working with d3 for about 4 years and I still regularly come across things where I'm like, whoa, D3 can do that?</p>
 		<p>It's also very large. Lots of different APIs. Huge file size if you import the whole thing, but it's modular, as of version 4, so you can just import the bits you want.</p>
 		<p class="meta">DOWN</p>
@@ -171,7 +171,7 @@
     <li class="fragment">Steeper learning curve</li>
     <li class="fragment">More complex</li>
     <li class="fragment">Takes longer to make a basic chart</li>
-    <li class="fragment">Have to give talks about using d3 + React</li>
+    <li class="fragment">Have to give talks about using D3 + React</li>
   </ul>
 	<aside class="notes">
 		<p>On the other hand, there are some downsides:</p>
@@ -180,9 +180,9 @@
 		<p class="meta">DOWN</p>
 		<p>2. The code can be a bit more complex to read, which means you need to put more thought into documenting it.</p>
 		<p class="meta">DOWN</p>
-		<p>3. f you just want to do a standard chart type like a bar or line chart, D3 will definitely take longer. I find that it's best to use it in situations where you're given a specific design that you need to implement as closely as possible.</p>
+		<p>3. If you just want to do a standard chart type like a bar or line chart, D3 will definitely take longer. I find that it's best to use it in situations where you're given a specific design that you need to implement as closely as possible.</p>
 		<p class="meta">DOWN</p>
-		<p>4. Finally, if you learn D3 then eventually your flatmate will ask you to speak about it at her meetup.</p>
+		<p>4. Finally, if you learn D3 then eventually your flatmate will ask you to speak about it at her meetup. So there's that.</p>
 	</aside>
 </section>
 
@@ -190,7 +190,8 @@
 	<img class="plain" src="img/react.svg" alt="React logo" width=350 />
 	<h1>D3 + React</h1>
 	<aside class="notes">
-		<p>I mentioned that D3 plays well with other tools, and that includes React. But when using them together, you need to make a big decision about which to use for updating the DOM. D3 is still perfectly fine to use for layout calculations even if you use React for all the DOM rendering, and in fact out of D3's 30 different modules, 22 of them don’t have any API methods that come in direct contact with the DOM!</p>
+		<p>I mentioned that D3 plays well with other tools, and that includes React. But when using them together, you need to make a big decision about which to use for updating the DOM.</p>
+		<p>D3 is still perfectly fine to use for layout calculations even if you use React for all the DOM rendering, and in fact, out of D3's 30 different modules, 22 of them don’t have any API methods that come in direct contact with the DOM!</p>
 	</aside>
 </section>
 
@@ -225,7 +226,8 @@
 <section data-background="img/why-not-both.gif" data-background-size="contain">
 	<aside class="notes">
 		<p>So why not choose a hybrid approach? What I like to do is to combine both approaches: Let React render static components, but use D3 for axes, and anything that needs complex animations. You can mix and match the syntax together, and see what works for you.</p>
-		<p>If you want to use D3 for DOM rendering in a React component, you just need to pass a container ref to your d3 code, and run it in componentDidMount and componentDidUpdate. There's a great article by Elijah Meeks with more details about how to do it, which I'll tweet a link to after this talk.</p>
+		<p class="meta">Slow down</p>
+		<p>If you want to use D3 for DOM rendering in a React component, you just need to pass a container ref to your D3 code, and run it in componentDidMount and componentDidUpdate. There's a great article by Elijah Meeks with more details about how to do it, which I'll tweet a link to after this talk.</p>
 	</aside>
 </section>
 
