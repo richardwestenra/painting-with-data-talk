@@ -109,9 +109,12 @@
     <li class="fragment">More readable, usually</li>
   </ul>
 	<aside class="notes">
-		<p>Generalising: obviously it depends on the library</p>
+		<p>In general, and obviously it depends on the library, but the advantages of using a charting library is that:</p>
+		<p class="meta">DOWN</p>
 		<p>1. You can get something built quickly</p>
+		<p class="meta">DOWN</p>
 		<p>2. Less upfront time investment</p>
+		<p class="meta">DOWN</p>
 		<p>3. Usually more readable than D3, though obviously it depends on the library</p>
 	</aside>
 </section>
@@ -123,7 +126,10 @@
     <li class="fragment">Limited features & restrictive APIs</li>
   </ul>
 	<aside class="notes">
-		<p>1. Perf: Sometimes in terms of download size, and also sometimes in terms of animation performance. I've found they can be a bit janky at times if you're doing something complex.</p>
+		<p>On the other hand they have some disadvantages too:</p>
+		<p class="meta">DOWN</p>
+		<p>1. They're not always performant enough: Sometimes because of excessive download size, and sometimes in terms of animation performance. I've found they can be a bit janky at times if you're doing something complex.</p>
+		<p class="meta">DOWN</p>
 		<p>2. Less control: Abstractions may not fit your use case. Because they're usually fairly opinionated, they don't always do everything you want them to. Often I find that it's not until a chart is nearly done that I discover the limitations of a given library's API, and realise that it it's not able to implement certain quirks of the design I've been given. So then I have to start all over again in something else.</p>
 		<p>So what I often do is prototype an MVP in a charting library, then build a more fleshed-out version in D3 once I've got more time to invest.</p>
 	</aside>
@@ -146,11 +152,16 @@
     <li class="fragment">Popular and well-established</li>
   </ul>
 	<aside class="notes">
+		<p>There are several advantages to using D3 over other charting libraries:</p>
+		<p class="meta">DOWN</p>
 		<p>1. D3 gives you full control over how things look, and has so many different tools and algorithms that you can mix and match to create really cool effects. I've been working with d3 for about 4 years and I still regularly come across things where I'm like, whoa, D3 can do that?</p>
 		<p>It's also very large. Lots of different APIs. Huge file size if you import the whole thing, but it's modular, as of version 4, so you can just import the bits you want.</p>
+		<p class="meta">DOWN</p>
 		<p>2. Works seamlessly with existing web technologies. Plays well with other tools. Can manipulate any part of the DOM, or use it with SVG, Canvas, WebGL, or whatever.</p>
-		<p>3. D3's animations are really smooth, even when you've got transitions.</p>
-		<p>4. Large community, lots of examples out there. Tutorials, stackoverflow questions, bl.ocks demos.</p>
+		<p class="meta">DOWN</p>
+		<p>3. D3's animations are usually really smooth, even with transitions involving hundreds of different objects.</p>
+		<p class="meta">DOWN</p>
+		<p>4. Large community, lots of examples, tutorials, stackoverflow questions, demos.</p>
 	</aside>
 </section>
 
@@ -163,10 +174,15 @@
     <li class="fragment">Have to give talks about using d3 + React</li>
   </ul>
 	<aside class="notes">
-		<p>Took me a lot longer to get my head around it, especially the data binding which is a bit counterintuitive.</p>
-		<p>The code can be a bit more complex to read, which means you need to put more thought into documenting it.</p>
-		<p>If you just want to do a standard chart type like a bar or line chart, D3 will definitely take longer. I find that it's best to use it in situations where you're given a specific design that you need to implement as closely as possible.</p>
-		<p>All the talks you have to give.</p>
+		<p>On the other hand, there are some downsides:</p>
+		<p class="meta">DOWN</p>
+		<p>1. It can take a longer to get your head around it, especially the data binding which is a bit counterintuitive.</p>
+		<p class="meta">DOWN</p>
+		<p>2. The code can be a bit more complex to read, which means you need to put more thought into documenting it.</p>
+		<p class="meta">DOWN</p>
+		<p>3. f you just want to do a standard chart type like a bar or line chart, D3 will definitely take longer. I find that it's best to use it in situations where you're given a specific design that you need to implement as closely as possible.</p>
+		<p class="meta">DOWN</p>
+		<p>4. Finally, if you learn D3 then eventually your flatmate will ask you to speak about it at her meetup.</p>
 	</aside>
 </section>
 
@@ -175,7 +191,6 @@
 	<h1>D3 + React</h1>
 	<aside class="notes">
 		<p>I mentioned that D3 plays well with other tools, and that includes React. But when using them together, you need to make a big decision about which to use for updating the DOM. D3 is still perfectly fine to use for layout calculations even if you use React for all the DOM rendering, and in fact out of D3's 30 different modules, 22 of them don’t have any API methods that come in direct contact with the DOM!</p>
-		<p>So it's fine if you just want to use React, but they're both great for DOM rendering in their own separate ways, and each have their own advantages and disadvantages.</p>
 	</aside>
 </section>
 
@@ -185,7 +200,7 @@
 		<div class="fragment">
 			<h4>D3</h4>
 			<ul class="list">
-				<li>Great for animation</li>
+				<li>Complex animation</li>
 				<li>SVG helpers, e.g. axes</li>
 			</ul>
 		</div>
@@ -198,7 +213,10 @@
 		</div>
 	</div>
 	<aside class="notes">
+		<p>So it's fine if you just want to use React, but they're both great for DOM rendering in their own separate ways, and each have their own advantages and disadvantages.</p>
+		<p class="meta">DOWN</p>
 		<p>1. For instance, D3 is great for animation, and has some great out-of-the-box SVG helpers for tricky things like axes.</p>
+		<p class="meta">DOWN</p>
 		<p>2. But D3 code tends to make your chart less structured, by putting the whole chart in one component, which can lead to tight-coupling between the individual parts. It's also a bit less readable than React's declarative syntax.</p>
 		<p>It's a pretty tough call! I like the structure and readability that comes by using React components, but I also like using the transitions directly on the DOM elements.</p>
 	</aside>
@@ -217,7 +235,7 @@
 	<svg class="chart" id="update"></svg>
 	<p><small><code id="updateArray"></code></small></p>
   <aside class="notes">
-		<p>One reason I really like d3 is its flexibility with transition animations - demonstrated here with a bar chart showing a random number of random numbers, updated every 2 seconds.</p>
+		<p>I mentioned that one reason I really like d3 is its flexibility with animations - demonstrated here with a bar chart showing a random number of random numbers, updated every 2 seconds.</p>
 		<p>D3 makes it easy to add separate transitions for adding, deleting, or updating elements. You can also easily add an incremental transition delay per element, for a neat ripple effect.</p>
 		<p>If you're using React for the DOM and you want sophisticated JS animations for your chart transitions, you still can, but you'll need use something like Greensock or React-Transition-Group.</p>
   </aside>
@@ -226,7 +244,7 @@
 <section data-background="img/devices.gif" data-background-size="cover">
   <aside class="notes">
 		<p>When it comes to responsive charts for mobile devices, you also have a few different approaches you can take.</p>
-		<p>If your chart doesn’t include any text then you can just treat the chart like any other vector image, and scale it CSS. However most charts include text for things like axes, so this won't work most of the time.</p>
+		<p>If your chart doesn’t include any text then you can just treat the chart like any other vector image, and scale it with CSS. However most charts include text for things like axes, so this won't work most of the time.</p>
 		<p>Instead, you'll need to manually set the chart dimensions based on the container component's width and height, once the component mounts.</p>
   </aside>
 </section>
@@ -247,30 +265,30 @@
 	</aside>
 </section>
 
-<section>
-	<section data-id="mountains-2">
-		<div class="fin">
-			<h1>Thanks!</h1>
-			<p style="margin: 1em 0 0.8em">Don't forget to like and subscribe 👍</p>
-			<a class="social" style="left:-1.85em" href="http://twitter.com/richardwestenra"> <i class="icon-twitter"></i> twitter.com/<b>richardwestenra</b></a>
-			<a class="social" style="left:-1.85em" href="http://github.com/richardwestenra"> <i class="icon-github"></i> github.com/<b>richardwestenra</b></a>
-			<a class="social" style="left:0em" href="mailto:richard@richardwestenra.com"> <i class="icon-email"></i> richard@<b>richardwestenra</b>.com</a>
-			<a class="social" style="left:2.17em" href="http://richardwestenra.com"> <i class="icon-home"></i> <b>richardwestenra</b>.com</a>
-			<small>Slides: <a href="https://www.richardwestenra.com/d3-talk-2">richardwestenra.com/d3-talk-2</a></small>
-		</div>
-		<aside class="notes">
-			<p>If you have any questions, please come chat to me afterwards, or get in touch online using any of my imaginative usernames.</p>
-		</aside>
-	</section>
-	<section data-id="mountains">
-		<div class="fin resources">
-			<h3>Resources</h3>
-			<p><a href="https://medium.com/@Elijah_Meeks/interactive-applications-with-react-d3-f76f7b3ebc71">Elijah Meeks: Interactive Applications with React & D3 (Medium)</a></p>
-			<p><a href="http://alignedleft.com/work/d3-book-2e">Scott Murray: Interactive Data Visualization for the Web (book + tutorials)</a></p>
-			<p><a href="https://bl.ocks.org/mbostock">Mike Bostock: bl.ocks (examples)</p>
-		</div>
-	</section>
+<section data-id="mountains-2">
+	<div class="fin">
+		<h1>Thanks!</h1>
+		<p style="margin: 1em 0 0.8em">Don't forget to like and subscribe 👍</p>
+		<a class="social" style="left:-1.85em" href="http://twitter.com/richardwestenra"> <i class="icon-twitter"></i> twitter.com/<b>richardwestenra</b></a>
+		<a class="social" style="left:-1.85em" href="http://github.com/richardwestenra"> <i class="icon-github"></i> github.com/<b>richardwestenra</b></a>
+		<a class="social" style="left:0em" href="mailto:richard@richardwestenra.com"> <i class="icon-email"></i> richard@<b>richardwestenra</b>.com</a>
+		<a class="social" style="left:2.17em" href="http://richardwestenra.com"> <i class="icon-home"></i> <b>richardwestenra</b>.com</a>
+		<small>Slides: <a href="https://www.richardwestenra.com/d3-talk-2">richardwestenra.com/d3-talk-2</a></small>
+	</div>
+	<aside class="notes">
+		<p>That's about it for me, thanks!</p>
+		<p>If you have any questions, please come chat to me afterwards, or get in touch online using any of my imaginative usernames.</p>
+		<p>Also I've added some links to handy resources on the last slide of this talk, and which I've tweeted out a link to, hopefully during this talk.</p>
+	</aside>
 </section>
+
+<section data-id="mountains">
+	<div class="fin resources">
+		<h3>Resources</h3>
+		<p><a href="https://medium.com/@Elijah_Meeks/interactive-applications-with-react-d3-f76f7b3ebc71">Elijah Meeks: Interactive Applications with React & D3 (Medium)</a></p>
+		<p><a href="http://alignedleft.com/work/d3-book-2e">Scott Murray: Interactive Data Visualization for the Web (book + tutorials)</a></p>
+		<p><a href="https://bl.ocks.org/mbostock">Mike Bostock: bl.ocks (examples)</p>
+	</div>
 </div>
 </div>
 

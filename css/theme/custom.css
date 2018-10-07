@@ -68,7 +68,8 @@
 .reveal .flex {
   display: flex;
   text-align: left;
-  margin-top: 2em; }
+  margin-top: 2em;
+  margin-left: 3.5em; }
   .reveal .flex div:last-child {
     margin-left: 3em; }
   .reveal .flex ul {
