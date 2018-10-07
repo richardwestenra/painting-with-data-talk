@@ -56,9 +56,23 @@
   <section data-id="title">
     <h1 class="title">Developing <b><span id="adjective">delightful</span></b> dataviz for diverse devices with D3.js</h1>
     <aside class="notes">
-      <p>Hey, I'm Richard. I'm a creative front-end dev, I make a lot of interactive charts and data visualisations in React and D3. I work at QuantumBlack, we're hiring, come work with us, yada yada yada, you know the drill.</p>
 			<p class="meta">SLOW DOWN</p>
-      <p>Today I'm going to take you through the basics of working with D3 and React.</p>
+      <p>Hey, I'm Richard. I'm a creative front-end dev, I make a lot of interactive charts and data visualisations in React and D3.</p>
+			<p class="meta">DOWN</p>
+			<p>I work at QuantumBlack, we're an advanced analytics consultancy owned by McKinsey. And btw we're hiring, like everyone else. Come work with us, it's a great place to work, yada yada yada, you all know the drill.</p>
+			<p class="meta">UP</p>
+      <p>Anyway today I'm going to take you through the basics of working with D3 and React.</p>
+    </aside>
+  </section>
+  <section>
+		<img src="img/logo-white.svg" alt="QuantumBlack logo" class="plain" width=700 />
+		<br>
+		<br>
+		<h2>We're hiring, I think?</h2>
+    <aside class="notes">
+			<p>I work at QuantumBlack, we're an advanced analytics consultancy owned by McKinsey. And btw we're hiring, like everyone else. Come work with us, it's a great place to work, yada yada yada, you all know the drill.</p>
+			<p class="meta">UP</p>
+      <p>Anyway today I'm going to take you through the basics of working with D3 and React.</p>
     </aside>
   </section>
 </section>
@@ -82,15 +96,44 @@
 	<aside class="notes">
 		<p>Common problem: Choosing what to build it in.</p>
 		<p class="meta">SLOW DOWN</p>
-		<p>Charting libraries like Highcharts, Chartist, and Chartjs. Charting libraries built on top of d3, like Plotly, Formidable's Victory Charts (built in React), C3, R2D3, NVD3, RJD2, D20, C4, R2D2, and the NVA.</p>
+		<p>Charting libraries like Highcharts, Chartist, and Chartjs. Charting libraries built on top of d3, like Plotly, Formidable's Victory Charts (built in React: good option), C3, R2D3, NVD3, RJD2, D20, C4, R2D2, and the NVA. It's overwhelming.</p>
+		<p>These libraries typically provide a few basic chart types, and abstract away most of the complexity. Whether this is help or a hindrance depends on your use case.</p>
+	</aside>
+</section>
+
+<section>
+  <h2>Pros of using charting libraries:</h2>
+  <ul class="list">
+    <li class="fragment">Quick to use</li>
+    <li class="fragment">Simpler to learn</li>
+    <li class="fragment">More readable, usually</li>
+  </ul>
+	<aside class="notes">
+		<p>Generalising: obviously it depends on the library</p>
+		<p>1. You can get something built quickly</p>
+		<p>2. Less upfront time investment</p>
+		<p>3. Usually more readable than D3, though obviously it depends on the library</p>
+	</aside>
+</section>
+
+<section>
+  <h2>Cons of using charting libraries:</h2>
+  <ul class="list">
+    <li class="fragment">Variable performance</li>
+    <li class="fragment">Limited features & restrictive APIs</li>
+  </ul>
+	<aside class="notes">
+		<p>1. Perf: Sometimes in terms of download size, and also sometimes in terms of animation performance. I've found they can be a bit janky at times if you're doing something complex.</p>
+		<p>2. Less control: Abstractions may not fit your use case. Because they're usually fairly opinionated, they don't always do everything you want them to. Often I find that it's not until a chart is nearly done that I discover the limitations of a given library's API, and realise that it it's not able to implement certain quirks of the design I've been given. So then I have to start all over again in something else.</p>
+		<p>So what I often do is prototype an MVP in a charting library, then build a more fleshed-out version in D3 once I've got more time to invest.</p>
 	</aside>
 </section>
 
 <section data-background="img/d3.jpg" data-background-size="contain" data-background-color="white">
   <aside class="notes">
-		<p>But what is D3? It's a data visualisation library too. But unlike the others, it's much more low-level. It's more like jQuery or Underscore than most charting libraries, and in fact the syntax looks a lot like jQuery and Underscore too. So if you like method chaining you'll love it.</p>
-		<p>Very large. Lots of different APIs. Huge file size if you import the whole thing, but it's modular as of V4 so you can just import the bits you want.</p>
-    <p>It's designed to enforce separation of concerns between data and presentation, just like the web was traditonally supposed to with HTML & CSS. I know that's not a popular idea now that we have CSS in JS, but it can still be a useful .</p>
+		<p>But some of you might be wondering what D3 is, and why I didn't include it in the list. After all, it's a data visualisation library too. But unlike the others, it's much more low-level, enough so to be a whole different sort of animal. It's a bit more like jQuery or Underscore than a true charting library, and in fact the syntax looks pretty similar. So if you like method chaining, you'll love it.</p>
+		<p>Rather than giving you ready-built charts or chart components that you can configure, it gives you the tools to build your own custom charts from scratch, along with a set of best practices.</p>
+    <p>D3 is also designed to enforce separation of concerns between data and presentation, just like the web was traditonally supposed to with HTML & CSS. I know that's not a popular idea these days, what with CSS in JS and all, but it's still a useful model IMO.</p>
   </aside>
 </section>
 
@@ -102,6 +145,13 @@
     <li class="fragment">Performant</li>
     <li class="fragment">Popular and well-established</li>
   </ul>
+	<aside class="notes">
+		<p>1. D3 gives you full control over how things look, and has so many different tools and algorithms that you can mix and match to create really cool effects. I've been working with d3 for about 4 years and I still regularly come across things where I'm like, whoa, D3 can do that?</p>
+		<p>It's also very large. Lots of different APIs. Huge file size if you import the whole thing, but it's modular, as of version 4, so you can just import the bits you want.</p>
+		<p>2. Works seamlessly with existing web technologies. Plays well with other tools. Can manipulate any part of the DOM, or use it with SVG, Canvas, WebGL, or whatever.</p>
+		<p>3. D3's animations are really smooth, even when you've got transitions.</p>
+		<p>4. Large community, lots of examples out there. Tutorials, stackoverflow questions, bl.ocks demos.</p>
+	</aside>
 </section>
 
 <section>
@@ -112,112 +162,114 @@
     <li class="fragment">Takes longer to make a basic chart</li>
     <li class="fragment">Have to give talks about using d3 + React</li>
   </ul>
-</section>
-
-<section>
-  <h2>Pros of using charting libraries:</h2>
-  <ul class="list">
-    <li class="fragment">Fast</li>
-    <li class="fragment">Simpler to learn</li>
-    <li class="fragment">More readable</li>
-  </ul>
 	<aside class="notes">
-		Good for prototyping
-	</aside>
-</section>
-
-<section>
-  <h2>Cons of using charting libraries:</h2>
-  <ul class="list">
-    <li class="fragment">Limited features</li>
-    <li class="fragment">Restrictive APIs</li>
-    <li class="fragment">Unnecessary features -> bloat</li>
-    <li class="fragment">Variable performance</li>
-  </ul>
-	<aside class="notes">
-		It can take some time to work out whether the API will suit your needs
+		<p>Took me a lot longer to get my head around it, especially the data binding which is a bit counterintuitive.</p>
+		<p>The code can be a bit more complex to read, which means you need to put more thought into documenting it.</p>
+		<p>If you just want to do a standard chart type like a bar or line chart, D3 will definitely take longer. I find that it's best to use it in situations where you're given a specific design that you need to implement as closely as possible.</p>
+		<p>All the talks you have to give.</p>
 	</aside>
 </section>
 
 <section>
 	<img class="plain" src="img/react.svg" alt="React logo" width=350 />
-	<h1>D3 + React?</h1>
+	<h1>D3 + React</h1>
 	<aside class="notes">
-		What shall we use for the DOM? React is good for DOM rendering, but so is D3.
-		D3 is great for animation and has some great out-of-the-box SVG helpers for tricky things like axes. But using just D3 can make your chart less structured by putting the whole chart in one component, leading to tight-coupling between the individual parts. It's also a bit less readable than React's declarative syntax.
+		<p>I mentioned that D3 plays well with other tools, and that includes React. But when using them together, you need to make a big decision about which to use for updating the DOM. D3 is still perfectly fine to use for layout calculations even if you use React for all the DOM rendering, and in fact out of D3's 30 different modules, 22 of them don’t have any API methods that come in direct contact with the DOM!</p>
+		<p>So it's fine if you just want to use React, but they're both great for DOM rendering in their own separate ways, and each have their own advantages and disadvantages.</p>
+	</aside>
+</section>
+
+<section>
+  <h2>Updating the DOM</h2>
+	<div class="flex">
+		<div class="fragment">
+			<h4>D3</h4>
+			<ul class="list">
+				<li>Great for animation</li>
+				<li>SVG helpers, e.g. axes</li>
+			</ul>
+		</div>
+		<div class="fragment">
+			<h4>React</h4>
+			<ul class="list">
+				<li>Better code structure</li>
+				<li>More readable</li>
+			</ul>
+		</div>
+	</div>
+	<aside class="notes">
+		<p>1. For instance, D3 is great for animation, and has some great out-of-the-box SVG helpers for tricky things like axes.</p>
+		<p>2. But D3 code tends to make your chart less structured, by putting the whole chart in one component, which can lead to tight-coupling between the individual parts. It's also a bit less readable than React's declarative syntax.</p>
+		<p>It's a pretty tough call! I like the structure and readability that comes by using React components, but I also like using the transitions directly on the DOM elements.</p>
 	</aside>
 </section>
 
 <section data-background="img/why-not-both.gif" data-background-size="contain">
 	<aside class="notes">
-		The Hybrid Approach. I prefer the structure and readability that comes by using React components, but I also like using the transitions directly on the DOM elements. So what I do is I combine both approaches: Let React render static components, and use D3 for everything that needs to be animated. Mix and match, see what works for you.
+		<p>So why not choose a hybrid approach? What I like to do is to combine both approaches: Let React render static components, but use D3 for axes, and anything that needs complex animations. You can mix and match the syntax together, and see what works for you.</p>
+		<p>If you want to use D3 for DOM rendering in a React component, you just need to pass a container ref to your d3 code, and run it in componentDidMount and componentDidUpdate. There's a great article by Elijah Meeks with more details about how to do it, which I'll tweet a link to after this talk.</p>
 	</aside>
-</section>
-
-<section data-background="img/d3-apis.png" data-background-size="contain" data-background-color="white">
-  <aside class="notes">
-  </aside>
-</section>
-
-<section>
-	<h3>22/30 of the D3 modules don’t touch the DOM:</h3>
-	<p class="d3-apis"><b>d3-array,</b> <b>d3-chord,</b> <b>d3-collection,</b> <b>d3-color,</b> <b>d3-dispatch,</b> <b>d3-dsv,</b> <b>d3-ease,</b> <b>d3-force,</b> <b>d3-format,</b> <b>d3-hierarchy,</b> <b>d3-interpolate,</b> <b>d3-path,</b> <b>d3-polygon,</b> <b>d3-quadtree,</b> <b>d3-queue,</b> <b>d3-random,</b> <b>d3-request,</b> <b>d3-scale,</b> <b>d3-time,</b> <b>d3-time-format,</b> <b>d3-timer,</b> <b>d3-voronoi</b></p>
-  <aside class="notes">
-		Most (22/30) of the D3 APIs don’t have any functions that come in direct contact with the DOM!
-  </aside>
 </section>
 
 <section data-id="update">
 	<h2>Transitions</h2>
-	<p>Exit, Enter, Update:</p>
+	<p>Enter (add) / Exit (delete) / Update:</p>
 	<svg class="chart" id="update"></svg>
 	<p><small><code id="updateArray"></code></small></p>
   <aside class="notes">
-		<p>I like d3 for the flexibility with transitions.</p>
-		<p>If you'd prefer to use React for the DOM and you want sophisticated animations than just CSS, you can use something like Greensock or React-Transition-Group.</p>
+		<p>One reason I really like d3 is its flexibility with transition animations - demonstrated here with a bar chart showing a random number of random numbers, updated every 2 seconds.</p>
+		<p>D3 makes it easy to add separate transitions for adding, deleting, or updating elements. You can also easily add an incremental transition delay per element, for a neat ripple effect.</p>
+		<p>If you're using React for the DOM and you want sophisticated JS animations for your chart transitions, you still can, but you'll need use something like Greensock or React-Transition-Group.</p>
   </aside>
 </section>
 
 <section data-background="img/devices.gif" data-background-size="cover">
   <aside class="notes">
-		<p>	Resizing the SVG with CSS can work (because vector) but only if you don’t include any text.</p>
-		<p>You need to manually set chart width/height when initialising the chart. Get container dimensions with this.ref.getBoundingBox and pass that to the chart when initialising.</p>
+		<p>When it comes to responsive charts for mobile devices, you also have a few different approaches you can take.</p>
+		<p>If your chart doesn’t include any text then you can just treat the chart like any other vector image, and scale it CSS. However most charts include text for things like axes, so this won't work most of the time.</p>
+		<p>Instead, you'll need to manually set the chart dimensions based on the container component's width and height, once the component mounts.</p>
   </aside>
 </section>
 
 <section data-background="img/resize.gif" data-background-size="contain" data-background-color="white">
   <aside class="notes">
-		<p>If you want to ensure that it works when resizing the screen, then add an event listener for window resize.</p>
+		<p>If you want to ensure that it works after resizing the screen, then add an event listener for window resize, and update the chart. This will make testing easier, and also ensure that your chart works even when users rotate their device or resize their browser window.</p>
+		<!-- <p class="meta">Maybe?</p>
+    <p>Choose chart types with modular designs, so that elements can be rearranged.</p> -->
   </aside>
 </section>
-<!-- 
-<section>
-  <aside class="notes">
-    <p>Choose charts with modular designs, so that elements can be rearranged. Keep it minimalist.</p>
-  </aside>
-</section>
--->
 
 <section data-id="mountains" data-transition="zoom">
 	<h1>Have fun with it</h1>
   <aside class="notes">
-		<p>You don't have to use d3 for just charts. There are loads of layout algorithms to play with and you can get creative with them, using SVG, Canvas, WebGL, or whatever.</p>
-		<p>I made this mountain effect with D3's Area layout and Canvas. The title slide background used a Voronoi layout.</p>
+		<p>Finally, you don't have to use D3 for just charts. There are loads of layout algorithms to play with, and you can get creative with them. It's great for adding little playful flourishes to your websites, or talk slides.</p>
+		<!-- <p>I made this mountain effect with D3's Area chart layout on a Canvas. The title slide background uses a Voronoi layout.</p> -->
 	</aside>
 </section>
 
-<section data-id="mountains">
-	<div class="fin">
-		<h1>Thanks!</h1>
-		<p style="margin: 1em 0 0.8em">Don't forget to like and subscribe 👍</p>
-		<a class="social" style="left:-1.85em" href="http://twitter.com/richardwestenra"> <i class="icon-twitter"></i> twitter.com/<b>richardwestenra</b></a>
-		<a class="social" style="left:-1.85em" href="http://github.com/richardwestenra"> <i class="icon-github"></i> github.com/<b>richardwestenra</b></a>
-		<a class="social" style="left:0em" href="mailto:richard@richardwestenra.com"> <i class="icon-email"></i> richard@<b>richardwestenra</b>.com</a>
-		<a class="social" style="left:2.17em" href="http://richardwestenra.com"> <i class="icon-home"></i> <b>richardwestenra</b>.com</a>
-	</div>
-  <aside class="notes">
-    <p>If you have any questions, please come chat to me afterwards, or get in touch online using any of my imaginative usernames.</p>
-  </aside>
+<section>
+	<section data-id="mountains-2">
+		<div class="fin">
+			<h1>Thanks!</h1>
+			<p style="margin: 1em 0 0.8em">Don't forget to like and subscribe 👍</p>
+			<a class="social" style="left:-1.85em" href="http://twitter.com/richardwestenra"> <i class="icon-twitter"></i> twitter.com/<b>richardwestenra</b></a>
+			<a class="social" style="left:-1.85em" href="http://github.com/richardwestenra"> <i class="icon-github"></i> github.com/<b>richardwestenra</b></a>
+			<a class="social" style="left:0em" href="mailto:richard@richardwestenra.com"> <i class="icon-email"></i> richard@<b>richardwestenra</b>.com</a>
+			<a class="social" style="left:2.17em" href="http://richardwestenra.com"> <i class="icon-home"></i> <b>richardwestenra</b>.com</a>
+			<small>Slides: <a href="https://www.richardwestenra.com/d3-talk-2">richardwestenra.com/d3-talk-2</a></small>
+		</div>
+		<aside class="notes">
+			<p>If you have any questions, please come chat to me afterwards, or get in touch online using any of my imaginative usernames.</p>
+		</aside>
+	</section>
+	<section data-id="mountains">
+		<div class="fin resources">
+			<h3>Resources</h3>
+			<p><a href="https://medium.com/@Elijah_Meeks/interactive-applications-with-react-d3-f76f7b3ebc71">Elijah Meeks: Interactive Applications with React & D3 (Medium)</a></p>
+			<p><a href="http://alignedleft.com/work/d3-book-2e">Scott Murray: Interactive Data Visualization for the Web (book + tutorials)</a></p>
+			<p><a href="https://bl.ocks.org/mbostock">Mike Bostock: bl.ocks (examples)</p>
+		</div>
+	</section>
 </section>
 </div>
 </div>

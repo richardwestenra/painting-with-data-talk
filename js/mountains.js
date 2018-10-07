@@ -25,7 +25,7 @@ function Mountains() {
     hasGradient: [false],
     blur_0: [0.6, [0, 10]],
     blur_1: [1.1, [0, 10]],
-    hasBlur: [true],
+    hasBlur: [false],
     xParallax_0: [0.1, [0, 1]],
     xParallax_1: [0.01, [0, 1]],
     yParallax_0: [0.1, [0, 1]],
@@ -429,11 +429,20 @@ function Mountains() {
   this.start = function() {
     req = requestAnimationFrame(run);
     canvas.style.opacity = 1;
+    return this;
+  };
+
+  this.updateHue = function() {
+    configValues.hue_change_rate_0 = 4;
+    configValues.hue_change_rate_1 = 6;
+    makeAreas();
+    return this;
   };
 
   this.stop = function() {
     cancelAnimationFrame(req);
     req = false;
     canvas.style.opacity = 0;
+    return this;
   };
 }

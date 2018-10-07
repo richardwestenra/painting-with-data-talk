@@ -65,6 +65,18 @@
     color: #f3d7ac;
     font-weight: normal; }
 
+.reveal .flex {
+  display: flex;
+  text-align: left;
+  margin-top: 2em; }
+  .reveal .flex div:last-child {
+    margin-left: 3em; }
+  .reveal .flex ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 0.7em; }
+
 .reveal .chartlibs {
   min-height: 15em;
   min-width: 20em; }
@@ -126,7 +138,7 @@
     transform: rotate(2deg); }
   .reveal .chartlib:nth-child(13) {
     left: -15%;
-    top: 8%;
+    top: 5%;
     transform: rotate(-5deg);
     width: 11em; }
 
@@ -144,7 +156,13 @@
   background: rgba(0, 0, 0, 0.6);
   max-width: 80%;
   margin: 0 auto;
-  padding: 1em 0; }
+  padding: 1em; }
+  .reveal .fin small {
+    margin: 1em 0 0; }
+
+.reveal .resources p {
+  margin-top: 1em;
+  font-size: 0.9em; }
 
 canvas {
   position: absolute;

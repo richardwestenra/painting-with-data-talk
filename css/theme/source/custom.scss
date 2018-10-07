@@ -105,6 +105,23 @@ $selectionBackgroundColor: #e7ad52;
     }
   }
 
+  .flex {
+    display: flex;
+    text-align: left;
+    margin-top: 2em;
+
+    div:last-child {
+      margin-left: 3em;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      font-size: 0.7em;
+    }
+  }
+
   .chartlibs {
     min-height: 15em;
     min-width: 20em;
@@ -192,7 +209,7 @@ $selectionBackgroundColor: #e7ad52;
 
     &:nth-child(13) {
       left: -15%;
-      top: 8%;
+      top: 5%;
       transform: rotate(-5deg);
       width: 11em;
     }
@@ -214,7 +231,18 @@ $selectionBackgroundColor: #e7ad52;
     background: rgba(black, 0.6);
     max-width: 80%;
     margin: 0 auto;
-    padding: 1em 0;
+    padding: 1em;
+
+    small {
+      margin: 1em 0 0;
+    }
+  }
+
+  .resources {
+    p {
+      margin-top: 1em;
+      font-size: 0.9em;
+    }
   }
 }
 

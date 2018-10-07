@@ -25,7 +25,9 @@
       case 'mountains':
         mountains.start();
         break;
+      case 'mountains-2':
+        mountains.updateHue().start();
+        break;
     }
   });
-
 })();

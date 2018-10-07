@@ -3,7 +3,7 @@ function Voronoi () {
   const canvasD3 = d3.select("#voronoi"),
       canvas = canvasD3.node(),
       context = canvas.getContext("2d"),
-      title = d3.select('.title'),
+      title = d3.selectAll('.title'),
       nodeCount = 100,
       velocity = 0.2,
       hueSpeed = 0.3;

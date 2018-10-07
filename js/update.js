@@ -36,7 +36,7 @@ function UpdateChart(){
       .attr('width', d => x(d))
       .transition('updateFill')
       .delay((d, i) => t - i * 30)
-      .style('fill','#aaa');
+      .style('fill','#bbb');
 
     bar.enter()
       .append('rect')
@@ -50,7 +50,7 @@ function UpdateChart(){
       .attr('width', d => x(d))
       .transition('updateFill')
       .delay((d, i) => t - i * 30)
-      .style('fill','#aaa');
+      .style('fill','#bbb');
 
     text.text('['+data.join(',')+']');
   };
