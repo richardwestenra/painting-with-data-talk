@@ -284,40 +284,49 @@ function Mountains() {
   };
 
   /**
+   * Get property value for a datum based on the given range for that prop
+   * @param {Array} areaIDs IDs of areas
+   */
+  const areaScaleLinear = areaIDs => d3.scaleLinear()
+      .domain(d3.extent(areaIDs));
+
+  /**
+   * Calculate config values for a given area
+   * @param {Object} d Area datum
+   */
+  const getAreaConfig = (d, areaScale) => {
+    const c = configValues;
+    const a = range => areaScale.range(range)(d);
+    
+    return {
+      id: d,
+      context: m_context,
+      MAX_Y: a([c.maxY_0, c.maxY_1]),
+      MIN_Y: a([c.minY_0, c.minY_1]),
+      WALK_DISTANCE: a([c.walkDistance_0, c.walkDistance_1]),
+      UPDATE_FREQUENCY: a([c.updateFrequency_0, c.updateFrequency_1]),
+      TICK_FREQUENCY: a([c.tickFrequency_0, c.tickFrequency_1]),
+      HUE: a([c.hue_0, c.hue_1]),
+      HUE_CHANGE_RATE: a([c.hue_change_rate_0, c.hue_change_rate_1]),
+      CHROMA: a([c.chroma_0, c.chroma_1]),
+      LIGHTNESS: a([c.lightness_0, c.lightness_1]),
+      HAS_GRADIENT: c.hasGradient,
+      BLUR: a([c.blur_0, c.blur_1]),
+      HAS_BLUR: c.hasBlur,
+      PARALLAX: {
+        x: a([c.xParallax_0, c.xParallax_1]),
+        y: a([c.yParallax_0, c.yParallax_1])
+      }
+    };
+  };
+
+  /**
    * Create instances of the Area class
    */
   const makeAreas = () => {
-    const c = configValues;
-    const areaData = Array.from(Array(c.areaCount).keys()).reverse();
-
-    const areaScaleLinear = d => range =>
-      d3
-        .scaleLinear()
-        .domain(d3.extent(areaData))
-        .range(range)(d);
-
-    areas = areaData.map(d => {
-      const a = areaScaleLinear(d);
-      return new Area({
-        id: d,
-        context: m_context,
-        MAX_Y: a([c.maxY_0, c.maxY_1]),
-        MIN_Y: a([c.minY_0, c.minY_1]),
-        WALK_DISTANCE: a([c.walkDistance_0, c.walkDistance_1]),
-        UPDATE_FREQUENCY: a([c.updateFrequency_0, c.updateFrequency_1]),
-        TICK_FREQUENCY: a([c.tickFrequency_0, c.tickFrequency_1]),
-        HUE: a([c.hue_0, c.hue_1]),
-        HUE_CHANGE_RATE: a([c.hue_change_rate_0, c.hue_change_rate_1]),
-        CHROMA: a([c.chroma_0, c.chroma_1]),
-        LIGHTNESS: a([c.lightness_0, c.lightness_1]),
-        HAS_GRADIENT: c.hasGradient,
-        BLUR: a([c.blur_0, c.blur_1]),
-        HAS_BLUR: c.hasBlur,
-        PARALLAX: {
-          x: a([c.xParallax_0, c.xParallax_1]),
-          y: a([c.yParallax_0, c.yParallax_1])
-        }
-      });
+    const areaIDs = Array.from(Array(configValues.areaCount).keys()).reverse();
+    areas = areaIDs.map(d => {
+      return new Area(getAreaConfig(d, areaScaleLinear(areaIDs)));
     });
   };
 
@@ -433,9 +442,12 @@ function Mountains() {
   };
 
   this.updateHue = function() {
-    configValues.hue_change_rate_0 = 4;
-    configValues.hue_change_rate_1 = 6;
-    makeAreas();
+    configValues.hue_change_rate_1 += 2;
+    areas.forEach(area => {
+      const areaIDs = areas.map(a => a.id);
+      const areaConfig = getAreaConfig(area.id, areaScaleLinear(areaIDs));
+      area.HUE_CHANGE_RATE = areaConfig.HUE_CHANGE_RATE;
+    });
     return this;
   };
 
