@@ -23,10 +23,13 @@
         updateChart.start();
         break;
       case 'mountains':
-        mountains.start();
+        mountains.updateHue(4).start();
         break;
       case 'mountains-2':
-        mountains.updateHue().start();
+        mountains.updateHue(6).start();
+        break;
+      case 'mountains-3':
+        mountains.updateHue(12).start();
         break;
     }
   });

@@ -441,8 +441,8 @@ function Mountains() {
     return this;
   };
 
-  this.updateHue = function() {
-    configValues.hue_change_rate_1 += 2;
+  this.updateHue = function(changeRate) {
+    configValues.hue_change_rate_1 = changeRate;
     areas.forEach(area => {
       const areaIDs = areas.map(a => a.id);
       const areaConfig = getAreaConfig(area.id, areaScaleLinear(areaIDs));
