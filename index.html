@@ -4,28 +4,28 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>Developing delightful dataviz for diverse devices with d3.js</title>
-		<meta name="description" content="When you want to make a chart, you’re faced with an overwhelming number of different platforms, frameworks and technologies to use as your canvas (including not least, HTML5 Canvas). In this talk I’ll help you chart a course through the different options." />
+		<title>Painting with Data</title>
+		<meta name="description" content="Data-visualisation trades in metaphor and allusion. At its best, it’s imaginative storytelling with data and algorithms. We’ll explore how to create beauty with JavaScript, how dataviz can shape the way we see the world, and how you can get started painting with data." />
 
 		<!-- Schema.org markup for Google+ -->
-		<meta itemprop="name" content="Developing delightful dataviz for diverse devices with d3.js">
-		<meta itemprop="description" content="When you want to make a chart, you’re faced with an overwhelming number of different platforms, frameworks and technologies to use as your canvas (including not least, HTML5 Canvas). In this talk I’ll help you chart a course through the different options.">
+		<meta itemprop="name" content="Painting with Data">
+		<meta itemprop="description" content="Data-visualisation trades in metaphor and allusion. At its best, it’s imaginative storytelling with data and algorithms. We’ll explore how to create beauty with JavaScript, how dataviz can shape the way we see the world, and how you can get started painting with data.">
 		<meta itemprop="image" content="https://www.richardwestenra.com/d3-talk-2/img/cover.png">
 
 		<!-- Twitter Card data -->
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:site" content="@richardwestenra">
-		<meta name="twitter:title" content="Developing delightful dataviz for diverse devices with d3.js">
-		<meta name="twitter:description" content="When you want to make a chart, you’re faced with an overwhelming number of different platforms, frameworks and technologies to use as your canvas (including not least, HTML5 Canvas). In this talk I’ll help you chart a course through the different options.">
+		<meta name="twitter:title" content="Painting with Data">
+		<meta name="twitter:description" content="Data-visualisation trades in metaphor and allusion. At its best, it’s imaginative storytelling with data and algorithms. We’ll explore how to create beauty with JavaScript, how dataviz can shape the way we see the world, and how you can get started painting with data.">
 		<meta name="twitter:creator" content="@richardwestenra">
 		<meta name="twitter:image:src" content="https://www.richardwestenra.com/d3-talk-2/img/cover.png">
 
 		<!-- Open Graph data -->
-		<meta property="og:title" content="Developing delightful dataviz for diverse devices with d3.js" />
+		<meta property="og:title" content="Painting with Data" />
 		<meta property="og:type" content="article" />
 		<meta property="og:url" content="https://www.richardwestenra.com/d3-talk-2/" />
 		<meta property="og:image" content="https://www.richardwestenra.com/d3-talk-2/img/cover.png" />
-		<meta property="og:description" content="When you want to make a chart, you’re faced with an overwhelming number of different platforms, frameworks and technologies to use as your canvas (including not least, HTML5 Canvas). In this talk I’ll help you chart a course through the different options." />
+		<meta property="og:description" content="Data-visualisation trades in metaphor and allusion. At its best, it’s imaginative storytelling with data and algorithms. We’ll explore how to create beauty with JavaScript, how dataviz can shape the way we see the world, and how you can get started painting with data." />
 		<meta property="og:site_name" content="Richard Westenra" />
 		<meta property="article:published_time" content="2018-10-08T19:00:00+01:00" />
 
@@ -49,32 +49,246 @@
 		<span class="twitter-handle">@richardwestenra</span>
 
 <canvas id="voronoi"></canvas>
+<canvas id="dvd"></canvas>
 
 <div class="reveal">
 <div class="slides">
+<section data-id="title">
+	<h1 class="title">PAINTING WITH DATA</h1>
+	<aside class="notes">
+		<p class="meta">SLOW DOWN</p>
+		<p>Hey, I'm Richard. I'm a creative front-end dev, I make a lot of interactive charts and data visualisations in React and D3.</p>
+		<p class="meta">DOWN</p>
+		<p>I work at QuantumBlack, we're an advanced analytics consultancy owned by McKinsey. And btw we're hiring, like everyone else. Come work with us, it's a great place to work, yada yada yada, you all know the drill.</p>
+		<p class="meta">UP</p>
+		<p>Anyway today I'm going to take you through the basics of working with D3 and React.</p>
+	</aside>
+</section>
 <section>
-  <section data-id="title">
-    <h1 class="title">Developing <b><span id="adjective">delightful</span></b> dataviz for diverse devices with D3.js</h1>
-    <aside class="notes">
-			<p class="meta">SLOW DOWN</p>
-      <p>Hey, I'm Richard. I'm a creative front-end dev, I make a lot of interactive charts and data visualisations in React and D3.</p>
-			<p class="meta">DOWN</p>
-			<p>I work at QuantumBlack, we're an advanced analytics consultancy owned by McKinsey. And btw we're hiring, like everyone else. Come work with us, it's a great place to work, yada yada yada, you all know the drill.</p>
-			<p class="meta">UP</p>
-      <p>Anyway today I'm going to take you through the basics of working with D3 and React.</p>
-    </aside>
-  </section>
-  <section>
+	<section>
 		<img src="img/logo-white.svg" alt="QuantumBlack logo" class="plain" width=700 />
 		<br>
 		<br>
-		<h2>We're hiring, I think?</h2>
-    <aside class="notes">
-			<p>I work at QuantumBlack, we're an advanced analytics consultancy owned by McKinsey. And btw we're hiring, like everyone else. Come work with us, it's a great place to work, yada yada yada, you all know the drill.</p>
-			<p class="meta">UP</p>
-      <p>Anyway today I'm going to take you through the basics of working with D3 and React.</p>
-    </aside>
-  </section>
+		<br>
+		<br>
+		<h5>We're hiring, I think?</h5>
+		<aside class="notes">
+			Finally: QuantumBlack.<br>
+			I know the company name sounds kind of sinister, but we’re actually a completely legitimate organisation.
+		</aside>
+	</section>
+	<section data-background="img/bond-lair2.png" data-background-size="contain">
+		<aside class="notes">
+			We have various offices around the world, this is our Boston office
+		</aside>
+	</section>
+	<section data-background="img/bond-lair.jpg" data-background-size="contain">
+		<aside class="notes">
+			And this is the new one that we just opened in India.
+		</aside>
+	</section>
+	<section data-background="img/henchmen.jpg" data-background-size="contain">
+		<aside class="notes">
+			He's some of my friendly coworkers, you can see we're a diverse team.<br/>
+			We could do better with representation in leadership, but we're working on it.
+		</aside>
+	</section>
+	<section data-background="img/blofeld.png" data-background-size="contain">
+		<aside class="notes">
+			and this is my boss, he's a big animal-lover.
+		</aside>
+	</section>
+</section>
+
+<section data-background="img/data.gif" data-background-size="cover">
+</section>
+
+<section data-background="img/StudioAI.jpg" data-background-size="contain" data-background-color="black">
+</section>
+
+<section data-background="img/Leadenhall_Street.jpg" data-background-size="cover" data-background-position="center bottom">
+</section>
+
+<section data-background="img/cholera.jpg" data-background-size="contain" data-background-color="white">
+</section>
+
+<section data-background="img/jon-snow.jpeg" data-background-size="cover" data-background-position="center 15%">
+</section>
+
+<section data-background="img/john-snow.jpg" data-background-size="contain" data-background-color="white">
+</section>
+
+<section data-background="img/jon-snow-annoyed.jpg" data-background-size="contain">
+</section>
+
+<section data-background="img/cholera-map.png" data-background-size="contain" data-background-color="white">
+</section>
+
+<section data-background="img/john-snow-pub.jpg" data-background-size="contain">
+</section>
+
+<section>
+	<h2>Good charts<br> save lives</h2>
+</section>
+</section>
+
+<section>
+	<h2>A good chart<br> should have a story</h2>
+</section>
+
+<section>
+	<h2>Purpose</h2>
+	<ul>
+		<li>Persuade</li>
+		<li>Inform</li>
+		<li>Entertain</li>
+	</ul>
+</section>
+
+<section>
+	<h2>Audience</h2>
+	<ul>
+		<li>Casual visitors or regular users?</li>
+		<li>Education level?</li>
+		<li>Technical ability?</li>
+		<li>Familiarity with the subject matter, and with dataviz in general?</li>
+	</ul>
+</section>
+
+<section data-background-color="white">
+	<img class="plain" src="img/common-aesthetics.png" />
+	<cite><a href="https://serialmentor.com/dataviz/aesthetic-mapping.html">https://serialmentor.com/dataviz/aesthetic-mapping.html</a></cite>
+</section>
+
+<section>
+	<section data-background="img/snapchat.gif">
+	</section>
+	<section data-background-iframe="http://www.concerthotels.com/ipod-visualized-as-vinyl" data-background-color="white">
+	</section>
+</section>
+
+
+<section data-background="img/dark-sky.gif" data-background-size="contain">
+</section>
+
+<section>
+	<h5>Types of variables encountered in typical data visualization scenarios</h5>
+	<table>
+		<colgroup>
+			<col width="25%" />
+			<col width="30%" />
+			<col width="15%" />
+		</colgroup>
+		<thead>
+			<tr class="header">
+				<th>Type of variable</th>
+				<th>Examples</th>
+				<th>Appropriate scale</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>quantitative/numerical continuous</td>
+				<td>1.3, 5.7, 83, 1.5x10<sup>-2</sup></td>
+				<td>continuous</td>
+			</tr>
+			<tr>
+				<td>quantitative/numerical discrete</td>
+				<td>1, 2, 3, 4</td>
+				<td>discrete</td>
+			</tr>
+			<tr>
+				<td>qualitative/categorical unordered</td>
+				<td>dog, cat, fish</td>
+				<td>discrete</td>
+			</tr>
+			<tr>
+				<td>qualitative/categorical ordered</td>
+				<td>good, fair, poor</td>
+				<td>discrete</td>
+			</tr>
+			<tr>
+				<td>date or time</td>
+				<td>Jan. 5 2018, 8:03am</td>
+				<td>continuous or discrete</td>
+			</tr>
+			<tr>
+				<td>text</td>
+				<td>The quick brown fox jumps over the lazy dog.</td>
+				<td>none, or discrete</td>
+			</tr>
+		</tbody>
+	</table>
+	<cite><a href="https://serialmentor.com/dataviz/aesthetic-mapping.html">https://serialmentor.com/dataviz/aesthetic-mapping.html</a></cite>
+</section>
+
+<section>
+	<h3>Scales map data values onto aesthetics</h3>
+</section>
+
+<section data-background="img/data-chart-type.png" data-background-size="contain" data-background-color="white">
+</section>
+
+<section>
+	<ul class="chart-chooser-apps">
+		<li>
+			<a href="https://datavizproject.com/">Data Viz Project</a>
+			<img src="img/chooser-apps/dataviz-project.png" alt="" />
+		</li>
+		<li>
+			<a href="https://datavizcatalogue.com/">Data Visualisation Catalogue</a>
+			<img src="img/chooser-apps/dataviz-catalogue.png" alt="" />
+		</li>
+		<li>
+			<a href="http://labs.juiceanalytics.com/chartchooser/">Chart Chooser</a>
+			<img src="img/chooser-apps/chart-chooser.png" alt="" />
+		</li>
+		<li>
+			<a href="https://www.d3-graph-gallery.com/">D3.js Graph Gallery</a>
+			<img src="img/chooser-apps/d3-gallery.png" alt="" />
+		</li>
+		<li>
+			<a href="https://public.tableau.com/en-us/s/gallery/visual-vocabulary">Tableau Visual Vocabulary</a>
+			<img src="img/chooser-apps/tableau-viz-vocab.png" alt="" />
+		</li>
+		<li>
+			<a href="https://www.ibm.com/design/v1/language/experience/data-visualization/">IBM Design Language</a>
+			<img src="img/chooser-apps/ibm.png" alt="" />
+		</li>
+	</ul>
+</section>
+
+<section>
+<pre><code><svg width="600" height="200">
+	<rect x="0" y="0" width="150" height="50" fill="steelblue" />
+	<rect x="0" y="50" width="200" height="50" fill="lightcoral" />
+	<rect x="0" y="100" width="500" height="50" fill="tomato" />
+	<rect x="0" y="150" width="100" height="50" fill="gold" />
+</svg>
+</code></pre>
+	<svg width="600" height="200">
+		<rect x="0" y="0" width="150" height="50" fill="steelblue" />
+		<rect x="0" y="50" width="200" height="50" fill="lightcoral" />
+		<rect x="0" y="100" width="500" height="50" fill="tomato" />
+		<rect x="0" y="150" width="100" height="50" fill="gold" />
+	</svg>
+</section>
+
+<section>
+	<img class="trump plain" src="img/DonaldTrump.svg" alt="" />
+</section>
+
+<section data-id="canvas">
+</section>
+
+<section data-id="canvas-clear">
+</section>
+
+<section data-background="img/webgl.jpg" data-background-size="contain">
+</section>
+
+<section>
+	<h1>todo</h1>
 </section>
 
 <section data-background="img/decision.jpg" data-background-size="cover">
@@ -139,7 +353,7 @@
   <aside class="notes">
 		<p>But some of you might be wondering what D3 is, and why I didn't include it in the list. After all, it's a data visualisation library too. But unlike the others, it's much more low-level, enough so to be a whole different sort of animal. It's a bit more like jQuery or Underscore than a true charting library, in the sense that, rather than giving you ready-built charts or chart components that you can configure, it gives you the tools to build your own custom charts from scratch, along with a set of best practices.</p>
 		<p>And in fact the syntax looks pretty similar to jQuery too. So if you like method chaining, you'll love it</p>
-    <p>D3 is also designed to enforce separation of concerns between data and presentation, just like the web was traditonally supposed to with HTML & CSS. I know that's not a popular idea these days, what with CSS in JS and all, but it can still be a useful model at times. Fight me.</p>
+    <p>D3 is also designed to enforce separation of concerns between data and presentation, just like the web was designed to do with HTML & CSS. I know that's not a popular idea lately, what with CSS in JS and all, but I reckon it's still a useful model in the right context. Fight me.</p>
   </aside>
 </section>
 
@@ -181,8 +395,6 @@
 		<p>2. The code can be a bit more complex to read, which means you need to put more thought into documenting it.</p>
 		<p class="meta">DOWN</p>
 		<p>3. If you just want to do a standard chart type like a bar or line chart, D3 will definitely take longer. I find that it's best to use it in situations where you're given a specific design that you need to implement as closely as possible.</p>
-		<p class="meta">DOWN</p>
-		<p>4. Finally, if you learn D3 then eventually your flatmate will ask you to speak about it at her meetup. So there's that.</p>
 	</aside>
 </section>
 
@@ -305,6 +517,7 @@
 <script src="js/voronoi.js"></script>
 <script src="js/mountains.js"></script>
 <script src="js/update.js"></script>
+<script src="js/dvd-bounce.js"></script>
 <script src="js/slides.js"></script>
 
 <script>

@@ -54,11 +54,11 @@ function Voronoi () {
     for (var i = 0, n = polygons.length; i < n; ++i) {
       context.beginPath();
       drawCell(polygons[i]);
-      context.fillStyle = getRandomColour(hue, 50, sites[i].colour);
+      context.fillStyle = hcl(hue, 30, sites[i].colour);
       context.fill();
     }
 
-    title.style('color', getRandomColour(hue + 180, 70, 25));
+    title.style('color', hcl(hue + 130, 70, 25));
 
     context.beginPath();
     for (var i = 0, n = polygons.length; i < n; ++i) drawCell(polygons[i]);
@@ -69,6 +69,8 @@ function Voronoi () {
   function getRandomNum(min, max){
     return Math.random() * (max - min) + min;
   }
+  
+  const hcl = (h, c, l) => d3.hcl(h, c, l).toString();
 
   function getRandomColour(hue, saturation, lightness){
     return `hsl(${hue},${saturation}%,${lightness}%)`;

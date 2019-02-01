@@ -1,36 +1,43 @@
 (function(){
-  const adjectives = new Adjectives();
   const voronoi = new Voronoi();
   const updateChart = new UpdateChart();
   const mountains = new Mountains();
+  const dvdBounce = new DVDBounce();
 
-  adjectives.start();
   voronoi.start();
+
 
   Reveal.addEventListener('slidechanged', function(e) {
     var id = e.currentSlide.getAttribute('data-id');
-    adjectives.stop();
-    voronoi.stop();
-    updateChart.stop();
-    mountains.stop();
 
-    switch (id) {
-      case 'title':
-        adjectives.start();
-        voronoi.start();
-        break;
-      case 'update':
-        updateChart.start();
-        break;
-      case 'mountains':
-        mountains.updateHue(4).start();
-        break;
-      case 'mountains-2':
-        mountains.updateHue(6).start();
-        break;
-      case 'mountains-3':
-        mountains.updateHue(12).start();
-        break;
+    if (id === 'title') {
+      voronoi.start();
+    } else {
+      voronoi.stop();
+    }
+
+    if (id === 'update') {
+      updateChart.start();
+    } else {
+      updateChart.stop();
+    }
+
+    if (id === 'canvas') {
+      dvdBounce.dontClear().start();
+    } else if (id === 'canvas-clear') {
+      dvdBounce.clear().start();
+    } else {
+      dvdBounce.stop();
+    }
+
+    if (id === 'mountains') {
+      mountains.updateHue(4).start();
+    } else if (id === 'mountains-2') {
+      mountains.updateHue(6).start();
+    } else if (id === 'mountains-3') {
+      mountains.updateHue(12).start();
+    } else {
+      mountains.stop();
     }
   });
 })();
