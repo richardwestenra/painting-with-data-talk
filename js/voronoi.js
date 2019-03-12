@@ -4,13 +4,13 @@ function Voronoi () {
       canvas = canvasD3.node(),
       context = canvas.getContext("2d"),
       title = d3.selectAll('.title'),
-      nodeCount = 100,
+      nodeCount = 200,
       velocity = 0.2,
       hueSpeed = 0.3;
 
   let width = canvas.width = window.innerWidth,
       height = canvas.height = window.innerHeight,
-      hue = 0,
+      hue = 120,
       voronoi,
       sites = [],
       play = false;
@@ -58,7 +58,7 @@ function Voronoi () {
       context.fill();
     }
 
-    title.style('color', hcl(hue + 130, 70, 25));
+    title.style('color', hcl(hue + 0, 80, 15));
 
     context.beginPath();
     for (var i = 0, n = polygons.length; i < n; ++i) drawCell(polygons[i]);
