@@ -3,9 +3,9 @@
   const updateChart = new UpdateChart();
   const mountains = new Mountains();
   const dvdBounce = new DVDBounce();
+  const webglDemo = new WebGLDemo();
 
   voronoi.start();
-
 
   Reveal.addEventListener('slidechanged', function(e) {
     var id = e.currentSlide.getAttribute('data-id');
@@ -14,6 +14,12 @@
       voronoi.start();
     } else {
       voronoi.stop();
+    }
+
+    if (id === 'webgl') {
+      webglDemo.start();
+    } else {
+      webglDemo.stop();
     }
 
     if (id === 'update') {

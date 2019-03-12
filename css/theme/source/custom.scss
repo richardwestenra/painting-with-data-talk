@@ -143,11 +143,12 @@ $selectionBackgroundColor: #e7ad52;
 
   .chart-chooser-apps {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 30px 30px;
-    width: 100%;
     height: 500px;
 
     a {
@@ -159,6 +160,44 @@ $selectionBackgroundColor: #e7ad52;
       max-width: 100%;
       height: auto;
       border: none;
+    }
+  }
+
+  .svg-bar {
+    margin-top: 30px;
+    rect {
+      animation: width 1.6s infinite alternate ease;
+
+      &:nth-child(1) { animation-delay: 0s; }
+      &:nth-child(2) { animation-delay: 0.4s; }
+      &:nth-child(3) { animation-delay: 0.8s; }
+      &:nth-child(4) { animation-delay: 1.2s; }
+    }
+  }
+
+  .css-bar {
+    margin-top: 30px;
+    list-style: none;
+    padding: 0;
+    width: 600px;
+    background: #333;
+
+    li {
+      height: 30px;
+      margin: 8px 0;
+      font-size: 18px;
+      line-height: 30px;
+      text-shadow: 0 0 7px rgba(#000, 0.5);
+      text-indent: -50px;
+    }
+  }
+
+  @keyframes width {
+    from {
+      width: 50%;
+    }
+    to {
+      width: 100%;
     }
   }
 

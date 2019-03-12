@@ -48,6 +48,7 @@
 	<body>
 		<span class="twitter-handle">@richardwestenra</span>
 
+
 <canvas id="voronoi"></canvas>
 <canvas id="dvd"></canvas>
 
@@ -118,10 +119,12 @@
 <section data-background="img/john-snow.jpg" data-background-size="contain" data-background-color="white">
 </section>
 
-<section data-background="img/jon-snow-annoyed.jpg" data-background-size="contain">
-</section>
 
-<section data-background="img/cholera-map.png" data-background-size="contain" data-background-color="white">
+<section>
+	<section data-background="img/cholera-map.png" data-background-size="contain" data-background-color="white">
+	</section>
+	<section data-background="img/jon-snow-annoyed.jpg" data-background-size="contain">
+	</section>
 </section>
 
 <section data-background="img/john-snow-pub.jpg" data-background-size="contain">
@@ -137,22 +140,18 @@
 </section>
 
 <section>
-	<h2>Purpose</h2>
-	<ul>
-		<li>Persuade</li>
-		<li>Inform</li>
-		<li>Entertain</li>
-	</ul>
+	<h5>What is your chart's purpose?</h5>
+	<h2>Persuade?</h2>
+	<h2>Inform?</h2>
+	<h2>Entertain?</h2>
 </section>
 
 <section>
-	<h2>Audience</h2>
-	<ul>
-		<li>Casual visitors or regular users?</li>
-		<li>Education level?</li>
-		<li>Technical ability?</li>
-		<li>Familiarity with the subject matter, and with dataviz in general?</li>
-	</ul>
+	<h3>Who are your audience?</h3>
+	<p>Casual visitors or regular users?</p>
+	<p>Education level?</p>
+	<p>Technical ability?</p>
+	<p>Familiarity with the subject matter, and with dataviz in general?</p>
 </section>
 
 <section data-background-color="white">
@@ -259,23 +258,59 @@
 </section>
 
 <section>
-<pre><code><svg width="600" height="200">
-	<rect x="0" y="0" width="150" height="50" fill="steelblue" />
-	<rect x="0" y="50" width="200" height="50" fill="lightcoral" />
-	<rect x="0" y="100" width="500" height="50" fill="tomato" />
-	<rect x="0" y="150" width="100" height="50" fill="gold" />
-</svg>
-</code></pre>
+	<h1>SVG</h1>
+</section>
+
+<section>
+<pre><code data-trim>
 	<svg width="600" height="200">
 		<rect x="0" y="0" width="150" height="50" fill="steelblue" />
 		<rect x="0" y="50" width="200" height="50" fill="lightcoral" />
 		<rect x="0" y="100" width="500" height="50" fill="tomato" />
 		<rect x="0" y="150" width="100" height="50" fill="gold" />
 	</svg>
+</code></pre>
+	<svg class="svg-bar" width="600" height="200">
+		<rect x="0" y="0" width="300" height="50" fill="steelblue" />
+		<rect x="0" y="50" width="300" height="50" fill="lightcoral" />
+		<rect x="0" y="100" width="300" height="50" fill="tomato" />
+		<rect x="0" y="150" width="300" height="50" fill="gold" />
+	</svg>
 </section>
 
 <section>
 	<img class="trump plain" src="img/DonaldTrump.svg" alt="" />
+</section>
+
+<section>
+	<h1>Canvas</h1>
+</section>
+
+<section>
+<pre><code data-trim>
+	<canvas></canvas>
+</code></pre>
+<pre><code data-trim>
+	const canvas = document.querySelector('canvas');
+	const context = canvas.getContext('2d');
+	context.clearRect(0, 0, width, height);
+	context.drawImage(object.image, x, y, object.width, object.height);
+	context.fillStyle = object.fillStyle;
+	context.fillRect(x, y, object.width, object.height);
+</code></pre>
+	<p><canvas id="canvas" style="position: static;" height="300" width="300"></canvas></p>
+	<script>
+		const canvas = document.querySelector('#canvas');
+		const context = canvas.getContext('2d');
+		context.fillStyle = '#eee';
+		context.fillRect(0, 0, 300, 300);
+		context.fillStyle = 'red';
+		context.fillRect(150, 50, 100, 100);
+		context.fillStyle = 'red';
+    const image = new Image();
+    image.src = 'img/cat-cheese.jpg';
+		image.onload = () => context.drawImage(image, 50, 100, 150, 150);
+	</script>
 </section>
 
 <section data-id="canvas">
@@ -284,11 +319,35 @@
 <section data-id="canvas-clear">
 </section>
 
+<section>
+	<h1>WebGL</h1>
+</section>
+
 <section data-background="img/webgl.jpg" data-background-size="contain">
 </section>
 
+<section data-id="webgl">
+</section>
+
 <section>
-	<h1>todo</h1>
+	<h1>HTML & CSS</h1>
+</section>
+
+<section>
+<pre><code data-trim>
+	<ul>
+		<li style="width: 50%; background: steelblue;">50%</li>
+		<li style="width: 60%; background: lightcoral;">60%</li>
+		<li style="width: 70%; background: tomato;">70%</li>
+		<li style="width: 80%; background: gold;">80%</li>
+	</ul>
+</code></pre>
+	<ul class="css-bar">
+		<li style="width: 50%; background: steelblue;">50%</li>
+		<li style="width: 60%; background: lightcoral;">60%</li>
+		<li style="width: 70%; background: tomato;">70%</li>
+		<li style="width: 80%; background: gold;">80%</li>
+	</ul>
 </section>
 
 <section data-background="img/decision.jpg" data-background-size="cover">
@@ -511,6 +570,7 @@
 <script src="lib/js/topojson.js"></script>
 <script src="lib/js/d3.min.js"></script>
 <script src="lib/js/dat.gui.min.js"></script>
+<script src="lib/js/three.min.js"></script>
 <script src="js/reveal.js"></script>
 <script src="js/utils.js"></script>
 <script src="js/adjectives.js"></script>
@@ -518,6 +578,7 @@
 <script src="js/mountains.js"></script>
 <script src="js/update.js"></script>
 <script src="js/dvd-bounce.js"></script>
+<script src="js/webgl.js"></script>
 <script src="js/slides.js"></script>
 
 <script>
