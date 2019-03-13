@@ -35,6 +35,10 @@ $selectionBackgroundColor: #e7ad52;
 
 .reveal {
   section {
+    &[data-background-color="white"] {
+      color: #111;
+    }
+
     .title {
       font-size: 2.7em;
       line-height: 1.1;
@@ -132,14 +136,15 @@ $selectionBackgroundColor: #e7ad52;
   }
 
   table {
-    margin: 2em 0;
-    font-size: 0.45em;
+    margin: 1em 0;
+    font-size: 0.55em;
 
     td, th {
-      padding: 1em 0;
+      padding: 0.7em 0;
     }
     td {
       border-bottom: 1px solid rgba(white, 0.2);
+      padding-right: 1em;
     }
   }
 
@@ -165,15 +170,27 @@ $selectionBackgroundColor: #e7ad52;
     }
   }
 
-  .svg-bar {
+  .svg-demo {
+    background: #444;
     margin-top: 30px;
-    rect {
-      animation: width 1.6s infinite alternate ease;
+
+    * {
+      animation: svg-zoom 1s infinite alternate ease;
+      transform-origin: center;
 
       &:nth-child(1) { animation-delay: 0s; }
-      &:nth-child(2) { animation-delay: 0.4s; }
-      &:nth-child(3) { animation-delay: 0.8s; }
-      &:nth-child(4) { animation-delay: 1.2s; }
+      &:nth-child(2) { animation-delay: -0.4s; }
+      &:nth-child(3) { animation-delay: -0.8s; }
+      &:nth-child(4) { animation-delay: -1.2s; }
+      &:nth-child(5) { animation-delay: -1.6s; }
+    }
+  }
+  @keyframes svg-zoom {
+    from {
+      transform: scale(0.8);
+    }
+    to {
+      transform: scale(1.2);
     }
   }
 
@@ -191,15 +208,27 @@ $selectionBackgroundColor: #e7ad52;
       line-height: 30px;
       text-shadow: 0 0 7px rgba(#000, 0.5);
       text-indent: -50px;
+      animation: jiggle 0.7s infinite ease;
+
+      &:nth-child(1) { animation-delay: 0s; }
+      &:nth-child(2) { animation-delay: 0.1s; }
+      &:nth-child(3) { animation-delay: 0.2s; }
+      &:nth-child(4) { animation-delay: 0.3s; }
+      &:nth-child(5) { animation-delay: 0.4s; }
+      &:nth-child(6) { animation-delay: 0.5s; }
+      &:nth-child(7) { animation-delay: 0.6s; }
     }
   }
 
-  @keyframes width {
-    from {
-      width: 50%;
+  @keyframes jiggle {
+    0% {
+      transform: scaleX(1);
     }
-    to {
-      width: 100%;
+    25% {
+      transform: scaleX(1.1) translateX(2%);
+    }
+    50% {
+      transform: scaleX(1);
     }
   }
 
