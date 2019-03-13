@@ -142,21 +142,12 @@
       animation-delay: -5s; }
 
 @keyframes toggle {
-  0% {
+  0%, 30%, 100% {
     visibility: hidden;
     opacity: 0; }
-  10% {
+  10%, 20% {
     visibility: visible;
-    opacity: 1; }
-  20% {
-    visibility: visible;
-    opacity: 1; }
-  30% {
-    visibility: hidden;
-    opacity: 0; }
-  100% {
-    visibility: hidden;
-    opacity: 0; } }
+    opacity: 1; } }
 
 .reveal .svg-demo {
   background: #444;

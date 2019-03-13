@@ -198,25 +198,13 @@ $selectionBackgroundColor: #e7ad52;
   }
 
   @keyframes toggle {
-    0% {
+    0%, 30%, 100% {
       visibility: hidden;
       opacity: 0;
     }
-    10% {
+    10%, 20% {
       visibility: visible;
       opacity: 1;
-    }
-    20% {
-      visibility: visible;
-      opacity: 1;
-    }
-    30% {
-      visibility: hidden;
-      opacity: 0;
-    }
-    100% {
-      visibility: hidden;
-      opacity: 0;
     }
   }
 
