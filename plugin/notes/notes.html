@@ -436,9 +436,9 @@
 				 * isn't set on the current slide iframe.
 				 */
 				function setupKeyboard() {
-
 					document.addEventListener( 'keydown', function( event ) {
 						currentSlide.contentWindow.postMessage( JSON.stringify({ method: 'triggerKey', args: [ event.keyCode ] }), '*' );
+						window.opener.postMessage( JSON.stringify({ method: 'triggerKey', args: [ event.keyCode ] }), '*' );
 					} );
 
 				}
