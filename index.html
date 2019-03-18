@@ -54,6 +54,7 @@
 
 <div class="reveal">
 <div class="slides">
+
 <section data-id="title">
 	<h1 class="title"><b>PAINTING</b> WITH DATA</h1>
 	<aside class="notes">
@@ -65,14 +66,11 @@
 		<p>Anyway today I'm going to take you through the basics of working with D3 and React.</p>
 	</aside>
 </section>
+
 <section>
 	<section>
 		<img src="img/logo-white.svg" alt="QuantumBlack logo" class="plain" width=700 />
-		<br>
-		<br>
-		<br>
-		<br>
-		<h5>We're hiring, I think?</h5>
+		<p style="font-size: 0.85em; position: relative; bottom: -150px">We're hiring I think?</p>
 		<aside class="notes">
 			Finally: QuantumBlack.<br>
 			I know the company name sounds kind of sinister, but we’re actually a completely legitimate organisation.
@@ -85,7 +83,7 @@
 	</section>
 	<section data-background="img/bond-lair.jpg" data-background-size="contain">
 		<aside class="notes">
-			And this is the new one that we just opened in India.
+			And this is the new one that we just opened in Japan.
 		</aside>
 	</section>
 	<section data-background="img/henchmen.jpg" data-background-size="contain">
@@ -119,7 +117,6 @@
 <section data-background="img/john-snow.jpg" data-background-size="contain" data-background-color="white">
 </section>
 
-
 <section>
 	<section data-background="img/cholera-map.png" data-background-size="contain" data-background-color="white">
 	</section>
@@ -127,7 +124,7 @@
 	</section>
 </section>
 
-<section data-background="img/john-snow-pub.jpg" data-background-position="center topf">
+<section data-background="img/john-snow-pub.jpg" data-background-position="center top">
 </section>
 
 <section>
@@ -232,13 +229,8 @@
 	</svg>
 </section>
 
-<section>
-	<section data-background="img/snapchat.gif">
-	</section>
-	<section data-background-iframe="http://www.concerthotels.com/ipod-visualized-as-vinyl" data-background-color="white">
-	</section>
+<section data-background="img/snapchat.gif">
 </section>
-
 
 <section data-background="img/dark-sky.gif" data-background-size="contain">
 </section>
@@ -538,7 +530,11 @@
 	</ul>
 </section>
 
-<section data-background="img/decision.jpg" data-background-size="cover">
+<section>
+	<h2>Choosing a<br> charting library</h2>
+</section>
+
+<section data-background="img/unsure.gif" data-background-size="cover" data-background-position="center top">
 	<div class="chartlibs">
 		<img class="chartlib fragment" src="img/libs/highcharts.png" alt="highcharts logo" />
 		<img class="chartlib fragment" src="img/libs/chartist.gif" alt="chartist logo" />
@@ -551,7 +547,7 @@
 		<img class="chartlib fragment" src="img/libs/rjd2.jpg" alt="rjd2" />
 		<img class="chartlib fragment plain" src="img/libs/d20.png" alt="d20" />
 		<img class="chartlib fragment plain" src="img/libs/c4.png" alt="c4" />
-		<img class="chartlib fragment plain" src="img/libs/r2d2.png" alt="r2d2" />
+		<!-- <img class="chartlib fragment plain" src="img/libs/r2d2.png" alt="r2d2" /> -->
 		<img class="chartlib fragment" src="img/libs/nva.jpg" alt="nva" />
 	</div>
 	<aside class="notes">
@@ -596,7 +592,7 @@
 	</aside>
 </section>
 
-<section data-background="img/d3.jpg" data-background-size="contain" data-background-color="white">
+<section data-background="img/d3.jpg" data-background-size="contain" data-background-color="white" data-background-position="center bottom">
   <aside class="notes">
 		<p>But some of you might be wondering what D3 is, and why I didn't include it in the list. After all, it's a data visualisation library too. But unlike the others, it's much more low-level, enough so to be a whole different sort of animal. It's a bit more like jQuery or Underscore than a true charting library, in the sense that, rather than giving you ready-built charts or chart components that you can configure, it gives you the tools to build your own custom charts from scratch, along with a set of best practices.</p>
 		<p>And in fact the syntax looks pretty similar to jQuery too. So if you like method chaining, you'll love it</p>
@@ -632,7 +628,6 @@
     <li class="fragment">Steeper learning curve</li>
     <li class="fragment">More complex</li>
     <li class="fragment">Takes longer to make a basic chart</li>
-    <li class="fragment">Have to give talks about using D3 + React</li>
   </ul>
 	<aside class="notes">
 		<p>On the other hand, there are some downsides:</p>
@@ -690,39 +685,10 @@
 	</aside>
 </section>
 
-<section data-id="update">
-	<h2>Transitions</h2>
-	<p>Enter (add) / Exit (delete) / Update:</p>
-	<svg class="chart" id="update"></svg>
-	<p><small><code id="updateArray"></code></small></p>
-  <aside class="notes">
-		<p>I mentioned that one reason I really like d3 is its flexibility with animations - demonstrated here with a bar chart showing a random number of random numbers, updated every 2 seconds.</p>
-		<p>D3 makes it easy to add separate transitions for adding, deleting, or updating elements. You can also easily add an incremental transition delay per element, for a neat ripple effect.</p>
-		<p>If you're using React for the DOM and you want sophisticated JS animations for your chart transitions, you still can, but you'll need use something like Greensock or React-Transition-Group.</p>
-  </aside>
-</section>
-
-<section data-background="img/devices.gif" data-background-size="cover">
-  <aside class="notes">
-		<p>When it comes to responsive charts for mobile devices, you also have a few different approaches you can take.</p>
-		<p>If your chart doesn’t include any text then you can just treat the chart like any other vector image, and scale it with CSS. However most charts include text for things like axes, so this won't work most of the time.</p>
-		<p>Instead, you'll need to manually set the chart dimensions based on the container component's width and height, once the component mounts.</p>
-  </aside>
-</section>
-
-<section data-background="img/resize.gif" data-background-size="contain" data-background-color="white">
-  <aside class="notes">
-		<p>If you want to ensure that it works after resizing the screen, then add an event listener for window resize, and update the chart. This will make testing easier, and also ensure that your chart works even when users rotate their device or resize their browser window.</p>
-		<!-- <p class="meta">Maybe?</p>
-    <p>Choose chart types with modular designs, so that elements can be rearranged.</p> -->
-  </aside>
-</section>
-
 <section data-id="mountains" data-transition="zoom">
 	<h1>Have fun with it</h1>
   <aside class="notes">
-		<p>Finally, you don't have to use D3 for just charts. There are loads of layout algorithms to play with, and you can get creative with them. It's great for adding little playful flourishes to your websites, or talk slides.</p>
-		<!-- <p>I made this mountain effect with D3's Area chart layout on a Canvas. The title slide background uses a Voronoi layout.</p> -->
+		<p>Finally, you don't have to use your new D3, SVG and Canvas skills for just charts. D3 has loads of interesting algorithms to play with, and you can get creative with them, and mix and match differnt layouts and scaling functions to create interesting effects in different contexts. They're great for adding little playful flourishes to your websites, or talk slides.</p>
 	</aside>
 </section>
 
@@ -751,6 +717,8 @@
 		<p><a href="http://alignedleft.com/work/d3-book-2e">Scott Murray: Interactive Data Visualization for the Web (book + tutorials)</a></p>
 		<p><a href="https://bl.ocks.org/mbostock">Mike Bostock: bl.ocks (examples)</p>
 	</div>
+</section>
+
 </div>
 </div>
 
