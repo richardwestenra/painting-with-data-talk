@@ -16,14 +16,14 @@ function ScaleDemo(){
     .attr('height', height);
 
   svg.append('rect')
-    .style('fill','#ddd')
+    .style('fill','#666')
     .attr('width', width)
     .attr('height', height)
     .attr('x', 0)
     .attr('y', 0);
 
   const bar  = svg.append('rect')
-    .style('fill','steelblue')
+    .style('fill','darkturquoise')
     .attr('width', 0)
     .attr('height', height)
     .attr('x', 0)

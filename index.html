@@ -127,7 +127,7 @@
 	</section>
 </section>
 
-<section data-background="img/john-snow-pub.jpg" data-background-size="contain">
+<section data-background="img/john-snow-pub.jpg" data-background-position="center topf">
 </section>
 
 <section>
@@ -154,11 +154,6 @@
 	<p>Familiarity with the subject matter, and with dataviz in general?</p>
 </section>
 
-<section data-background-color="white">
-	<img class="plain" src="img/common-aesthetics.png" />
-	<cite>Source: <a href="https://serialmentor.com/dataviz/aesthetic-mapping.html">https://serialmentor.com/dataviz/aesthetic-mapping.html</a></cite>
-</section>
-
 <section>
 	<svg class="svg" width="400" height="300">
 		<line x1="10" x2="10" y1="3" y2="291" stroke="white" stroke-width="3" />
@@ -167,9 +162,10 @@
 		<polygon points="400,290 380,300 380,280" fill="white" />
 		<text x="20" y="40" fill="white" style="font-size: 16px">x</text>
 		<text x="360" y="275" fill="white" style="font-size: 16px">y</text>
+		<text x="40" y="255" fill="white" style="font-size: 25px">Position</text>
+		<text x="60" y="190" fill="white" style="font-size: 25px">Position</text>
+		<text x="140" y="120" fill="white" style="font-size: 25px">Position</text>
 		<text x="250" y="75" fill="white" style="font-size: 25px">Position</text>
-		<text x="60" y="225" fill="white" style="font-size: 25px">Position</text>
-		<text x="120" y="100" fill="white" style="font-size: 25px">Position</text>
 	</svg>
 	<svg class="svg" width="400" height="300">
 		<g transform="translate(30, -25)">
@@ -249,7 +245,7 @@
 
 <section>
 	<h5>Common dataviz variable types</h5>
-	<table>
+	<table class="variables">
 		<colgroup>
 			<col width="30%" />
 			<col width="25%" />
@@ -300,21 +296,104 @@
 
 <section>
 	<h3>Scales map data values<br> onto aesthetics</h3>
-	<img class="plain" src="img/scales-example.png" />
-	<cite>Source: <a href="https://serialmentor.com/dataviz/aesthetic-mapping.html">https://serialmentor.com/dataviz/aesthetic-mapping.html</a></cite>
+	<table class="scales">
+		<tbody>
+			<tr>
+				<th></th>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<th>Position</th>
+				<td>
+					<svg class="svg" width="48" height="20">
+						<line x1="6" x2="42" y1="10" y2="10" stroke="white" stroke-width="2" />
+						<circle cx="6" cy="10" r="6" fill="darkturquoise" />
+					</svg>
+				</td>
+				<td>
+					<svg class="svg" width="48" height="20">
+						<line x1="6" x2="42" y1="10" y2="10" stroke="white" stroke-width="2" />
+						<circle cx="18" cy="10" r="6" fill="darkturquoise" />
+					</svg>
+				</td>
+				<td>
+					<svg class="svg" width="48" height="20">
+						<line x1="6" x2="42" y1="10" y2="10" stroke="white" stroke-width="2" />
+						<circle cx="30" cy="10" r="6" fill="darkturquoise" />
+					</svg>
+				</td>
+				<td>
+					<svg class="svg" width="48" height="20">
+						<line x1="6" x2="42" y1="10" y2="10" stroke="white" stroke-width="2" />
+						<circle cx="42" cy="10" r="6" fill="darkturquoise" />
+					</svg>
+				</td>
+			</tr>
+			<tr>
+				<th>Shape</th>
+				<td>
+					<svg class="svg" width="30" height="30">
+						<circle cx="15" cy="15" r="15" fill="darkturquoise" />
+					</svg>
+				</td>
+				<td>
+					<svg class="svg" width="30" height="30">
+						<rect x="2" y="2" width="26" height="26" fill="darkturquoise" />
+					</svg>
+				</td>
+				<td>
+					<svg class="svg" width="40" height="40">
+						<rect x="6" y="6" width="26" height="26" fill="darkturquoise" transform="rotate(45, 20, 20)" />
+					</svg>
+				</td>
+				<td>
+					<svg class="svg" width="36" height="30">
+						<polygon points="18,0 36,30 0,30" fill="darkturquoise" />
+					</svg>
+				</td>
+			</tr>
+			<tr>
+				<th>Colour</th>
+				<td>
+					<svg class="svg" width="30" height="30">
+						<rect x="2" y="2" width="26" height="26" fill="#f0f9e8" />
+					</svg>
+				</td>
+				<td>
+					<svg class="svg" width="30" height="30">
+						<rect x="2" y="2" width="26" height="26" fill="#bae4bc" />
+					</svg>
+				</td>
+				<td>
+					<svg class="svg" width="30" height="30">
+						<rect x="2" y="2" width="26" height="26" fill="#7bccc4" />
+					</svg>
+				</td>
+				<td>
+					<svg class="svg" width="30" height="30">
+						<rect x="2" y="2" width="26" height="26" fill="#2b8cbe" />
+					</svg>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </section>
 
 <section data-id="scale-demo">
-	<h3>Scales map data values<br> onto aesthetics</h3>
+	<h3>Scale functions</h3>
 	<div class="scaleForm">
+		<h5>Input (domain)</h5>
 		<div class="formRow">
-			<label for="input">Input: [20,60]</label>
+			<label for="input">[20, 60]</label>
 			<input id="input" type="range" min=20 max=60 value=40>
 			<span id="inputValue"></span>
 		</div>
-		⬇️
+		<h5>Output (range)</h5>
 		<div class="formRow">
-			<label for="output">Output: [0,400]</label>
+			<label for="output">[0, 400]</label>
 			<svg class="chart" id="output"></svg>
 			<span id="outputValue"></span>
 		</div>

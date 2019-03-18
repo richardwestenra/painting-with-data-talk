@@ -138,37 +138,76 @@ $selectionBackgroundColor: #e7ad52;
   }
 
   table {
-    margin: 1em 0;
     font-size: 0.55em;
 
     td, th {
       padding: 0.7em 0;
     }
     td {
-      border-bottom: 1px solid rgba(white, 0.2);
       padding-right: 1em;
     }
   }
 
-  .scaleForm {
-    margin: 2em 0;
-    .formRow {
-      margin: 1em 0;
+  .variables {
+    margin: 1em 0;
+
+    td {
+      border-bottom: 1px solid rgba(white, 0.2);
     }
-    label {
-      display: inline-block;
-      width: 250px;
-      padding-right: 20px;
-      text-align: right;
+  }
+
+  .scales {
+    margin: 1em auto;
+    font-size: 0.7em;
+
+    th, td {
+      font-weight: normal;
+      border-bottom: none;
+      padding: 0 2em;
+      height: 3em;
+      vertical-align: middle;
+    }
+    th {
+      padding-bottom: 0.4em;
+    }
+    td {
+      text-align: center;
+    }
+  }
+
+  .scaleForm {
+    width: 680px;
+    margin: 2em auto;
+    padding-left: 80px;
+
+    h5 {
+      text-align: left;
+      margin-top: 2em;
       font-size: 0.8em;
     }
+
+    .formRow {
+      display: flex;
+      margin: 1em 0;
+    }
+
+    label {
+      padding-right: 30px;
+      font-size: 0.8em;
+    }
+    
     input {
       width: 400px;
     }
+
     span {
-      display: inline-block;
       width: 100px;
-      margin-left: 0.5em;
+      padding-left: 0.5em;
+    }
+
+    svg {
+      display: block;
+      margin-top: 8px;
     }
   }
 
