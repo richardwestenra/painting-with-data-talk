@@ -58,12 +58,9 @@
 <section data-id="title">
 	<h1 class="title"><b>PAINTING</b> WITH DATA</h1>
 	<aside class="notes">
-		<p class="meta">SLOW DOWN</p>
-		<p>Hey, I'm Richard. I'm a creative front-end dev, I make a lot of interactive charts and data visualisations in React and D3.</p>
-		<p class="meta">DOWN</p>
-		<p>I work at QuantumBlack, we're an advanced analytics consultancy owned by McKinsey. And btw we're hiring, like everyone else. Come work with us, it's a great place to work, yada yada yada, you all know the drill.</p>
-		<p class="meta">UP</p>
-		<p>Anyway today I'm going to take you through the basics of working with D3 and React.</p>
+		<p class="meta">SLOW</p>
+		<p>Hey all, I’m Richard. I’m a front-end engineer, or UI developer, or creative technologist, or webmaster, or whatever - I’m not even sure anymore.</p>
+		<p>I’m originally from New Zealand, but I’ve been living in London for eight years, and I’ve been working with interactive dataviz for most of that time.</p>
 	</aside>
 </section>
 
@@ -72,68 +69,126 @@
 		<img src="img/logo-white.svg" alt="QuantumBlack logo" class="plain" width=700 />
 		<p style="font-size: 0.85em; position: relative; bottom: -150px">We're hiring I think?</p>
 		<aside class="notes">
-			Finally: QuantumBlack.<br>
-			I know the company name sounds kind of sinister, but we’re actually a completely legitimate organisation.
+			<p>I work at a company called QuantumBlack, which is part of McKinsey.</p>
+			<p class="meta">SLOW</p>
+			<p>I know the company name sounds kind of sinister, but we’re actually a completely legitimate organisation.</p>
+			<p class="meta">DOWN 👇</p>
 		</aside>
 	</section>
 	<section data-background="img/bond-lair2.png" data-background-size="contain">
 		<aside class="notes">
-			We have various offices around the world, this is our Boston office
+			<p>We have various offices around the world, this is our Boston office</p>
+			<p class="meta">DOWN 👇</p>
 		</aside>
 	</section>
 	<section data-background="img/bond-lair.jpg" data-background-size="contain">
 		<aside class="notes">
-			And this is the new one that we just opened in Japan.
+			<p>And this is the new one that we just opened in Japan.</p>
+			<p class="meta">DOWN 👇</p>
 		</aside>
 	</section>
 	<section data-background="img/henchmen.jpg" data-background-size="contain">
 		<aside class="notes">
-			He's some of my friendly coworkers, you can see we're a diverse team.<br/>
-			We could do better with representation in leadership, but we're working on it.
+			<p>Here are some of my friendly coworkers. You can see we're a diverse team.</p>
+			<p>We could do with better representation in leadership, but we're working on it.</p>
+			<p class="meta">DOWN 👇</p>
 		</aside>
 	</section>
 	<section data-background="img/blofeld.png" data-background-size="contain">
 		<aside class="notes">
-			and this is my boss, he's a big animal-lover.
+			<p>and this is my boss, he's a big animal-lover.</p>
+			<p>Anyway QB is an advanced analytics company, so we do a lot of fancy things with data.</p>
 		</aside>
 	</section>
 </section>
 
 <section data-background="img/data.gif" data-background-size="cover">
+	<aside class="notes">
+		<p class="meta">SLOW</p>
+		<p>I work with a lot of smart people with ‘data’ in their job title, like data scientists, and data engineers, and dataviz designers and developers.</p>
+	</aside>
 </section>
 
 <section data-background="img/StudioAI.jpg" data-background-size="contain" data-background-color="black">
+	<aside class="notes">
+		<p>And my job is usually to take this data, and help translate that into an interactive tool or product, that will help them explore it, or explain their insights to clients and stakeholders.</p>
+		<p>So I’m going to talk to you today about how to make great charts. But before I get to that, let’s begin with a story. I want you to imagine for a minute, that you’re in Victorian London.</p>
+	</aside>
 </section>
 
 <section data-background="img/Leadenhall_Street.jpg" data-background-size="cover" data-background-position="center bottom">
+	<aside class="notes">
+		<p>It’s 1854. The British Empire is fighting against Russia in the Crimea, and Londoners are stoked about reading Charles Dickens.</p>
+		<p class="meta">SLOW</p>
+	</aside>
 </section>
 
 <section data-background="img/cholera.jpg" data-background-size="contain" data-background-color="white">
+	<aside class="notes">
+		<p>Meanwhile, London is suffering one of its worst ever cholera outbreaks. The disease has ripped through Soho, killing over 600 people, and causing many of the local residents to flee the area.</p>
+		<p>At the time there were two competing theories on the cause of cholera’s spread: Some people argued that it was spread by a noxious form of bad air or “miasma”, that originated in rotting decaying matter.</p>
+		<p>Meanwhile, others held that it was spread through some sort of unidentified microscopic organism, or “germ”. If you’ve heard of germ theory but haven’t heard of miasma theory then at this point you might have an idea which side was right, but please don’t spoil it for your neighbours if they haven't figured it out yet.</p>
+		<p>Now every good story needs to have a hero, and this one is no exception. His name was John Snow.</p>
+	</aside>
 </section>
 
 <section data-background="img/jon-snow.jpeg" data-background-size="cover" data-background-position="center 15%">
+	<aside class="notes">
+		<p class="meta">UNCOMFORTABLY LONG PAUSE</p>
+		<p>Not that one</p>
+	</aside>
 </section>
 
 <section data-background="img/john-snow.jpg" data-background-size="contain" data-background-color="white">
+	<aside class="notes">
+		<p>Yep that’s the guy.</p>
+		<p>John Snow was an English physician, and a skeptic of miasma theory. He did not understand exactly how Cholera was transmitted, but his observation of the evidence led him to discount the theory of foul air. He had a theory that it was spread through the water supply.</p>
+	</aside>
 </section>
 
-<section>
-	<section data-background="img/cholera-map.png" data-background-size="contain" data-background-color="white">
-	</section>
-	<section data-background="img/jon-snow-annoyed.jpg" data-background-size="contain">
-	</section>
+<section data-background="img/cholera-map.png" data-background-size="contain" data-background-color="white">
+	<aside class="notes">
+		<p>By talking to local residents and studying the pattern of how the disease spread, he identified the source of the outbreak as the public water pump on Broad Street - just a few minutes’ walk from the McKinsey offices, which are down in the bottom right corner of the map, just by Piccadilly Circus.</p>
+		<p>John Snow tried to warn everyone about this pump, but they told him, “You know nothing John Snow”.</p>
+	</aside>
+</section>
+
+<section data-background="img/jon-snow-annoyed.jpg" data-background-size="contain">
+	<aside class="notes">
+	<p class="meta">PAUSE.</p>
+	</aside>
+</section>
+
+<section data-background="img/cholera-map.png" data-background-size="contain" data-background-color="white">
+	<aside class="notes">
+		<p>But he was eventually able to convince the local authorities about his theory, with the aid of this dot map, which illustrates the clusters of cholera cases, juxtaposed with the locations of water pumps.</p>
+		<p>You can see on the map how the infections are concentrated around the Broad Street pump, marked in blue in the middle.</p>
+		<p>Once he convinced the parish authorities that almost all the deaths occurred at houses which were a shorter walking distance to the Broad Street water pump than to other pumps, they solved the problem by removing the pump handle. This forced people to draw their water from other wells which were uncontaminated, and the number of new cholera cases fell.</p>
+		<p>So what does this tell us?</p>
+	</aside>
 </section>
 
 <section data-background="img/john-snow-pub.jpg" data-background-position="center top">
+	<aside class="notes">
+		<p>Firstly, not to drink water from public taps in Soho. If you’re in any doubt about this, you should know that not one of the employees at the brewery just up the street from the pump contracted cholera, because they were paid in beer, so they didn’t drink the water. So if in doubt, don’t drink water, drink beer.</p>
+		<p>There’s actually a pub on the location of the former pump called the John Snow, so you can drink your beer there instead if you visit London.</p>
+	</aside>
 </section>
 
 <section>
 	<h2>Good charts<br> save lives</h2>
-</section>
+	<aside class="notes">
+		<p>Secondly, that a well-executed chart can inspire action. John Snow’s use of a map-based dataviz helped convince the city to shut down the infected well. His chart might have saved hundreds of lives.</p>
+	</aside>
 </section>
 
 <section>
 	<h2>A good chart<br> should have a story</h2>
+	<aside class="notes">
+		But thirdly and most importantly, it tells us that a good chart should have a story.
+		<p>Most data visualization is done for the purpose of communication. We have an insight about a dataset, and we have a potential audience, and we would like to convey our insight to our audience. To communicate our insight successfully, we will have to present the audience with a clear and exciting story.</p>
+		<p>The need for a story may sound a bit disturbing to engineers, who may equate it with making things up, putting a spin on things, or overselling results. After all, surely the point of a chart is to persuade people with cold hard numbers, not wishy washy emotions. However, we must not overlook the important role that stories play in reasoning and memory. We get excited when we hear a good story, and we get bored when the story is bad or when there is none.</p>
+	</aside>
 </section>
 
 <section>
@@ -141,6 +196,10 @@
 	<h2>Persuade?</h2>
 	<h2>Inform?</h2>
 	<h2>Entertain?</h2>
+	<aside class="notes">
+		<p>So when you want to make a chart, the first and most important thing to think about, is what point you chart is trying to make, or what problem you’re trying to solve.</p>
+		<p>Are you trying to persuade people, and change their minds? To teach them something new? Or do you just want to make some dank chart based memes?</p>
+	</aside>
 </section>
 
 <section>
@@ -149,6 +208,10 @@
 	<p>Education level?</p>
 	<p>Technical ability?</p>
 	<p>Familiarity with the subject matter, and with dataviz in general?</p>
+	<aside class="notes">
+		<p>Next, consider who your audience is. Is this a dashboard that they use every day at work, or will they be random reddit users? Are they data scientists with PhDs, or are they teenagers? How familiar are they with complex web user interfaces, or with common chart metaphors like graph axes?</p>
+		<p>All of these factors will influence how much hand-holding you’ll need to do for your users. There’s often a balance or trade-off to be made, between intuitiveness on the one hand, and originality on the other.</p>
+	</aside>
 </section>
 
 <section>
@@ -184,7 +247,7 @@
 			</g>
 		</g>
 	</svg>
-	<svg class="svg" width="800" height="300" style="font-weight: 900">
+	<svg class="svg" width="800" height="240" style="font-weight: 900">
 		<g transform="translate(1, 10)">
 			<text x="0" y="50" fill="crimson" style="font-size: 30px">Colour</text>
 			<text x="0" y="100" fill="green" style="font-size: 30px">Colour</text>
@@ -210,10 +273,13 @@
 			<text x="0" y="200" fill="black" stroke="white" stroke-width="1" stroke-dasharray="1,4" style="font-size: 30px">Line type</text>
 		</g>
 	</svg>
+	<aside class="notes">
+		<p>Now, my favourite thing about charts is their ability to tell a compelling story in a beautiful way using just a few kilobytes of data and code. And just as most good storytellers use metaphors, good dataviz uses metaphors too. Like you can represent data in your visual stories with aesthetic properties like position, shape, size, color, line width, line type.</p>
+	</aside>
 </section>
 
 <section>
-	<svg class="svg" width="800" height="300" style="font-weight: 900">
+	<svg class="svg" width="800" height="240" style="font-weight: 900">
 		<g class="frequency" transform="translate(1, 10)">
 			<text x="0" y="50" fill="white" style="font-size: 30px">Frequency</text>
 			<text x="0" y="100" fill="white" style="font-size: 30px">Frequency</text>
@@ -227,12 +293,21 @@
 			<text x="0" y="200" fill="white" style="font-size: 30px">Velocity</text>
 		</g>
 	</svg>
+	<aside class="notes">
+		<p>But you don't have to stop there. We’re using computer screens, CSS and JavaScript instead of paper and ink, so you can use time as a medium too. Consider playing around with animation, for example using frequency or velocity as a visual metaphor.</p>
+	</aside>
 </section>
 
 <section data-background="img/snapchat.gif">
+	<aside class="notes">
+		<p></p>
+	</aside>
 </section>
 
 <section data-background="img/dark-sky.gif" data-background-size="contain">
+	<aside class="notes">
+		<p></p>
+	</aside>
 </section>
 
 <section>
@@ -284,6 +359,9 @@
 		</tbody>
 	</table>
 	<cite>Source: <a href="https://serialmentor.com/dataviz/aesthetic-mapping.html">https://serialmentor.com/dataviz/aesthetic-mapping.html</a></cite>
+	<aside class="notes">
+		<p></p>
+	</aside>
 </section>
 
 <section>
@@ -426,6 +504,12 @@
 </section>
 
 <section>
+	<h3>Don’t choose a chart type just because you think it looks cool</h3>
+	<p>Choose it because it presents the data well</p>
+</section>
+</section>
+
+<section>
 	<h1>SVG</h1>
 </section>
 
@@ -552,7 +636,7 @@
 	</div>
 	<aside class="notes">
 		<p>Common problem: Choosing what to build it in.</p>
-		<p class="meta">SLOW DOWN</p>
+		<p class="meta">SLOW</p>
 		<p>Charting libraries like Highcharts, Chartist, and Chartjs. Charting libraries built on top of d3, like Plotly, Formidable's Victory Charts (built in React: good option), C3, R2D3, NVD3, RJD2, D20, C4, R2D2, and the NVA. It's overwhelming.</p>
 		<p>These libraries typically provide a few basic chart types, and abstract away most of the complexity. Whether this is a help or a hindrance depends on your use case.</p>
 	</aside>
@@ -610,7 +694,7 @@
   </ul>
 	<aside class="notes">
 		<p>There are several advantages to using D3 over other charting libraries:</p>
-		<p class="meta">DOWN _ _ _ _ Slow down!</p>
+		<p class="meta">DOWN _ _ _ _ Slow!</p>
 		<p>1. D3 gives you full control over how things look, and has so many different tools and algorithms that you can mix and match to create really cool effects. I've been working with d3 for about 4 years and I still regularly come across things where I'm like, whoa, D3 can do that?</p>
 		<p>It's also very large. Lots of different APIs. Huge file size if you import the whole thing, but it's modular, as of version 4, so you can just import the bits you want.</p>
 		<p class="meta">DOWN</p>
@@ -680,7 +764,7 @@
 <section data-background="img/why-not-both.gif" data-background-size="contain">
 	<aside class="notes">
 		<p>So why not choose a hybrid approach? What I like to do is to combine both approaches: Let React render static components, but use D3 for axes, and anything that needs complex animations. You can mix and match the syntax together, and see what works for you.</p>
-		<p class="meta">Slow down</p>
+		<p class="meta">Slow</p>
 		<p>If you want to use D3 for DOM rendering in a React component, you just need to pass a container ref to your D3 code, and run it in componentDidMount and componentDidUpdate. There's a great article by Elijah Meeks with more details about how to do it, which I'll tweet a link to after this talk.</p>
 	</aside>
 </section>
