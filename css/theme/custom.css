@@ -18,7 +18,7 @@
       bottom: 30px;
       left: 30px; } }
 
-.reveal section[data-background-color="white"] {
+.reveal section[data-background-color="white"], .reveal section[data-background-color="white"] h3 {
   color: #111; }
 
 .reveal section .title {
@@ -97,6 +97,23 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding-right: 1em; }
 
+.reveal .scaleForm {
+  margin: 2em 0; }
+  .reveal .scaleForm .formRow {
+    margin: 1em 0; }
+  .reveal .scaleForm label {
+    display: inline-block;
+    width: 250px;
+    padding-right: 20px;
+    text-align: right;
+    font-size: 0.8em; }
+  .reveal .scaleForm input {
+    width: 400px; }
+  .reveal .scaleForm span {
+    display: inline-block;
+    width: 100px;
+    margin-left: 0.5em; }
+
 .reveal .chart-chooser-apps-grid {
   list-style: none;
   padding: 0;
@@ -127,7 +144,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    animation: toggle 6s infinite; }
+    animation: toggle 7s infinite; }
     .reveal .chart-chooser-apps li:nth-child(1) {
       animation-delay: -0s; }
     .reveal .chart-chooser-apps li:nth-child(2) {
@@ -140,14 +157,19 @@
       animation-delay: -4s; }
     .reveal .chart-chooser-apps li:nth-child(6) {
       animation-delay: -5s; }
+    .reveal .chart-chooser-apps li:nth-child(7) {
+      animation-delay: -6s; }
 
 @keyframes toggle {
-  0%, 30%, 100% {
-    visibility: hidden;
-    opacity: 0; }
-  10%, 20% {
+  5.7142857143%,
+  14.2857142857% {
     visibility: visible;
-    opacity: 1; } }
+    opacity: 1; }
+  0%,
+  20%,
+  100% {
+    visibility: hidden;
+    opacity: 0; } }
 
 .reveal .svg-demo {
   background: #444;
@@ -208,6 +230,61 @@
     transform: scaleX(1.1) translateX(2%); }
   50% {
     transform: scaleX(1); } }
+
+.reveal .frequency text {
+  animation: frequency 1s infinite alternate ease; }
+  .reveal .frequency text:nth-child(1) {
+    animation-duration: 0.3s; }
+  .reveal .frequency text:nth-child(2) {
+    animation-duration: 0.6s; }
+  .reveal .frequency text:nth-child(3) {
+    animation-duration: 1.2s; }
+  .reveal .frequency text:nth-child(4) {
+    animation-duration: 2.4s; }
+
+@keyframes frequency {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.reveal .velocity text {
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+  .reveal .velocity text:nth-child(1) {
+    animation-name: velocity1; }
+  .reveal .velocity text:nth-child(2) {
+    animation-name: velocity2; }
+  .reveal .velocity text:nth-child(3) {
+    animation-name: velocity3; }
+  .reveal .velocity text:nth-child(4) {
+    animation-name: velocity4; }
+
+@keyframes velocity1 {
+  0% {
+    transform: translateX(0); }
+  25%, 100% {
+    transform: translateX(350px); } }
+
+@keyframes velocity2 {
+  0% {
+    transform: translateX(0); }
+  50%, 100% {
+    transform: translateX(350px); } }
+
+@keyframes velocity3 {
+  0% {
+    transform: translateX(0); }
+  75%, 100% {
+    transform: translateX(350px); } }
+
+@keyframes velocity4 {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(350px); } }
 
 .reveal .trump {
   margin-top: -100px;

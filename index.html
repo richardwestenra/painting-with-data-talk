@@ -160,6 +160,83 @@
 </section>
 
 <section>
+	<svg class="svg" width="400" height="300">
+		<line x1="10" x2="10" y1="3" y2="291" stroke="white" stroke-width="3" />
+		<line x1="9" x2="397" y1="290" y2="290" stroke="white" stroke-width="3" />
+		<polygon points="10,0 20,20 0,20" fill="white" />
+		<polygon points="400,290 380,300 380,280" fill="white" />
+		<text x="20" y="40" fill="white" style="font-size: 16px">x</text>
+		<text x="360" y="275" fill="white" style="font-size: 16px">y</text>
+		<text x="250" y="75" fill="white" style="font-size: 25px">Position</text>
+		<text x="60" y="225" fill="white" style="font-size: 25px">Position</text>
+		<text x="120" y="100" fill="white" style="font-size: 25px">Position</text>
+	</svg>
+	<svg class="svg" width="400" height="300">
+		<g transform="translate(30, -25)">
+			<g transform="translate(35, 40)">
+				<polygon points="50,0 100,80 0,80" stroke="#aaa" stroke-width="3" />
+				<text x="15" y="60" fill="white" style="font-size: 25px">Shape</text>
+			</g>
+			<g transform="translate(250, 50)">
+				<circle cx="40" cy="40" r="40" stroke="#aaa" stroke-width="3" />
+				<text x="5" y="50" fill="white" style="font-size: 25px">Shape</text>
+			</g>
+			<g transform="translate(250, 200)">
+				<rect x="0" y="0" width="80" height="80" stroke="#aaa" stroke-width="3" />
+				<text x="5" y="50" fill="white" style="font-size: 25px">Shape</text>
+			</g>
+			<g transform="translate(50, 200)">
+				<rect x="0" y="0" width="80" height="80" transform="rotate(45, 40, 40)" stroke="#aaa" stroke-width="3" />
+				<text x="5" y="50" fill="white" style="font-size: 25px">Shape</text>
+			</g>
+		</g>
+	</svg>
+	<svg class="svg" width="800" height="300" style="font-weight: 900">
+		<g transform="translate(1, 10)">
+			<text x="0" y="50" fill="crimson" style="font-size: 30px">Colour</text>
+			<text x="0" y="100" fill="green" style="font-size: 30px">Colour</text>
+			<text x="0" y="150" fill="royalblue" style="font-size: 30px">Colour</text>
+			<text x="0" y="200" fill="gold" style="font-size: 30px">Colour</text>
+		</g>
+		<g transform="translate(220, 10)">
+			<text x="0" y="50" dy="-5" fill="white" style="font-size: 20px">Size</text>
+			<text x="0" y="100" dy="-6" fill="white" style="font-size: 30px">Size</text>
+			<text x="0" y="150" dy="-3" fill="white" style="font-size: 40px">Size</text>
+			<text x="0" y="200"  dy="8" fill="white" style="font-size: 50px">Size</text>
+		</g>
+		<g transform="translate(400, 10)">
+			<text x="0" y="50" fill="black" stroke="white" stroke-width="0.5" style="font-size: 30px">Line width</text>
+			<text x="0" y="100" fill="black" stroke="white" stroke-width="1" style="font-size: 30px">Line width</text>
+			<text x="0" y="150" fill="black" stroke="white" stroke-width="2" style="font-size: 30px">Line width</text>
+			<text x="0" y="200" fill="black" stroke="white" stroke-width="3" style="font-size: 30px">Line width</text>
+		</g>
+		<g transform="translate(630, 10)">
+			<text x="0" y="50" fill="black" stroke="white" stroke-width="1" style="font-size: 30px">Line type</text>
+			<text x="0" y="100" fill="black" stroke="white" stroke-width="1" stroke-dasharray="1,1" style="font-size: 30px">Line type</text>
+			<text x="0" y="150" fill="black" stroke="white" stroke-width="1" stroke-dasharray="5,2" style="font-size: 30px">Line type</text>
+			<text x="0" y="200" fill="black" stroke="white" stroke-width="1" stroke-dasharray="1,4" style="font-size: 30px">Line type</text>
+		</g>
+	</svg>
+</section>
+
+<section>
+	<svg class="svg" width="800" height="300" style="font-weight: 900">
+		<g class="frequency" transform="translate(1, 10)">
+			<text x="0" y="50" fill="white" style="font-size: 30px">Frequency</text>
+			<text x="0" y="100" fill="white" style="font-size: 30px">Frequency</text>
+			<text x="0" y="150" fill="white" style="font-size: 30px">Frequency</text>
+			<text x="0" y="200" fill="white" style="font-size: 30px">Frequency</text>
+		</g>
+		<g class="velocity" transform="translate(300, 10)">
+			<text x="0" y="50" fill="white" style="font-size: 30px">Velocity</text>
+			<text x="0" y="100" fill="white" style="font-size: 30px">Velocity</text>
+			<text x="0" y="150" fill="white" style="font-size: 30px">Velocity</text>
+			<text x="0" y="200" fill="white" style="font-size: 30px">Velocity</text>
+		</g>
+	</svg>
+</section>
+
+<section>
 	<section data-background="img/snapchat.gif">
 	</section>
 	<section data-background-iframe="http://www.concerthotels.com/ipod-visualized-as-vinyl" data-background-color="white">
@@ -223,9 +300,25 @@
 
 <section>
 	<h3>Scales map data values<br> onto aesthetics</h3>
+	<img class="plain" src="img/scales-example.png" />
+	<cite>Source: <a href="https://serialmentor.com/dataviz/aesthetic-mapping.html">https://serialmentor.com/dataviz/aesthetic-mapping.html</a></cite>
 </section>
 
-<section data-background="img/data-chart-type.png" data-background-size="contain" data-background-color="white">
+<section data-id="scale-demo">
+	<h3>Scales map data values<br> onto aesthetics</h3>
+	<div class="scaleForm">
+		<div class="formRow">
+			<label for="input">Input: [20,60]</label>
+			<input id="input" type="range" min=20 max=60 value=40>
+			<span id="inputValue"></span>
+		</div>
+		⬇️
+		<div class="formRow">
+			<label for="output">Output: [0,400]</label>
+			<svg class="chart" id="output"></svg>
+			<span id="outputValue"></span>
+		</div>
+	</div>
 </section>
 
 <section>
@@ -253,6 +346,10 @@
 		<li>
 			<a href="https://www.ibm.com/design/v1/language/experience/data-visualization/">IBM Design Language</a>
 			<img src="img/chooser-apps/ibm.png" alt="" />
+		</li>
+		<li>
+			<a href="https://www.labnol.org/software/find-right-chart-type-for-your-data/6523/">Choose the Right Chart Type for your Data</a>
+			<img src="img/chooser-apps/data-chart-type.png" alt="" />
 		</li>
 	</ul>
 </section>
@@ -584,6 +681,7 @@
 <script src="js/utils.js"></script>
 <script src="js/adjectives.js"></script>
 <script src="js/voronoi.js"></script>
+<script src="js/scale-demo.js"></script>
 <script src="js/mountains.js"></script>
 <script src="js/update.js"></script>
 <script src="js/dvd-bounce.js"></script>

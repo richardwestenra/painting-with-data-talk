@@ -2,6 +2,7 @@
   const voronoi = new Voronoi();
   const updateChart = new UpdateChart();
   const mountains = new Mountains();
+  const scaleDemo = new ScaleDemo();
   const dvdBounce = new DVDBounce();
   const webglDemo = new WebGLDemo();
 
@@ -14,6 +15,12 @@
       voronoi.start();
     } else {
       voronoi.stop();
+    }
+
+    if (id === 'scale-demo') {
+      scaleDemo.start();
+    } else {
+      scaleDemo.stop();
     }
 
     if (id === 'webgl') {

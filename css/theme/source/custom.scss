@@ -36,7 +36,9 @@ $selectionBackgroundColor: #e7ad52;
 .reveal {
   section {
     &[data-background-color="white"] {
-      color: #111;
+      &, h3 {
+        color: #111;
+      }
     }
 
     .title {
@@ -148,6 +150,29 @@ $selectionBackgroundColor: #e7ad52;
     }
   }
 
+  .scaleForm {
+    margin: 2em 0;
+    .formRow {
+      margin: 1em 0;
+    }
+    label {
+      display: inline-block;
+      width: 250px;
+      padding-right: 20px;
+      text-align: right;
+      font-size: 0.8em;
+    }
+    input {
+      width: 400px;
+    }
+    span {
+      display: inline-block;
+      width: 100px;
+      margin-left: 0.5em;
+    }
+  }
+
+
   .chart-chooser-apps-grid {
     list-style: none;
     padding: 0;
@@ -186,7 +211,7 @@ $selectionBackgroundColor: #e7ad52;
       left: 0;
       right: 0;
       bottom: 0;
-      animation: toggle 6s infinite;
+      animation: toggle 7s infinite;
 
       &:nth-child(1) { animation-delay: -0s; }
       &:nth-child(2) { animation-delay: -1s; }
@@ -194,17 +219,26 @@ $selectionBackgroundColor: #e7ad52;
       &:nth-child(4) { animation-delay: -3s; }
       &:nth-child(5) { animation-delay: -4s; }
       &:nth-child(6) { animation-delay: -5s; }
+      &:nth-child(7) { animation-delay: -6s; }
     }
   }
+  @function calc-percent($i) {
+    $incrementPercentage: 100% / 7;
+    @return $i * $incrementPercentage;
+  }
+
 
   @keyframes toggle {
-    0%, 30%, 100% {
-      visibility: hidden;
-      opacity: 0;
-    }
-    10%, 20% {
+    #{calc-percent(0.4)},
+    #{calc-percent(1)} {
       visibility: visible;
       opacity: 1;
+    }
+    0%,
+    #{calc-percent(1.4)},
+    100% {
+      visibility: hidden;
+      opacity: 0;
     }
   }
 
@@ -268,6 +302,52 @@ $selectionBackgroundColor: #e7ad52;
     50% {
       transform: scaleX(1);
     }
+  }
+
+  .frequency {
+    text {
+      animation: frequency 1s infinite alternate ease;
+      &:nth-child(1) { animation-duration: 0.3s; }
+      &:nth-child(2) { animation-duration: 0.6s; }
+      &:nth-child(3) { animation-duration: 1.2s; }
+      &:nth-child(4) { animation-duration: 2.4s; }
+    }
+  }
+  @keyframes frequency {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .velocity {
+    text {
+      animation-duration: 4s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      &:nth-child(1) { animation-name: velocity1; }
+      &:nth-child(2) { animation-name: velocity2; }
+      &:nth-child(3) { animation-name: velocity3; }
+      &:nth-child(4) { animation-name: velocity4; }
+    }
+  }
+  @keyframes velocity1 {
+    0% { transform: translateX(0); }
+    25%, 100% { transform: translateX(350px); }
+  }
+  @keyframes velocity2 {
+    0% { transform: translateX(0); }
+    50%, 100% { transform: translateX(350px); }
+  }
+  @keyframes velocity3 {
+    0% { transform: translateX(0); }
+    75%, 100% { transform: translateX(350px); }
+  }
+  @keyframes velocity4 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(350px); }
   }
 
   .trump {
