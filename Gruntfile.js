@@ -2,6 +2,7 @@
 module.exports = function(grunt) {
 	var port = grunt.option('port') || 8009;
 	var root = grunt.option('root') || '.';
+	var sass = require('node-sass');
 
 	if (!Array.isArray(root)) root = [root];
 
@@ -34,6 +35,9 @@ module.exports = function(grunt) {
 		},
 
 		sass: {
+			options: {
+				implementation: sass
+			},
 			core: {
 				files: {
 					'css/reveal.css': 'css/reveal.scss',
