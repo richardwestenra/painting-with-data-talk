@@ -119,6 +119,12 @@ function DVDBounce() {
       handleResize();
     }
   });
+	window.addEventListener('message', function(event) {
+		var data = JSON.parse(event.data);
+		if (data.method ==='triggerKey' && data.args.includes(82)) { // R
+      handleResize();
+		}
+	});
   
   this.clear = function() {
     clear = true;
