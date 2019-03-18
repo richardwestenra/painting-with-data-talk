@@ -36,7 +36,7 @@ function WebGLDemo() {
 
     //add to the DOM
     renderer.domElement.style.opacity = 0;
-    document.body.appendChild(renderer.domElement);
+    document.body.prepend(renderer.domElement);
 
     //increase the steps to make squares bigger. must be divisible by the size
     var size = 20,
