@@ -147,55 +147,29 @@ $selectionBackgroundColor: turquoise;
     display: inline-block;
     background: -webkit-linear-gradient(
       0deg,
-      #d53e4f,
-      #3288bd
+      #d7438f,
+      #2f82fe
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  
+  @mixin discreteBg($n, $colour) {
+    span:nth-child(#{$n}) {
+      background: $colour;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
   .discrete {
     display: inline-block;
-    span:nth-child(1) {
-      background: #d53e4f;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    span:nth-child(2) {
-      background: #f46d43;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    span:nth-child(3) {
-      background: #fdae61;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    span:nth-child(4) {
-      background: #fee08b;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    span:nth-child(5) {
-      background: #e6f598;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    span:nth-child(6) {
-      background: #abdda4;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    span:nth-child(7) {
-      background: #66c2a5;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    span:nth-child(8) {
-      background: #3288bd;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    @include discreteBg(1, #8dd3c7);
+    @include discreteBg(2, #ffffb3);
+    @include discreteBg(3, #bebada);
+    @include discreteBg(4, #fb8072);
+    @include discreteBg(5, #80b1d3);
+    @include discreteBg(6, #fdb462);
+    @include discreteBg(7, #b3de69);
+    @include discreteBg(8, #fccde5);
   }
 
   cite {

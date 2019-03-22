@@ -89,42 +89,42 @@
 
 .reveal .continuous {
   display: inline-block;
-  background: -webkit-linear-gradient(0deg, #d53e4f, #3288bd);
+  background: -webkit-linear-gradient(0deg, #d7438f, #2f82fe);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
 .reveal .discrete {
   display: inline-block; }
   .reveal .discrete span:nth-child(1) {
-    background: #d53e4f;
+    background: #8dd3c7;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
   .reveal .discrete span:nth-child(2) {
-    background: #f46d43;
+    background: #ffffb3;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
   .reveal .discrete span:nth-child(3) {
-    background: #fdae61;
+    background: #bebada;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
   .reveal .discrete span:nth-child(4) {
-    background: #fee08b;
+    background: #fb8072;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
   .reveal .discrete span:nth-child(5) {
-    background: #e6f598;
+    background: #80b1d3;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
   .reveal .discrete span:nth-child(6) {
-    background: #abdda4;
+    background: #fdb462;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
   .reveal .discrete span:nth-child(7) {
-    background: #66c2a5;
+    background: #b3de69;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
   .reveal .discrete span:nth-child(8) {
-    background: #3288bd;
+    background: #fccde5;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
 
