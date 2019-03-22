@@ -30,7 +30,6 @@
 		<meta property="article:published_time" content="2018-10-08T19:00:00+01:00" />
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/night.css">
 		<link rel="stylesheet" href="css/theme/custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
@@ -511,7 +510,25 @@
 	<p id="scale-colour"></p>
 	<aside class="notes">
 		<p>To set up a scale function, you’ll typically provide one with an input domain and an output range. The domain is the complete set of data values that the function can expect to receive, and the range is the set of aesthetic values that you want it to return.</p>
+		<p class="meta">Move mouse to other screen</p>
 		<p>So for this slide for example, I’m using a linear colour scale to set the background colour based on the mouse position on the screen. We have a continuous numerical domain, which has a minimum extent of zero, and a maximum extent equal to the height of the screen. The input value is equal to the current Y position of the mouse as I move it around. Our range corresponds to the hue value of an HSL colour, which runs from 0 to 360. And you can see the output aesthetic on the screen background here.</p>
+	</aside>
+</section>
+</section>
+
+<section>
+	<h2>Choosing a<br> chart type</h2>
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
+</section>
+
+<section>
+	<h3>Don’t choose a chart type just because you think it looks cool</h3>
+	<aside class="notes">
+		<p></p>
+		<p></p>
 	</aside>
 </section>
 
@@ -553,7 +570,7 @@
 </section>
 
 <section>
-	<h3>Don’t choose a chart type just because you think it looks cool</h3>
+	<h2>Choosing a web technology</h2>
 	<aside class="notes">
 		<p></p>
 		<p></p>
@@ -601,6 +618,13 @@
 
 <section>
 	<h1>Canvas</h1>
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
+</section>
+
+<section data-background="img/ripmspaint.jpg" data-background-size="contain">
 	<aside class="notes">
 		<p></p>
 		<p></p>
@@ -669,8 +693,11 @@
 
 <section data-background-iframe="webgl.html">
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p class="meta">T = start. R = stop. Y = reset.</p>
+		<p>I've shown examples of SVG and Canvas code, so here's a relatively straightforward example, basically a "Hello World" sort of thing, from the intro to WebGL tutorials on the Mozilla docs website. Let's quickly read over the code and see if we can figure out what it draws.</p>
+		<p>Okay so we're initialising our canvas and WebGL context, setting up some shaders for vertices, and fragments, handling lighting sources, creating some objects, and buffers, loading textures, drawing the scene... uhhh. oh no.</p>
+		<p>Right, easy. Did you all get that? Anybody able to work out what it makes? The answer is a spinning cube.</p>
+		https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Lighting_in_WebGL
 	</aside>
 </section>
 
@@ -683,7 +710,8 @@
 </section>
 
 <section>
-	<h1>HTML & CSS</h1>
+	<p>Don't forget about</p>
+	<h1>HTML & CSS!</h1>
 	<aside class="notes">
 		<p></p>
 		<p></p>

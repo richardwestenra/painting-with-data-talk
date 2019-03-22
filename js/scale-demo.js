@@ -31,7 +31,8 @@ function ScaleDemo(){
     if (play) {
       const { y } = d3.event;
       update(y);
-      el.line.style('transform', `translateY(${y}px)`);
+      el.line.style('opacity', 1)
+        .style('transform', `translateY(${y}px)`);
     }
   });
 
@@ -40,8 +41,6 @@ function ScaleDemo(){
     play = true;
     el.domain.text(`[0, ${window.innerHeight}]`);
     el.range.text(`[${hue(0)}, ${hue(window.innerHeight)}]`);
-    el.line.style('opacity', 1);
-    update(180);
   };
 
   this.stop = function() {
