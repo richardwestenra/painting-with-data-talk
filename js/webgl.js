@@ -64,9 +64,10 @@ function WebGLDemo() {
     scene.add(line);
 
     const boxes = [
-      { color: 'rgb(195, 26, 118)', x: -1, height: 3 },
-      { color: 'rgb(241, 147, 32)', x: 0, height: 2 },
-      { color: 'rgb(157, 225, 30)', x: 1, height: 1 },
+      { color: 'rgb(195, 26, 118)', x: -1.5, height: 3 },
+      { color: 'rgb(241, 147, 32)', x: -0.5, height: 2.1 },
+      { color: 'rgb(157, 225, 30)', x: 0.5, height: 1.5 },
+      { color: 'rgb(28, 107, 154)', x: 1.5, height: 1 },
     ];
     boxes.forEach(box => {
       var geometry = new THREE.BoxGeometry( 1, box.height, 1 );

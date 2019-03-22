@@ -324,7 +324,10 @@
 
 <section data-background="img/snapchat.gif">
 	<aside class="notes">
-		<p>So back in 2015 I was working with a creative team making interactive web content, and we did a piece about this hot new app called Snapchat. At the time, it was growing quickly, and it was amazing to think there might be nearly 9 thousand photos being shared per second. So we visualised this using Canvas, using an emoji or snapchat logo to represent each photo. I thought it was effective, and it did okay on reddit, but 9 thousand RPM was a lot for most computer’s GPUs to handle, and the frame-rate suffered on all but the most powerful desktop computers. Last time I checked, the number of Snapchats being shared is closer to 34 thousand per second, which is enough to completely ruin the frame rate if not completely crash your browser.</p>
+		<p>In 2015, I was working with a creative team making interactive web content. And we did a piece about this hot new app called Snapchat. At the time, it was growing very quickly, and it was amazing to think there might be nearly 9 thousand photos being shared per second. We wanted to impress upon people just how many photos this was, so we visualised it by using Snapchat logo or an emoji to represent each photo.</p>
+		<p>I thought it was effective, and it did okay on Reddit, but that many photos per second was a lot for most computer’s GPUs to handle. I mean if you think about it, it's more than 500,000 RPM!</p>
+		<p>So, predictably, the frame-rate suffered on all but the most powerful computers. Mobiles did not handle it well at all. It was a good learning experience about performance limits on different devices.</p>
+		<p>By the way, the number of Snapchats being shared these days is closer to 34 thousand per second, which would probably be enough to completely ruin the frame rate for everyone, if not completely crash your browser.</p>
 		<p>So that was fun :). But you can also use animation in more subtle ways to communicate about your data!</p>
 	</aside>
 </section>
@@ -519,16 +522,17 @@
 <section>
 	<h2>Choosing a<br> chart type</h2>
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>So now it’s time to choose a chart type. There are hundreds of different established formats, and each has different advantages and disadvantages for different situations and different types of data.</p>
+		<p>The most important thing though, is that you choose a chart type because it’s the right type for your data.</p>
+		<p class="meta">SLOW</p>
 	</aside>
 </section>
 
 <section>
 	<h3>Don’t choose a chart type just because you think it looks cool</h3>
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>A couple of years ago, I did some work for a client project, with a team who asked us to make a bubble chart. We asked why they wanted a bubble chart specifically, and they said it’s mainly because the client likes bubble charts. You can show a lot of different dimensions at once with a bubble chart, and it’s what they’ve always used, so the client has grown to expect them. So we built it for them. And I think it ended up being a really good bubble chart, with lots of filters and animated transitions between states and so on, and the client was impressed and the team were happy. But I can’t help thinking that we were going in with one arm tied behind our backs, and that we could have chosen a chart that would have communicated so much better if we’d been allowed more flexibility to choose a chart that would suit the dataset.</p>
+		<p>So above all, if you learning nothing else from this talk, I want you to learn from my mistakes, and don't do what we did on that project. Instead, remember that you should choose your chart style based on your data type, the problem you’re trying to solve, the story you’re trying to tell, and your audience.</p>
 	</aside>
 </section>
 
@@ -564,24 +568,22 @@
 		</li>
 	</ul>
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>This is a tough problem, but fortunately there are loads of tools around to help you out. I’ve listed a few here, and I’ll tweet out some links to them later on.</p>
+		<p>Each one is a slightly different, but they all have a common starting point, which is look at your data and ask yourself, what are you trying to show? Are you trying to demonstrate a correlation between different variables? Or a size comparison? Or maybe how something changes over time? Find that thing you’re trying to present, and work from there until you’ve found the right chart for your data story.</p>
 	</aside>
 </section>
 
 <section>
 	<h2>Choosing a web technology</h2>
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>Ok so once you’ve chosen a chart type, now it’s time for the fun part: Building the chart. But we’ve still got so many options to choose from! Like, which web technology will you build it in?</p>
 	</aside>
 </section>
 
 <section>
-	<h1>SVG</h1>
+	<h1>&lt;svg /&gt;</h1>
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>The most common choice is SVG. I spend a lot of my time working with SVG and often assume that it’s a core part of every front-end developer’s toolkit, but I meet a lot of devs who haven’t really worked with it much and don’t feel confident writing it from scratch. If this is you, that’s okay! Here’s my lightning summary of SVG:</p>
 	</aside>
 </section>
 
@@ -603,31 +605,32 @@
 		<polygon points="400,10 550,300 300,100 400,350" fill="crimson" stroke="skyblue" stroke-width="6" />
 	</svg>
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>SVG is basically an alternate universe version of HTML focused on graphics instead of documents, but where everything is set to position absolute. You get some new element types like circles and polygons and lines, but you have to use a bizarro-world version of CSS which has features like stroke and fill, but you can’t use most of the regular useful features that you’d normally depend on, like background-image and border and box-shadow and so on.</p>
+		<p>Also, text won’t wrap automatically which even more annoying than it sounds, so you need to use JavaScript to calculate text wrap with weird hacks like rendering to the DOM, then measuring the text width, then deleting it and re-rendering it with extra tags inserted to add line breaks, which is basically a nightmare.</p>
+		<p>SVG has a DOM just like HTML, so it’s not great for JavaScript animations on large numbers of elements, but you can use CSS animations which are super performant, so I try to use those over JavaScript animations wherever possible.</p>
 	</aside>
 </section>
 
 <section>
 	<img class="trump plain" src="img/DonaldTrump.svg" alt="" />
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>Also, SVG is vector so it scales well and you can make it YUGE without sacrificing image quality, even if the result is extremely upsetting and you start to wonder why you did it in the first place.</p>
 	</aside>
 </section>
 
 <section>
-	<h1>Canvas</h1>
+	<h1>&lt;canvas /&gt;</h1>
 	<aside class="notes">
-		<p></p>
+		<p>Next up, Canvas! Canvas is often used for visualisations that have a large number of animated nodes, like force-directed network graphs.</p>
 		<p></p>
 	</aside>
 </section>
 
 <section data-background="img/ripmspaint.jpg" data-background-size="contain">
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>In practice, writing to Canvas is a lot like using Microsoft Paint, but with JavaScript. Did anybody else here use to mess around creating weird images in MS Paint?</p>
+		<p>An old flatmate of mine used to use my computer to do these really weird pictures in MS Paint while I was out, and set them as my desktop background. So whenever I turn on my computer I would just be like… what IS this?</p>
+		<p>But if you’ve used Paint then you’ll remember that in Paint there are no layers or objects. If you draw over something then it’s gone forever. HTML Canvas is the same. Everything is raster and there’s no DOM, there’s just a big area that you need to paint onto.</p>
 	</aside>
 </section>
 
@@ -657,55 +660,55 @@
 		image.onload = () => context.drawImage(image, 50, 100, 150, 150);
 	</script>
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>The native JavaScript for writing Canvas tends is a lot more imperative than writing SVG, which can make it a lot more time-consuming to work with. You also can’t inspect any DOM elements, or attach mouse events to objects, because there aren’t any. All of which makes it sound like a massive pain, which it is.</p>
+		<p>But! It’s really performant for complex animations with lots of different elements. If you loaded 8000 DOM elements and animated them all with JavaScript, your frame rate would drop through the floor, but you can do it with Canvas and it’s fine.</p>
 	</aside>
 </section>
 
 <section data-id="canvas">
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>Because there aren’t persistent objects that you can move around like you would in HTML or SVG, you need to repaint every single frame from scratch. To illustrate this, here’s an example I’ve made, which has loaded a JPG file, and is moving it a little bit every frame and drawing it again and again.</p>
+		<p>If you let it run, then the canvas will fill up with old copies of the image, which would cause all sorts of performance issues if these were HTML images. But it’s just raster so it doesn’t matter, it’s just pixels persisting until you draw over them again.</p>
 	</aside>
 </section>
 
 <section data-id="canvas-clear">
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>But you don’t usually want to leave a trail every time you move something on screen. So usually, what you’ll do is to erase the entire canvas and redraw it again from scratch, every time you request a new animation frame.</p>
 	</aside>
 </section>
 
 <section>
 	<h1>WebGL</h1>
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>So we’ve looked at using Canvas in a 2D context. But it also has a 3D big brother, WebGL.</p>
 	</aside>
 </section>
 
 <section data-background="img/webgl.jpg" data-background-size="contain">
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>WebGL is basically “galaxy-brain Canvas”. Like, it is to 2D Canvas what 2D Canvas was to everything else, but even more so. If you think Canvas is performant, well WebGL is even more performant! Do you find Canvas tricky to write sometimes? Well WebGL is an absolute nightmare!</p>
+		<p>Consider the following example:</p>
 	</aside>
 </section>
 
 <section data-background-iframe="webgl.html">
 	<aside class="notes">
-		<p class="meta">T = start. R = stop. Y = reset.</p>
-		<p>I've shown examples of SVG and Canvas code, so here's a relatively straightforward example, basically a "Hello World" sort of thing, from the intro to WebGL tutorials on the Mozilla docs website. Let's quickly read over the code and see if we can figure out what it draws.</p>
+		<p class="meta">(Controls: T = start. R = stop. Y = reset.)</p>
+		<p>I've shown examples of SVG and Canvas code, so this here is a relatively straightforward example, basically a "Hello World" demo, from the Intro to WebGL tutorials on the Mozilla docs website. Let's quickly read over the code and see if we can figure out what it draws.</p>
+		<p class="meta">Press T</p>
 		<p>Okay so we're initialising our canvas and WebGL context, setting up some shaders for vertices, and fragments, handling lighting sources, creating some objects, and buffers, loading textures, drawing the scene... uhhh. oh no.</p>
 		<p>Right, easy. Did you all get that? Anybody able to work out what it makes? The answer is a spinning cube.</p>
-		https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Lighting_in_WebGL
 	</aside>
 </section>
 
 <section data-id="webgl">
 	<h3 class="fragment">Just because you can<br> doesn't mean you should</h3>
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>For that reason, I don't think many people actually write native WebGL code. You're better off using a library like Three.js, which is what I used to code this lovely spinning bar chart.</p>
+		<p class="meta">Next</p>
+		<p>I use this example to raise a very real issue with 3D charts, which is that most of the time, they're completely gratuitous and don't add anything useful. In fact by projecting data into a third dimension then representing it on a 2D screen, you're introducing visual distortion. Our eyes can try to correct for visual ambiguity, but we can only do so much.</p>
+		<p>Much like all those crappy clip-art-looking 3D pie charts generated with Microsoft Excel for early 2000s Powerpoint presentations, many WebGL charts are gratuitous decoration that do nothing to help the viewer understand the data. So I'd avoid them if at all possible. The best exceptions to this rule, are visualisations of actual 3D objects, like topographical maps with mountainous terrain. But in this case, you'll still want to allow users to rotate the view, to reduce the distortion effect.</p>
 	</aside>
 </section>
 
@@ -764,7 +767,7 @@
 	<aside class="notes">
 		<p>Common problem: Choosing what to build it in.</p>
 		<p class="meta">SLOW</p>
-		<p>Charting libraries like Highcharts, Chartist, and Chartjs. Charting libraries built on top of d3, like Plotly, Formidable's Victory Charts (built in React: good option), C3, R2D3, NVD3, RJD2, D20, C4, and R2D2. It's overwhelming.</p>
+		<p>Charting libraries like Highcharts, Chartist, and Chartjs. Charting libraries built on top of d3, like Plotly, Victory Charts (built in React: good option), C3, R2D3, NVD3, RJD2, D20, C4, and R2D2. It's overwhelming.</p>
 		<p>These libraries typically provide a few basic chart types, and abstract away most of the complexity. Whether this is a help or a hindrance depends on your use case.</p>
 	</aside>
 </section>
