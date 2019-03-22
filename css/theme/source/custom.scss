@@ -4,7 +4,7 @@ $backgroundColor: #111;
 $mainFont: 'Open Sans', sans-serif;
 $linkColor: #e7ad52;
 $linkColorHover: lighten( $linkColor, 20% );
-$headingFont: 'Montserrat', Impact, sans-serif;
+$headingFont: 'Ubuntu', Impact, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: 0;
 $headingTextTransform: none;
@@ -24,7 +24,7 @@ $selectionBackgroundColor: #e7ad52;
   padding: 5px 7px 7px;
   border-radius: 5px;
 
-  @media (min-width: 700px) {
+  @media (min-width: 700px) and (min-height: 500px) {
     font-size: 1.5em;
     bottom: 30px;
     left: 30px;
@@ -42,14 +42,14 @@ $selectionBackgroundColor: #e7ad52;
     }
 
     .title {
-      font-size: 2.7em;
+      font-size: 3.2em;
       line-height: 1.1;
       text-shadow: 3px 3px 0 rgba(white, 0.6), 3px 4px 10px rgba(black, 0.3);
 
       b {
         display: block;
-        font-size: 1.22em;
-        text-indent: -0.01em;
+        font-size: 1.18em;
+        text-indent: -0.018em;
         white-space: nowrap;
       }
     }
@@ -133,6 +133,61 @@ $selectionBackgroundColor: #e7ad52;
     }
   }
 
+  .continuous {
+    display: inline-block;
+    background: -webkit-linear-gradient(
+      0deg,
+      #d53e4f,
+      #3288bd
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .discrete {
+    display: inline-block;
+    span:nth-child(1) {
+      background: #d53e4f;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    span:nth-child(2) {
+      background: #f46d43;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    span:nth-child(3) {
+      background: #fdae61;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    span:nth-child(4) {
+      background: #fee08b;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    span:nth-child(5) {
+      background: #e6f598;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    span:nth-child(6) {
+      background: #abdda4;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    span:nth-child(7) {
+      background: #66c2a5;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    span:nth-child(8) {
+      background: #3288bd;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
   cite {
     font-size: 0.45em;
   }
@@ -175,42 +230,21 @@ $selectionBackgroundColor: #e7ad52;
     }
   }
 
-  .scaleForm {
-    width: 680px;
-    margin: 2em auto;
-    padding-left: 80px;
-
-    h5 {
-      text-align: left;
-      margin-top: 2em;
-      font-size: 0.8em;
+  .box.scale-demo {
+    max-width: 54%;
+    th {
+      padding-right: 4em;
     }
-
-    .formRow {
-      display: flex;
-      margin: 1em 0;
-    }
-
-    label {
-      padding-right: 30px;
-      font-size: 0.8em;
-    }
-    
-    input {
-      width: 400px;
-    }
-
-    span {
-      width: 100px;
-      padding-left: 0.5em;
-    }
-
-    svg {
-      display: block;
-      margin-top: 8px;
+    td {
+      padding-right: 0;
     }
   }
 
+  #scale-colour {
+    margin: 2em 0 0;
+    font-size: 0.6em;
+    color: black;
+  }
 
   .chart-chooser-apps-grid {
     list-style: none;
@@ -363,7 +397,7 @@ $selectionBackgroundColor: #e7ad52;
   .velocity {
     text {
       animation-duration: 4s;
-      animation-direction: alternate;
+      // animation-direction: alternate;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
       &:nth-child(1) { animation-name: velocity1; }
@@ -373,20 +407,20 @@ $selectionBackgroundColor: #e7ad52;
     }
   }
   @keyframes velocity1 {
-    0% { transform: translateX(0); }
-    25%, 100% { transform: translateX(350px); }
+    0%, 62.5% { transform: translateX(0); }
+    12.5%, 50% { transform: translateX(350px); }
   }
   @keyframes velocity2 {
-    0% { transform: translateX(0); }
-    50%, 100% { transform: translateX(350px); }
+    0%, 75% { transform: translateX(0); }
+    25%, 50% { transform: translateX(350px); }
   }
   @keyframes velocity3 {
-    0% { transform: translateX(0); }
-    75%, 100% { transform: translateX(350px); }
+    0%, 87.5% { transform: translateX(0); }
+    37.5%, 50% { transform: translateX(350px); }
   }
   @keyframes velocity4 {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(350px); }
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(350px); }
   }
 
   .trump {
@@ -422,15 +456,15 @@ $selectionBackgroundColor: #e7ad52;
     &:nth-child(2) {
       right: 0;
       top: 0;
-      transform: rotate(10deg);
       width: 8em;
+      transform: rotate(10deg);
     }
 
     &:nth-child(3) {
       left: 10%;
       top: 20%;
-      transform: rotate(-5deg);
       width: 6em;
+      transform: rotate(-5deg);
     }
 
     &:nth-child(4) {
@@ -468,31 +502,48 @@ $selectionBackgroundColor: #e7ad52;
       left: 20%;
       top: 50%;
       width: 7em;
-      transform: rotate(5deg);
+      transform: rotate(15deg) translateY(80px);
+      &.visible {
+        transform: rotate(5deg) translateY(0);
+      }
     }
 
     &:nth-child(10) {
       left: -10%;
       top: 50%;
+      transform: rotate(0);
+      transform: rotate(-30deg) translateX(-90px);
+      &.visible {
+        transform: rotate(0) translateX(0);
+      }
     }
 
     &:nth-child(11) {
       right: -10%;
       top: 50%;
-      transform: rotate(20deg);
+      transform: rotate(20deg) translateY(-80px);
+      &.visible {
+        transform: rotate(20deg) translateY(0);
+      }
     }
 
     &:nth-child(12) {
       right: 20%;
       top: 50%;
-      transform: rotate(2deg);
+      transform: rotate(0deg) translateY(100px);
+      &.visible {
+        transform: rotate(2deg) translateY(0);
+      }
     }
 
     &:nth-child(13) {
       left: -15%;
       top: 5%;
-      transform: rotate(-5deg);
       width: 11em;
+      transform: rotate(5deg) translateY(80px);
+      &.visible {
+        transform: rotate(-5deg) translateY(0);
+      }
     }
   }
 
@@ -508,7 +559,7 @@ $selectionBackgroundColor: #e7ad52;
     font-size: 0.9em;
   }
 
-  .fin {
+  .box {
     background: rgba(black, 0.6);
     max-width: 80%;
     margin: 0 auto;
@@ -525,11 +576,34 @@ $selectionBackgroundColor: #e7ad52;
       font-size: 0.9em;
     }
   }
+
+  .mountain-text {
+    text-shadow: 4px 4px 0 rgba(black, 0.1), 3px 4px 20px rgba(black, 0.1);
+  }
 }
 
-canvas {
+.fullscreen {
   position: absolute;
-  transition: opacity ease 0.4s;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity ease 0.4s;
+}
+
+#darksky {
+  background: url(../../../img/dark-sky.gif) center;
+  background-size: cover;
+  filter: blur(10px) grayscale(30%) brightness(0.4);
+  margin: -12px;
+  opacity: 0;
+}
+
+.scale-line {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: white;
 }

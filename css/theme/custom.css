@@ -12,7 +12,7 @@
   background: rgba(0, 0, 0, 0.3);
   padding: 5px 7px 7px;
   border-radius: 5px; }
-  @media (min-width: 700px) {
+  @media (min-width: 700px) and (min-height: 500px) {
     .twitter-handle {
       font-size: 1.5em;
       bottom: 30px;
@@ -22,13 +22,13 @@
   color: #111; }
 
 .reveal section .title {
-  font-size: 2.7em;
+  font-size: 3.2em;
   line-height: 1.1;
   text-shadow: 3px 3px 0 rgba(255, 255, 255, 0.6), 3px 4px 10px rgba(0, 0, 0, 0.3); }
   .reveal section .title b {
     display: block;
-    font-size: 1.22em;
-    text-indent: -0.01em;
+    font-size: 1.18em;
+    text-indent: -0.018em;
     white-space: nowrap; }
 
 .reveal section .hashtag {
@@ -85,6 +85,47 @@
     list-style: none;
     font-size: 0.7em; }
 
+.reveal .continuous {
+  display: inline-block;
+  background: -webkit-linear-gradient(0deg, #d53e4f, #3288bd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.reveal .discrete {
+  display: inline-block; }
+  .reveal .discrete span:nth-child(1) {
+    background: #d53e4f;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .reveal .discrete span:nth-child(2) {
+    background: #f46d43;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .reveal .discrete span:nth-child(3) {
+    background: #fdae61;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .reveal .discrete span:nth-child(4) {
+    background: #fee08b;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .reveal .discrete span:nth-child(5) {
+    background: #e6f598;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .reveal .discrete span:nth-child(6) {
+    background: #abdda4;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .reveal .discrete span:nth-child(7) {
+    background: #66c2a5;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .reveal .discrete span:nth-child(8) {
+    background: #3288bd;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+
 .reveal cite {
   font-size: 0.45em; }
 
@@ -114,28 +155,17 @@
   .reveal .scales td {
     text-align: center; }
 
-.reveal .scaleForm {
-  width: 680px;
-  margin: 2em auto;
-  padding-left: 80px; }
-  .reveal .scaleForm h5 {
-    text-align: left;
-    margin-top: 2em;
-    font-size: 0.8em; }
-  .reveal .scaleForm .formRow {
-    display: flex;
-    margin: 1em 0; }
-  .reveal .scaleForm label {
-    padding-right: 30px;
-    font-size: 0.8em; }
-  .reveal .scaleForm input {
-    width: 400px; }
-  .reveal .scaleForm span {
-    width: 100px;
-    padding-left: 0.5em; }
-  .reveal .scaleForm svg {
-    display: block;
-    margin-top: 8px; }
+.reveal .box.scale-demo {
+  max-width: 54%; }
+  .reveal .box.scale-demo th {
+    padding-right: 4em; }
+  .reveal .box.scale-demo td {
+    padding-right: 0; }
+
+.reveal #scale-colour {
+  margin: 2em 0 0;
+  font-size: 0.6em;
+  color: black; }
 
 .reveal .chart-chooser-apps-grid {
   list-style: none;
@@ -273,7 +303,6 @@
 
 .reveal .velocity text {
   animation-duration: 4s;
-  animation-direction: alternate;
   animation-iteration-count: infinite;
   animation-timing-function: linear; }
   .reveal .velocity text:nth-child(1) {
@@ -286,27 +315,27 @@
     animation-name: velocity4; }
 
 @keyframes velocity1 {
-  0% {
+  0%, 62.5% {
     transform: translateX(0); }
-  25%, 100% {
+  12.5%, 50% {
     transform: translateX(350px); } }
 
 @keyframes velocity2 {
-  0% {
+  0%, 75% {
     transform: translateX(0); }
-  50%, 100% {
+  25%, 50% {
     transform: translateX(350px); } }
 
 @keyframes velocity3 {
-  0% {
+  0%, 87.5% {
     transform: translateX(0); }
-  75%, 100% {
+  37.5%, 50% {
     transform: translateX(350px); } }
 
 @keyframes velocity4 {
-  0% {
+  0%, 100% {
     transform: translateX(0); }
-  100% {
+  50% {
     transform: translateX(350px); } }
 
 .reveal .trump {
@@ -334,13 +363,13 @@
   .reveal .chartlib:nth-child(2) {
     right: 0;
     top: 0;
-    transform: rotate(10deg);
-    width: 8em; }
+    width: 8em;
+    transform: rotate(10deg); }
   .reveal .chartlib:nth-child(3) {
     left: 10%;
     top: 20%;
-    transform: rotate(-5deg);
-    width: 6em; }
+    width: 6em;
+    transform: rotate(-5deg); }
   .reveal .chartlib:nth-child(4) {
     right: 30%;
     top: 10%;
@@ -366,23 +395,35 @@
     left: 20%;
     top: 50%;
     width: 7em;
-    transform: rotate(5deg); }
+    transform: rotate(15deg) translateY(80px); }
+    .reveal .chartlib:nth-child(9).visible {
+      transform: rotate(5deg) translateY(0); }
   .reveal .chartlib:nth-child(10) {
     left: -10%;
-    top: 50%; }
+    top: 50%;
+    transform: rotate(0);
+    transform: rotate(-30deg) translateX(-90px); }
+    .reveal .chartlib:nth-child(10).visible {
+      transform: rotate(0) translateX(0); }
   .reveal .chartlib:nth-child(11) {
     right: -10%;
     top: 50%;
-    transform: rotate(20deg); }
+    transform: rotate(20deg) translateY(-80px); }
+    .reveal .chartlib:nth-child(11).visible {
+      transform: rotate(20deg) translateY(0); }
   .reveal .chartlib:nth-child(12) {
     right: 20%;
     top: 50%;
-    transform: rotate(2deg); }
+    transform: rotate(0deg) translateY(100px); }
+    .reveal .chartlib:nth-child(12).visible {
+      transform: rotate(2deg) translateY(0); }
   .reveal .chartlib:nth-child(13) {
     left: -15%;
     top: 5%;
-    transform: rotate(-5deg);
-    width: 11em; }
+    width: 11em;
+    transform: rotate(5deg) translateY(80px); }
+    .reveal .chartlib:nth-child(13).visible {
+      transform: rotate(-5deg) translateY(0); }
 
 .reveal .speaker-notes {
   padding: 10px 30px;
@@ -394,20 +435,40 @@
   font-weight: normal;
   font-size: 0.9em; }
 
-.reveal .fin {
+.reveal .box {
   background: rgba(0, 0, 0, 0.6);
   max-width: 80%;
   margin: 0 auto;
   padding: 1em; }
-  .reveal .fin small {
+  .reveal .box small {
     margin: 1em 0 0; }
 
 .reveal .resources p {
   margin-top: 1em;
   font-size: 0.9em; }
 
-canvas {
+.reveal .mountain-text {
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1), 3px 4px 20px rgba(0, 0, 0, 0.1); }
+
+.fullscreen {
   position: absolute;
-  transition: opacity ease 0.4s;
   top: 0;
-  left: 0; }
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity ease 0.4s; }
+
+#darksky {
+  background: url(../../../img/dark-sky.gif) center;
+  background-size: cover;
+  filter: blur(10px) grayscale(30%) brightness(0.4);
+  margin: -12px;
+  opacity: 0; }
+
+.scale-line {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: white; }

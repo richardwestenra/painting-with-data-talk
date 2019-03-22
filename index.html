@@ -49,8 +49,9 @@
 		<span class="twitter-handle">@richardwestenra</span>
 
 
-<canvas id="voronoi"></canvas>
-<canvas id="dvd"></canvas>
+<canvas class="fullscreen" id="voronoi"></canvas>
+<canvas class="fullscreen" id="dvd"></canvas>
+<div class="fullscreen" id="darksky"></div>
 
 <div class="reveal">
 <div class="slides">
@@ -215,6 +216,7 @@
 </section>
 
 <section>
+	<h3>Aesthetics</h3>
 	<svg class="svg" width="400" height="300">
 		<line x1="10" x2="10" y1="3" y2="291" stroke="white" stroke-width="3" />
 		<line x1="9" x2="397" y1="290" y2="290" stroke="white" stroke-width="3" />
@@ -274,39 +276,64 @@
 		</g>
 	</svg>
 	<aside class="notes">
-		<p>Now, my favourite thing about charts is their ability to tell a compelling story in a beautiful way using just a few kilobytes of data and code. And just as most good storytellers use metaphors, good dataviz uses metaphors too. Like you can represent data in your visual stories with aesthetic properties like position, shape, size, color, line width, line type.</p>
+		<p>Now, my favourite thing about charts is their ability to tell a compelling story in a beautiful way using just a few kilobytes of data and code. And just as most good storytellers use metaphors, good dataviz uses metaphors too. Like you can represent data in your visual stories with aesthetic properties like position, shape, size, color, line width, and line type.</p>
+		<p>All aesthetics fall into one of two groups: Those that can represent continuous data and those that can't.</p>
 	</aside>
 </section>
 
 <section>
-	<svg class="svg" width="800" height="240" style="font-weight: 900">
-		<g class="frequency" transform="translate(1, 10)">
-			<text x="0" y="50" fill="white" style="font-size: 30px">Frequency</text>
-			<text x="0" y="100" fill="white" style="font-size: 30px">Frequency</text>
-			<text x="0" y="150" fill="white" style="font-size: 30px">Frequency</text>
-			<text x="0" y="200" fill="white" style="font-size: 30px">Frequency</text>
+	<h1 class="continuous">Continuous</h1>
+	<p>vs</p>
+	<h1 class="discrete"><span>D</span><span>i</span><span>s</span><span>c</span><span>r</span><span>e</span><span>t</span><span>e</span></h1>
+	<aside class="notes">
+		<p>Continuous data values are values for which arbitrarily fine intermediates exist. For example, distance is a continuous value, because you can break that down into as many intermediates as you like, from kilometres down to nanometers. On the other hand, number of persons in a room is a discrete value. A room can hold 5 persons, or 6 persons, but not 5 and a half persons.</p>
+		<p>You can use position, size, colour or line width to represent continuous data, while shape and line type should usually only be used to represent discrete data.</p>
+		<p>Each of these can have advantages and disadvantages for different types of data. e.g. size can be misleading because it's tricky for the human eye to accurate tell how much bigger one thing is than another, while certain colour scales don’t work well for colour-blind people. So you’ll want to be careful how you use these scales.</p>
+	</aside>
+</section>
+
+<section>
+	<h3>Animated aesthetics</h3>
+	<br>
+	<svg class="svg" width="820" height="300" style="font-weight: 900">
+		<g class="frequency" transform="translate(10, 5)">
+			<text x="0" y="50" fill="white" style="font-size: 40px">Frequency</text>
+			<text x="0" y="120" fill="white" style="font-size: 40px">Frequency</text>
+			<text x="0" y="190" fill="white" style="font-size: 40px">Frequency</text>
+			<text x="0" y="260" fill="white" style="font-size: 40px">Frequency</text>
 		</g>
-		<g class="velocity" transform="translate(300, 10)">
-			<text x="0" y="50" fill="white" style="font-size: 30px">Velocity</text>
-			<text x="0" y="100" fill="white" style="font-size: 30px">Velocity</text>
-			<text x="0" y="150" fill="white" style="font-size: 30px">Velocity</text>
-			<text x="0" y="200" fill="white" style="font-size: 30px">Velocity</text>
+		<g class="velocity" transform="translate(300, 5)">
+			<text x="0" y="50" fill="white" style="font-size: 40px">Velocity</text>
+			<text x="0" y="120" fill="white" style="font-size: 40px">Velocity</text>
+			<text x="0" y="190" fill="white" style="font-size: 40px">Velocity</text>
+			<text x="0" y="260" fill="white" style="font-size: 40px">Velocity</text>
 		</g>
 	</svg>
 	<aside class="notes">
-		<p>But you don't have to stop there. We’re using computer screens, CSS and JavaScript instead of paper and ink, so you can use time as a medium too. Consider playing around with animation, for example using frequency or velocity as a visual metaphor.</p>
+		<p>By the way, we've discussed static visual aesthetics but you don't have to stop there. Instead of paper and ink, we’re using computer screens, CSS and JavaScript, so you can use Time as a medium. Consider playing around with animation too, like you can use frequency or velocity as a visual metaphor.</p>
+	</aside>
+</section>
+
+<section>
+	<h2>Photosensitive<br> seizure warning</h2>
+	<br>
+	<p>The following slide contains rapidly flashing images</p>
+	<aside class="notes">
+		<p>Speaking of which, I just want to give a small photosensitivity warning. If you’re strongly affected by flashing images then I’d recommend that you close your eyes for the next slide.</p>
 	</aside>
 </section>
 
 <section data-background="img/snapchat.gif">
 	<aside class="notes">
-		<p></p>
+		<p>So back in 2015 I was working with a creative team making interactive web content, and we did a piece about this hot new app called Snapchat. At the time, it was growing quickly, and it was amazing to think there might be nearly 9 thousand photos being shared per second. So we visualised this using Canvas, using an emoji or snapchat logo to represent each photo. I thought it was effective, and it did okay on reddit, but 9 thousand RPM was a lot for most computer’s GPUs to handle, and the frame-rate suffered on all but the most powerful desktop computers. Last time I checked, the number of Snapchats being shared is closer to 34 thousand per second, which is enough to completely ruin the frame rate if not completely crash your browser.</p>
+		<p>So that was fun :). But you can also use animation in more subtle ways to communicate about your data!</p>
 	</aside>
 </section>
 
-<section data-background="img/dark-sky.gif" data-background-size="contain">
+<section data-id="darksky" data-background="img/dark-sky.gif" data-background-size="contain">
 	<aside class="notes">
-		<p></p>
+		<p>And this is done really well in one of my favourite apps. Dark Sky is a smartphone app that does hyper-local weather forecasting to predict exactly when it’s going to rain in the next hour, by cross-referencing your phone’s GPS against local weather radar. It’s amazing for working out whether you need to bring an umbrella when you step out for lunch. But before you all download it at once, I should warn you that unfortunately it only works in the US, UK and Ireland.</p>
+		<p>Anyway Dark Sky uses an area chart to show when and how much it’ll be raining over the next hour. And the developers have included this cute little wiggle animation, which is great for communicating the level of uncertainty in the data. I think it’s really clever.</p>
 	</aside>
 </section>
 
@@ -360,7 +387,8 @@
 	</table>
 	<cite>Source: <a href="https://serialmentor.com/dataviz/aesthetic-mapping.html">https://serialmentor.com/dataviz/aesthetic-mapping.html</a></cite>
 	<aside class="notes">
-		<p></p>
+		<p>So we have a few different aesthetics that we can use to represent our data. But before you start visualising it, you need to consider what types of data you’re going to present.</p>
+		<p>You might think of data as numbers, but numerical values are only a couple of the many types of data we may encounter. In addition to continuous and discrete numerical values, data can come in the form of discrete categories, or as dates or times, or as text. When data is numerical we also call it quantitative and when it is categorical we call it qualitative.</p>
 	</aside>
 </section>
 
@@ -450,24 +478,41 @@
 			</tr>
 		</tbody>
 	</table>
+	<aside class="notes">
+		<p>In order to translate your data into a visual aesthetic, you’re going to want a scale function. Scales are your basic low-level building block of any chart. They make it easy to take data of different formats, and convert it consistently into a corresponding aesthetic value, like a pixel distance or a colour or a shape.</p>
+		<p>Importantly, a scale’s input and output must always have a deterministic one-to-one relationship, such that for each specific data value there is exactly one aesthetics value and vice versa. If a scale isn’t one-to-one, then the visualization can be ambiguous.</p>
+	</aside>
 </section>
 
 <section data-id="scale-demo">
-	<h3>Scale functions</h3>
-	<div class="scaleForm">
-		<h5>Input (domain)</h5>
-		<div class="formRow">
-			<label for="input">[20, 60]</label>
-			<input id="input" type="range" min=20 max=60 value=40>
-			<span id="inputValue"></span>
-		</div>
-		<h5>Output (range)</h5>
-		<div class="formRow">
-			<label for="output">[0, 400]</label>
-			<svg class="chart" id="output"></svg>
-			<span id="outputValue"></span>
-		</div>
+	<div class="box scale-demo">
+		<h3>Scale functions</h3>
+		<table>
+			<tbody>
+				<tr>
+					<th>Domain (pixels):</th>
+					<td id="domain"></td>
+				</tr>
+				<tr>
+					<th>Range (hue):</th>
+					<td id="range"></td>
+				</tr>
+				<tr>
+					<th>Input value (pixels):</th>
+					<td id="inputValue"></td>
+				</tr>
+				<tr>
+					<th>Output value (hue):</th>
+					<td id="outputValue"></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
+	<p id="scale-colour"></p>
+	<aside class="notes">
+		<p>To set up a scale function, you’ll typically provide one with an input domain and an output range. The domain is the complete set of data values that the function can expect to receive, and the range is the set of aesthetic values that you want it to return.</p>
+		<p>So for this slide for example, I’m using a linear colour scale to set the background colour based on the mouse position on the screen. We have a continuous numerical domain, which has a minimum extent of zero, and a maximum extent equal to the height of the screen. The input value is equal to the current Y position of the mouse as I move it around. Our range corresponds to the hue value of an HSL colour, which runs from 0 to 360. And you can see the output aesthetic on the screen background here.</p>
+	</aside>
 </section>
 
 <section>
@@ -501,16 +546,26 @@
 			<img src="img/chooser-apps/data-chart-type.png" alt="" />
 		</li>
 	</ul>
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section>
 	<h3>Don’t choose a chart type just because you think it looks cool</h3>
-	<p>Choose it because it presents the data well</p>
-</section>
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section>
 	<h1>SVG</h1>
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section>
@@ -530,14 +585,26 @@
 		<text x="50" y="340" fill="white" style="font-size: 16px">Why can't I wrap this text without manually inserting line breaks? 😔</text>
 		<polygon points="400,10 550,300 300,100 400,350" fill="crimson" stroke="skyblue" stroke-width="6" />
 	</svg>
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section>
 	<img class="trump plain" src="img/DonaldTrump.svg" alt="" />
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section>
 	<h1>Canvas</h1>
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section>
@@ -565,30 +632,62 @@
     image.src = 'img/cat-cheese.jpg';
 		image.onload = () => context.drawImage(image, 50, 100, 150, 150);
 	</script>
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section data-id="canvas">
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section data-id="canvas-clear">
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section>
 	<h1>WebGL</h1>
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section data-background="img/webgl.jpg" data-background-size="contain">
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section data-background-iframe="webgl.html">
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section data-id="webgl">
 	<h3 class="fragment">Just because you can<br> doesn't mean you should</h3>
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section>
 	<h1>HTML & CSS</h1>
+	<aside class="notes">
+		<p></p>
+		<p></p>
+	</aside>
 </section>
 
 <section>
@@ -631,19 +730,19 @@
 		<img class="chartlib fragment" src="img/libs/rjd2.jpg" alt="rjd2" />
 		<img class="chartlib fragment plain" src="img/libs/d20.png" alt="d20" />
 		<img class="chartlib fragment plain" src="img/libs/c4.png" alt="c4" />
-		<!-- <img class="chartlib fragment plain" src="img/libs/r2d2.png" alt="r2d2" /> -->
-		<img class="chartlib fragment" src="img/libs/nva.jpg" alt="nva" />
+		<img class="chartlib fragment plain" src="img/libs/r2d2.png" alt="r2d2" />
+		<!-- <img class="chartlib fragment" src="img/libs/nva.jpg" alt="nva" /> -->
 	</div>
 	<aside class="notes">
 		<p>Common problem: Choosing what to build it in.</p>
 		<p class="meta">SLOW</p>
-		<p>Charting libraries like Highcharts, Chartist, and Chartjs. Charting libraries built on top of d3, like Plotly, Formidable's Victory Charts (built in React: good option), C3, R2D3, NVD3, RJD2, D20, C4, R2D2, and the NVA. It's overwhelming.</p>
+		<p>Charting libraries like Highcharts, Chartist, and Chartjs. Charting libraries built on top of d3, like Plotly, Formidable's Victory Charts (built in React: good option), C3, R2D3, NVD3, RJD2, D20, C4, and R2D2. It's overwhelming.</p>
 		<p>These libraries typically provide a few basic chart types, and abstract away most of the complexity. Whether this is a help or a hindrance depends on your use case.</p>
 	</aside>
 </section>
 
 <section>
-  <h2>Pros of using charting libraries:</h2>
+  <h2>Pros of using<br> charting libraries:</h2>
   <ul class="list">
     <li class="fragment">Quick to use</li>
     <li class="fragment">Simpler to learn</li>
@@ -661,7 +760,7 @@
 </section>
 
 <section>
-  <h2>Cons of using charting libraries:</h2>
+  <h2>Cons of using<br> charting libraries:</h2>
   <ul class="list">
     <li class="fragment">Variable performance</li>
     <li class="fragment">Limited features & restrictive APIs</li>
@@ -770,21 +869,21 @@
 </section>
 
 <section data-id="mountains" data-transition="zoom">
-	<h1>Have fun with it</h1>
+	<h1 class="mountain-text">Have fun with it!</h1>
   <aside class="notes">
 		<p>Finally, you don't have to use your new D3, SVG and Canvas skills for just charts. D3 has loads of interesting algorithms to play with, and you can get creative with them, and mix and match differnt layouts and scaling functions to create interesting effects in different contexts. They're great for adding little playful flourishes to your websites, or talk slides.</p>
 	</aside>
 </section>
 
 <section data-id="mountains-2">
-	<div class="fin">
+	<div class="box">
 		<h1>Thanks!</h1>
 		<p style="margin: 1em 0 0.8em">Don't forget to like and subscribe 👍</p>
 		<a class="social" style="left:-1.85em" href="http://twitter.com/richardwestenra"> <i class="icon-twitter"></i> twitter.com/<b>richardwestenra</b></a>
 		<a class="social" style="left:-1.85em" href="http://github.com/richardwestenra"> <i class="icon-github"></i> github.com/<b>richardwestenra</b></a>
 		<a class="social" style="left:0em" href="mailto:richard@richardwestenra.com"> <i class="icon-email"></i> richard@<b>richardwestenra</b>.com</a>
 		<a class="social" style="left:2.17em" href="http://richardwestenra.com"> <i class="icon-home"></i> <b>richardwestenra</b>.com</a>
-		<small>Slides: <a href="https://www.richardwestenra.com/d3-talk-2">richardwestenra.com/d3-talk-2</a></small>
+		<small>Slides: <a href="https://richardwestenra.com/painting-with-data-talk">richardwestenra.com/painting-with-data-talk</a></small>
 	</div>
 	<aside class="notes">
 		<p>That's about it for me.</p>
@@ -795,7 +894,7 @@
 </section>
 
 <section data-id="mountains-3">
-	<div class="fin resources">
+	<div class="box resources">
 		<h3>Resources</h3>
 		<p><a href="https://medium.com/@Elijah_Meeks/interactive-applications-with-react-d3-f76f7b3ebc71">Elijah Meeks: Interactive Applications with React & D3 (Medium)</a></p>
 		<p><a href="http://alignedleft.com/work/d3-book-2e">Scott Murray: Interactive Data Visualization for the Web (book + tutorials)</a></p>

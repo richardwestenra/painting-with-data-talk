@@ -1,61 +1,52 @@
 function ScaleDemo(){
-  const width = 400;
-  const height = 30;
-  const input = d3.select('#input');
-  const inputValue = d3.select('#inputValue');
-  const output = d3.select('#output');
-  const outputValue = d3.select('#outputValue');
-  let interval;
-
-  const x = d3.scaleLinear()
-    .domain([20, 60])
-    .range([0, width]);
-
-  const svg = output
-    .attr('width', width)
-    .attr('height', height);
-
-  svg.append('rect')
-    .style('fill','#666')
-    .attr('width', width)
-    .attr('height', height)
-    .attr('x', 0)
-    .attr('y', 0);
-
-  const bar  = svg.append('rect')
-    .style('fill','darkturquoise')
-    .attr('width', 0)
-    .attr('height', height)
-    .attr('x', 0)
-    .attr('y', 0);
-
-  function update(d){
-    bar.transition()
-      .duration(800)
-      .attr('width',x(d));
-    inputValue.text(d);
-    outputValue.text( Math.round( x(d) ) );
-  }
-
-  update(40)
-
-  input.on('change',function (){
-    update(this.value);
-  });
-
-  const updateInput = () => {
-    const domain = x.domain();
-    const newInputValue = Math.round(Math.random() * (domain[1] - domain[0])) + domain[0];
-    input.node(0).value = newInputValue;
-    update(newInputValue);
+  let play = false;
+  const el = {
+    window: d3.select(window),
+    body: d3.select('body'),
+    domain: d3.select('#domain'),
+    range: d3.select('#range'),
+    inputValue: d3.select('#inputValue'),
+    outputValue: d3.select('#outputValue'),
+    outputColour: d3.select('#scale-colour'),
   };
 
+  el.line = el.body.append('div')
+    .attr('class', 'scale-line')
+    .style('opacity', 0);
+
+  const hue = d => Math.round(d3.scaleLinear()
+    .domain([0, window.innerHeight])
+    .range([0, 360])(d));
+
+  const colour = d => `hsl(${hue(d)}, 70%, 70%)`;
+
+  function update(d){
+    el.body.style('background', colour(d));
+    el.inputValue.text(d);
+    el.outputValue.text(hue(d));
+    el.outputColour.text(colour(d));
+  }
+
+  el.window.on('mousemove',function () {
+    if (play) {
+      const { y } = d3.event;
+      update(y);
+      el.line.style('transform', `translateY(${y}px)`);
+    }
+  });
+
+
   this.start = function() {
-    interval = window.setInterval(updateInput, 2000);
+    play = true;
+    el.domain.text(`[0, ${window.innerHeight}]`);
+    el.range.text(`[${hue(0)}, ${hue(window.innerHeight)}]`);
+    el.line.style('opacity', 1);
+    update(180);
   };
 
   this.stop = function() {
-    window.clearInterval(interval);
-    interval = false;
+    play = false;
+    el.body.style('background', null);
+    el.line.style('opacity', 0);
   };
 }

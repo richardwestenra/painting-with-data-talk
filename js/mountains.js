@@ -3,7 +3,7 @@ function Mountains() {
    * Constants [current-value, [min, max]]
    */
   const config = {
-    areaCount: [8, [1, 200]],
+    areaCount: [6, [1, 200]],
     maxY_0: [0.4, [0, 1]],
     maxY_1: [0.9, [0, 1]],
     minY_0: [0.15, [0, 1]],
@@ -425,6 +425,7 @@ function Mountains() {
   // A virtual canvas for pre-rendering, to improve perf
   // (See https://www.html5rocks.com/en/tutorials/canvas/performance/#toc-pre-render)
   const [m_canvas, m_context] = createCanvas();
+  canvas.classList.add('fullscreen');
 
   // Reformat the data to just key:value pairs for use with dat.gui
   const configValues = Object.keys(config).reduce((obj, key) => {

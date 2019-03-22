@@ -8,6 +8,8 @@
 
   voronoi.start();
 
+  const darksky = document.getElementById('darksky');
+
   Reveal.addEventListener('slidechanged', function(e) {
     var id = e.currentSlide.getAttribute('data-id');
 
@@ -15,6 +17,12 @@
       voronoi.start();
     } else {
       voronoi.stop();
+    }
+
+    if (id === 'darksky') {
+      darksky.style.opacity = 1;
+    } else {
+      darksky.style.opacity = 0;
     }
 
     if (id === 'scale-demo') {

@@ -622,14 +622,28 @@ function loadShader(gl, type, source) {
 <script src="lib/js/jquery-3.3.1.min.js"></script>
 <script>
 	hljs.initHighlightingOnLoad();
+
+  $.extend($.easing, {
+    easeInExpo: function (x, t, b, c, d) {
+        return (t==0) ? b : c * Math.pow(2, 10 * (t/d - 1)) + b;
+    },
+  });
+
   var $html = $('html, body');
   function smoothScroll(e) {
     if (e.keyCode === 84) { // t
-      $html.stop().animate({ scrollTop: $(document).height() }, 20000);
+      $html
+        .stop()
+        .animate({
+          easing: 'easeInExpo',
+          scrollTop: $(document).height(),
+        }, 20000);
     } else if (e.keyCode === 82) { // r
       $html.stop();
     } else if (e.keyCode === 89) { // y
-      $html.stop().animate({ scrollTop: 0 }, 500);
+      $html
+        .stop()
+        .animate({ scrollTop: 0 }, 500);
     }
   }
   parent.document.addEventListener('keydown', smoothScroll);
