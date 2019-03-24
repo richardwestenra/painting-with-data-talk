@@ -41,6 +41,7 @@ function ScaleDemo(){
     play = true;
     el.domain.text(`[0, ${window.innerHeight}]`);
     el.range.text(`[${hue(0)}, ${hue(window.innerHeight)}]`);
+    update(0);
   };
 
   this.stop = function() {

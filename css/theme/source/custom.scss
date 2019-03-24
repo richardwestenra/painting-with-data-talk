@@ -214,13 +214,19 @@ $selectionBackgroundColor: turquoise;
     }
   }
 
-  .box.scale-demo {
+  .scale-demo {
+    margin: 0 auto;
+    padding: 1em;
     max-width: 54%;
+    background: white;
+    h3, table {
+      color: #333;
+    }
     th {
-      padding-right: 4em;
+      padding: 0.7em 4em 0.7em 0;
     }
     td {
-      padding-right: 0;
+      padding: 0.7em 0;
     }
   }
 
@@ -452,39 +458,61 @@ $selectionBackgroundColor: turquoise;
     }
 
     &:nth-child(4) {
-      right: 30%;
-      top: 10%;
-      transform: rotate(2deg);
+      right: -10%;
+      top: 30%;
+      transform: rotate(-2deg);
     }
 
     &:nth-child(5) {
       right: 0;
       top: 50%;
       transform: rotate(2deg);
+      background: white;
+      padding: 15px 15px 15px 5px;
     }
 
     &:nth-child(6) {
-      right: 0;
-      top: 30%;
-      transform: rotate(-5deg);
+      left: -5%;
+      top: 45%;
+      width: 8em;
+      transform: rotate(5deg);
     }
 
     &:nth-child(7) {
+      left: 10%;
+      top: 60%;
+      width: 10em;
+      transform: rotate(-2deg);
+    }
+
+    &:nth-child(8) {
+      right: 30%;
+      top: 10%;
+      transform: rotate(2deg);
+    }
+
+    &:nth-child(9) {
+      right: -5%;
+      top: 60%;
+      transform: rotate(-5deg);
+    }
+
+    &:nth-child(10) {
       right: 20%;
       top: 60%;
       width: 6em;
       transform: rotate(15deg);
     }
 
-    &:nth-child(8) {
-      left: -10%;
-      top: 50%;
-      transform: rotate(-5deg);
+    &:nth-child(11) {
+      left: -17%;
+      top: 65%;
+      transform: rotate(15deg);
     }
 
-    &:nth-child(9) {
-      left: 20%;
-      top: 50%;
+    &:nth-child(12) {
+      left: 24%;
+      top: 55%;
       width: 7em;
       transform: rotate(15deg) translateY(80px);
       &.visible {
@@ -492,7 +520,7 @@ $selectionBackgroundColor: turquoise;
       }
     }
 
-    &:nth-child(10) {
+    &:nth-child(13) {
       left: -10%;
       top: 50%;
       transform: rotate(0);
@@ -502,16 +530,16 @@ $selectionBackgroundColor: turquoise;
       }
     }
 
-    &:nth-child(11) {
+    &:nth-child(14) {
       right: -10%;
-      top: 50%;
+      top: 60%;
       transform: rotate(20deg) translateY(-80px);
       &.visible {
         transform: rotate(20deg) translateY(0);
       }
     }
 
-    &:nth-child(12) {
+    &:nth-child(15) {
       right: 20%;
       top: 50%;
       transform: rotate(0deg) translateY(100px);
@@ -520,7 +548,7 @@ $selectionBackgroundColor: turquoise;
       }
     }
 
-    &:nth-child(13) {
+    &:nth-child(16) {
       left: -15%;
       top: 5%;
       width: 11em;

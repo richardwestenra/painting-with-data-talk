@@ -157,12 +157,17 @@
   .reveal .scales td {
     text-align: center; }
 
-.reveal .box.scale-demo {
-  max-width: 54%; }
-  .reveal .box.scale-demo th {
-    padding-right: 4em; }
-  .reveal .box.scale-demo td {
-    padding-right: 0; }
+.reveal .scale-demo {
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 54%;
+  background: white; }
+  .reveal .scale-demo h3, .reveal .scale-demo table {
+    color: #333; }
+  .reveal .scale-demo th {
+    padding: 0.7em 4em 0.7em 0; }
+  .reveal .scale-demo td {
+    padding: 0.7em 0; }
 
 .reveal #scale-colour {
   margin: 2em 0 0;
@@ -373,58 +378,74 @@
     width: 6em;
     transform: rotate(-5deg); }
   .reveal .chartlib:nth-child(4) {
-    right: 30%;
-    top: 10%;
-    transform: rotate(2deg); }
+    right: -10%;
+    top: 30%;
+    transform: rotate(-2deg); }
   .reveal .chartlib:nth-child(5) {
     right: 0;
     top: 50%;
-    transform: rotate(2deg); }
+    transform: rotate(2deg);
+    background: white;
+    padding: 15px 15px 15px 5px; }
   .reveal .chartlib:nth-child(6) {
-    right: 0;
-    top: 30%;
-    transform: rotate(-5deg); }
+    left: -5%;
+    top: 45%;
+    width: 8em;
+    transform: rotate(5deg); }
   .reveal .chartlib:nth-child(7) {
+    left: 10%;
+    top: 60%;
+    width: 10em;
+    transform: rotate(-2deg); }
+  .reveal .chartlib:nth-child(8) {
+    right: 30%;
+    top: 10%;
+    transform: rotate(2deg); }
+  .reveal .chartlib:nth-child(9) {
+    right: -5%;
+    top: 60%;
+    transform: rotate(-5deg); }
+  .reveal .chartlib:nth-child(10) {
     right: 20%;
     top: 60%;
     width: 6em;
     transform: rotate(15deg); }
-  .reveal .chartlib:nth-child(8) {
-    left: -10%;
-    top: 50%;
-    transform: rotate(-5deg); }
-  .reveal .chartlib:nth-child(9) {
-    left: 20%;
-    top: 50%;
+  .reveal .chartlib:nth-child(11) {
+    left: -17%;
+    top: 65%;
+    transform: rotate(15deg); }
+  .reveal .chartlib:nth-child(12) {
+    left: 24%;
+    top: 55%;
     width: 7em;
     transform: rotate(15deg) translateY(80px); }
-    .reveal .chartlib:nth-child(9).visible {
+    .reveal .chartlib:nth-child(12).visible {
       transform: rotate(5deg) translateY(0); }
-  .reveal .chartlib:nth-child(10) {
+  .reveal .chartlib:nth-child(13) {
     left: -10%;
     top: 50%;
     transform: rotate(0);
     transform: rotate(-30deg) translateX(-90px); }
-    .reveal .chartlib:nth-child(10).visible {
+    .reveal .chartlib:nth-child(13).visible {
       transform: rotate(0) translateX(0); }
-  .reveal .chartlib:nth-child(11) {
+  .reveal .chartlib:nth-child(14) {
     right: -10%;
-    top: 50%;
+    top: 60%;
     transform: rotate(20deg) translateY(-80px); }
-    .reveal .chartlib:nth-child(11).visible {
+    .reveal .chartlib:nth-child(14).visible {
       transform: rotate(20deg) translateY(0); }
-  .reveal .chartlib:nth-child(12) {
+  .reveal .chartlib:nth-child(15) {
     right: 20%;
     top: 50%;
     transform: rotate(0deg) translateY(100px); }
-    .reveal .chartlib:nth-child(12).visible {
+    .reveal .chartlib:nth-child(15).visible {
       transform: rotate(2deg) translateY(0); }
-  .reveal .chartlib:nth-child(13) {
+  .reveal .chartlib:nth-child(16) {
     left: -15%;
     top: 5%;
     width: 11em;
     transform: rotate(5deg) translateY(80px); }
-    .reveal .chartlib:nth-child(13).visible {
+    .reveal .chartlib:nth-child(16).visible {
       transform: rotate(-5deg) translateY(0); }
 
 .reveal .speaker-notes {

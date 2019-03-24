@@ -148,7 +148,7 @@
 
 <section data-background="img/cholera-map.png" data-background-size="contain" data-background-color="white">
 	<aside class="notes">
-		<p>By talking to local residents and studying the pattern of how the disease spread, he identified the source of the outbreak as the public water pump on Broad Street - just a few minutes’ walk from the McKinsey offices, which are down in the bottom right corner of the map, just by Piccadilly Circus.</p>
+		<p>By talking to local residents and studying the pattern of how the disease spread, he identified the source of the outbreak as the public water pump on Broad Street - just a few minutes’ walk from our offices at Picadilly Circus, down in the bottom right corner of the map.</p>
 		<p>John Snow tried to warn everyone about this pump, but they told him, “You know nothing John Snow”.</p>
 	</aside>
 </section>
@@ -159,7 +159,7 @@
 	</aside>
 </section>
 
-<section data-background="img/cholera-map.png" data-background-size="contain" data-background-color="white">
+<section data-background="img/cholera-map.png" data-background-size="200%" data-background-position="62% 43%" data-background-color="white">
 	<aside class="notes">
 		<p>But he was eventually able to convince the local authorities about his theory, with the aid of this dot map, which illustrates the clusters of cholera cases, juxtaposed with the locations of water pumps.</p>
 		<p>You can see on the map how the infections are concentrated around the Broad Street pump, marked in blue in the middle.</p>
@@ -192,10 +192,7 @@
 </section>
 
 <section>
-	<h5>What is your chart's purpose?</h5>
-	<h2>Persuade?</h2>
-	<h2>Inform?</h2>
-	<h2>Entertain?</h2>
+	<h2>What is your<br> chart's purpose?</h2>
 	<aside class="notes">
 		<p>So when you want to make a chart, the first and most important thing to think about, is what point you chart is trying to make, or what problem you’re trying to solve.</p>
 		<p>Are you trying to persuade people, and change their minds? To teach them something new? Or do you just want to make some dank chart based memes?</p>
@@ -203,13 +200,10 @@
 </section>
 
 <section>
-	<h3>Who are your audience?</h3>
-	<p>Casual visitors or regular users?</p>
-	<p>Education level?</p>
-	<p>Technical ability?</p>
-	<p>Familiarity with the subject matter, and with dataviz in general?</p>
+	<h2>Who are your audience?</h2>
 	<aside class="notes">
-		<p>Next, consider who your audience is. Is this a dashboard that they use every day at work, or will they be random reddit users? Are they data scientists with PhDs, or are they teenagers? How familiar are they with complex web user interfaces, or with common chart metaphors like graph axes?</p>
+		<p>Next, consider who your audience is. Is this a dashboard that they use every day at work, or will they be random reddit users? If it's the former, then they can afford to spend more time learning to use a complex interface.</p>
+		<p>You'll also want to consider their level of education and technical ability. Like are they data scientists with PhDs, or are they teenagers? How familiar are they with complex web user interfaces, or with common chart metaphors like graph axes?</p>
 		<p>All of these factors will influence how much hand-holding you’ll need to do for your users. There’s often a balance or trade-off to be made, between intuitiveness on the one hand, and originality on the other.</p>
 	</aside>
 </section>
@@ -487,7 +481,7 @@
 </section>
 
 <section data-id="scale-demo">
-	<div class="box scale-demo">
+	<div class="scale-demo">
 		<h3>Scale functions</h3>
 		<table>
 			<tbody>
@@ -668,7 +662,7 @@
 <section data-id="canvas">
 	<aside class="notes">
 		<p>Because there aren’t persistent objects that you can move around like you would in HTML or SVG, you need to repaint every single frame from scratch. To illustrate this, here’s an example I’ve made, which has loaded a JPG file, and is moving it a little bit every frame and drawing it again and again.</p>
-		<p>If you let it run, then the canvas will fill up with old copies of the image, which would cause all sorts of performance issues if these were HTML images. But it’s just raster so it doesn’t matter, it’s just pixels persisting until you draw over them again.</p>
+		<p>If you let it run, then the canvas will fill up with old copies of the image, which would cause all sorts of performance issues if these were HTML images. But it’s Canvas so it doesn’t matter, it’s just pixels persisting until you draw over them again.</p>
 	</aside>
 </section>
 
@@ -708,7 +702,7 @@
 		<p>For that reason, I don't think many people actually write native WebGL code. You're better off using a library like Three.js, which is what I used to code this lovely spinning bar chart.</p>
 		<p class="meta">Next</p>
 		<p>I use this example to raise a very real issue with 3D charts, which is that most of the time, they're completely gratuitous and don't add anything useful. In fact by projecting data into a third dimension then representing it on a 2D screen, you're introducing visual distortion. Our eyes can try to correct for visual ambiguity, but we can only do so much.</p>
-		<p>Much like all those crappy clip-art-looking 3D pie charts generated with Microsoft Excel for early 2000s Powerpoint presentations, many WebGL charts are gratuitous decoration that do nothing to help the viewer understand the data. So I'd avoid them if at all possible. The best exceptions to this rule, are visualisations of actual 3D objects, like topographical maps with mountainous terrain. But in this case, you'll still want to allow users to rotate the view, to reduce the distortion effect.</p>
+		<p>Much like all those crappy clip-art-looking 3D pie charts generated with Microsoft Excel for early 2000s Powerpoint presentations, many WebGL charts are gratuitous decoration that do nothing to help the viewer understand the data. So I'd avoid them if at all possible. The best exceptions to this rule, are visualisations of actual 3D objects, like topographical maps with mountainous terrain. But in this case, you'll still want to allow users to rotate the view, to reduce the distortion effect by providing different perspectives.</p>
 	</aside>
 </section>
 
@@ -716,8 +710,8 @@
 	<p>Don't forget about</p>
 	<h1>HTML & CSS!</h1>
 	<aside class="notes">
-		<p></p>
-		<p></p>
+		<p>And last but not least, let’s not forget about HTML & CSS! You can totally make charts using just HTML elements.</p>
+		<p class="meta">Slow</p>
 	</aside>
 </section>
 
@@ -742,10 +736,18 @@
 		<li style="width: 80%; background: indigo;">80%</li>
 		<li style="width: 90%; background: violet;">90%</li>
 	</ul>
+	<aside class="notes">
+		<p>HTML is great for things like simple bar charts, where you can make use of the normal document flow to arrange them, without needing to calculate each bar’s vertical offset. You already know HTML & CSS, so there’s no learning curve, and you can use CSS for animations. Also, HTML makes it easy to write semantic and accessible markup, compared to Canvas which is basically a black box.</p>
+		<p>The downside of HTML is that, although there are loads of shapes and layouts that you can make with CSS, it’s ultimately not as flexible as SVG and Canvas. I’d recommend saving it for very simple things like prototypes and spark charts, and using SVG and Canvas when you have a more complex chart in mind.</p>
+	</aside>
 </section>
 
 <section>
 	<h2>Choosing a<br> charting library</h2>
+	<aside class="notes">
+		<p>Right so we've figured out some technologies we can use. But you probably don't want to build it completely from scratch, right? Other people have done this sort of thing before, there's no need to reinvent the wheel.</p>
+		<p class="meta">SLOW</p>
+	</aside>
 </section>
 
 <section data-background="img/unsure.gif" data-background-size="cover" data-background-position="center top">
@@ -753,8 +755,11 @@
 		<img class="chartlib fragment" src="img/libs/highcharts.png" alt="highcharts logo" />
 		<img class="chartlib fragment" src="img/libs/chartist.gif" alt="chartist logo" />
 		<img class="chartlib fragment plain" src="img/libs/chartjs.svg" alt="chartjs logo" />
+		<img class="chartlib fragment" src="img/libs/semiotic.png" alt="Semiotic logo" />
+		<img class="chartlib fragment" src="img/libs/victory.svg" alt="Victory logo" />
+		<img class="chartlib fragment" src="img/libs/react-vis.png" alt="React-Vis logo" />
+		<img class="chartlib fragment" src="img/libs/recharts.png" alt="Recharts logo" />
 		<img class="chartlib fragment plain" src="img/libs/plotly.png" alt="plotly logo" />
-		<img class="chartlib fragment plain" src="img/libs/victory.svg" alt="Victory logo" />
 		<img class="chartlib fragment" src="img/libs/c3.png" alt="C3 logo" />
 		<img class="chartlib fragment plain" src="img/libs/r2d3.png" alt="r2d3 logo" />
 		<img class="chartlib fragment" src="img/libs/nvd3.png" alt="nvd3 logo" />
@@ -765,9 +770,8 @@
 		<!-- <img class="chartlib fragment" src="img/libs/nva.jpg" alt="nva" /> -->
 	</div>
 	<aside class="notes">
-		<p>Common problem: Choosing what to build it in.</p>
-		<p class="meta">SLOW</p>
-		<p>Charting libraries like Highcharts, Chartist, and Chartjs. Charting libraries built on top of d3, like Plotly, Victory Charts (built in React: good option), C3, R2D3, NVD3, RJD2, D20, C4, and R2D2. It's overwhelming.</p>
+		<p>But this can be a tricky decision too, because there are so many charting libraries to choose from!</p>
+		<p>There are loads of popular charting libraries out there, like Highcharts, Chartist, and Chartjs. There's a bunch built on top of React with D3 underneath, like Semiotic, Victory, React-Vis, and ReCharts. And there's also loads that are just a light D3 wrapper, like Plotly, C3, R2D3, NVD3, RJD2, D20, C4, and R2D2. It's overwhelming.</p>
 		<p>These libraries typically provide a few basic chart types, and abstract away most of the complexity. Whether this is a help or a hindrance depends on your use case.</p>
 	</aside>
 </section>
@@ -802,7 +806,7 @@
 		<p>1. They're not always performant enough: Sometimes because of excessive download size, and sometimes in terms of animation performance. I've found they can be a bit janky at times if you're doing something complex.</p>
 		<p class="meta">DOWN</p>
 		<p>2. Less control: Abstractions may not fit your use case. Because they're usually fairly opinionated, they don't always do everything you want them to. Often I find that it's not until a chart is nearly done that I discover the limitations of a given library's API, and realise that it it's not able to implement certain quirks of the design I've been given. So then I have to start all over again in something else.</p>
-		<p>So what I often do is prototype an MVP in a charting library, then build a more fleshed-out version in D3 once I've got more time to invest.</p>
+		<p>So what I sometimes do, is make a prototype in a charting library, then once I'm happy with the direction we've chosen but I'm starting to hit the limits of the library, I'll build a more fleshed-out version in D3 once I've got more time to invest.</p>
 	</aside>
 </section>
 
