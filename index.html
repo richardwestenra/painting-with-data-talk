@@ -398,8 +398,8 @@
 	</table>
 	<cite>Source: <a href="https://serialmentor.com/dataviz/aesthetic-mapping.html">https://serialmentor.com/dataviz/aesthetic-mapping.html</a></cite>
 	<aside class="notes">
-		<p>So we have a few different aesthetics that we can use to represent our data. But before you start visualising it, you need to consider what types of data you’re going to present.</p>
-		<p>You might think of data as numbers, but numerical values are only a couple of the many types of data we may encounter. In addition to continuous and discrete numerical values, data can come in the form of discrete categories, or as dates or times, or as text. When data is numerical we also call it quantitative and when it is categorical we call it qualitative.</p>
+		<p>So we have a few different aesthetics that we can use to represent our data. But before you start visualising it, you'll need to consider what types of data you’re going to present.</p>
+		<p>You might think of data as numbers, but numerical values are only a couple of the many types of data we may encounter. In addition to continuous and discrete quantitative values, data can come in the form of discrete qualitatitive categories, or as dates or times, or as text.</p>
 	</aside>
 </section>
 
@@ -491,7 +491,7 @@
 	</table>
 	<aside class="notes">
 		<p>In order to translate your data into a visual aesthetic, you’re going to want a scale function. Scales are your basic low-level building block of any chart. They make it easy to take data of different formats, and convert it consistently into a corresponding aesthetic value, like a pixel distance or a colour or a shape.</p>
-		<p>Importantly, a scale’s input and output must always have a deterministic one-to-one relationship, such that for each specific data value there is exactly one aesthetics value and vice versa. If a scale isn’t one-to-one, then the visualization can be ambiguous.</p>
+		<p>Importantly, a scale’s input and output must always have a deterministic one-to-one relationship. So for each specific data value there should be exactly one aesthetic value, and vice versa. If a scale isn’t one-to-one, then the visualization can be ambiguous.</p>
 	</aside>
 </section>
 
@@ -521,9 +521,9 @@
 	</div>
 	<p id="scale-colour"></p>
 	<aside class="notes">
-		<p>To set up a scale function, you’ll typically provide one with an input domain and an output range. The domain is the complete set of data values that the function can expect to receive, and the range is the set of aesthetic values that you want it to return.</p>
+		<p>To set up a scale function, you’ll start by providing an input domain and an output range. The domain is the complete set of data values that the function can expect to receive, and the range is the set of aesthetic values that you want it to return.</p>
 		<p class="meta">Move mouse to other screen</p>
-		<p>So for this slide for example, I’m using a linear colour scale to set the background colour based on the mouse position on the screen. We have a continuous numerical domain, which has a minimum extent of zero, and a maximum extent equal to the height of the screen. The input value is equal to the current Y position of the mouse as I move it around. Our range corresponds to the hue value of an HSL colour, which runs from 0 to 360. And you can see the output aesthetic on the screen background here.</p>
+		<p>So for this slide, for example, I’m using a linear colour scale to set the background colour based on the mouse position on the screen. We have a continuous numerical domain, which is based on the screen height. The input value is set to the current Y position of my mouse, as I move it around. Our output range is using the hue of an HSL colour, which goes from 0 to 360. And you can see the aesthetic output on the screen background here.</p>
 	</aside>
 </section>
 </section>
@@ -531,7 +531,7 @@
 <section>
 	<h2>Choosing a<br> chart type</h2>
 	<aside class="notes">
-		<p>So now it’s time to choose a chart type. There are hundreds of different established formats, and each has different advantages and disadvantages for different situations and different types of data.</p>
+		<p>So now it’s time to choose a chart type. There are hundreds of different established formats, and each has various advantages and disadvantages for different situations and types of data.</p>
 		<p>The most important thing though, is that you choose a chart type because it’s the right type for your data.</p>
 		<p class="meta">SLOW</p>
 	</aside>
@@ -577,8 +577,8 @@
 		</li>
 	</ul>
 	<aside class="notes">
-		<p>This is a tough problem, but fortunately there are loads of tools around to help you out. I’ve listed a few here, and I’ll tweet out some links to them later on.</p>
-		<p>Each one is a slightly different, but they all have a common starting point, which is look at your data and ask yourself, what are you trying to show? Are you trying to demonstrate a correlation between different variables? Or a size comparison? Or maybe how something changes over time? Find that thing you’re trying to present, and work from there until you’ve found the right chart for your data story.</p>
+		<p>This is a hard problem, but fortunately there are loads of tools around to help you out. I’ve listed a few here, and I’ll tweet out some links to them later on.</p>
+		<p>Each one is slightly different, but they all have a common starting point, which is to ask yourself, what are you trying to show? Are you trying to demonstrate a correlation between variables? Or a size comparison? Or maybe how something changes over time? Find the thing you’re trying to present, and work from there until you’ve found the right chart for your data story.</p>
 	</aside>
 </section>
 
@@ -715,7 +715,7 @@
 	<h3 class="fragment">Just because you can<br> doesn't mean you should</h3>
 	<aside class="notes">
 		<p>For that reason, I don't think many people actually write native WebGL code. You're better off using a library like Three.js, which is what I used to code this lovely spinning bar chart.</p>
-		<p class="meta">Next</p>
+		<p class="meta">Down 👇 to show title text</p>
 		<p>I use this example to raise a very real issue with 3D charts, which is that most of the time, they're completely gratuitous and don't add anything useful. In fact by projecting data into a third dimension then representing it on a 2D screen, you're introducing visual distortion. Our eyes can try to correct for visual ambiguity, but we can only do so much.</p>
 		<p>Much like all those crappy clip-art-looking 3D pie charts generated with Microsoft Excel for early 2000s Powerpoint presentations, many WebGL charts are gratuitous decoration that do nothing to help the viewer understand the data. So I'd avoid them if at all possible. The best exceptions to this rule, are visualisations of actual 3D objects, like topographical maps with mountainous terrain. But in this case, you'll still want to allow users to rotate the view, to reduce the distortion effect by providing different perspectives.</p>
 	</aside>
@@ -786,7 +786,7 @@
 	</div>
 	<aside class="notes">
 		<p>But this can be a tricky decision too, because there are so many charting libraries to choose from!</p>
-		<p>There are loads of popular charting libraries out there, like Highcharts, Chartist, and Chartjs. There's a bunch built on top of React with D3 underneath, like Semiotic, Victory, React-Vis, and ReCharts. And there's also loads that are just a light D3 wrapper, like Plotly, C3, R2D3, NVD3, RJD2, D20, C4, and R2D2. It's overwhelming.</p>
+		<p>There are loads of popular ones out there, like Highcharts, Chartist, and ChartJS. There's a bunch that use D3 with React, like Semiotic, Victory, React-Vis, and ReCharts. And there's also dozens that are just reusable abstractions for D3, like Plotly, C3, R2D3, NVD3, RJD2, D20, C4, and R2D2. It's overwhelming.</p>
 		<p>These libraries typically provide a few basic chart types, and abstract away most of the complexity. Whether this is a help or a hindrance depends on your use case.</p>
 	</aside>
 </section>
@@ -805,7 +805,7 @@
 		<p class="meta">DOWN</p>
 		<p>2. Less upfront time investment</p>
 		<p class="meta">DOWN</p>
-		<p>3. Usually more readable than D3, though obviously it depends on the library</p>
+		<p>3. Usually more readable and reusable than writing raw D3, though obviously it depends on the library</p>
 	</aside>
 </section>
 
@@ -827,7 +827,7 @@
 
 <section data-background="img/d3.jpg" data-background-size="contain" data-background-color="white" data-background-position="center bottom">
   <aside class="notes">
-		<p>But some of you might be wondering what D3 is, and why I didn't include it in the list. After all, it's a data visualisation library too. But unlike the others, it's much more low-level, enough so to be a whole different sort of animal. It's a bit more like jQuery or Underscore than a true charting library, in the sense that, rather than giving you ready-built charts or chart components that you can configure, it gives you the tools to build your own custom charts from scratch, along with a set of best practices.</p>
+		<p>But some of you might be wondering what D3 is, and why I didn't include it in the list. D3 is a data visualisation library too. But unlike the others, it's much more low-level. It's a bit more like jQuery or Underscore than a true charting library, in the sense that, rather than giving you ready-built charts or chart components that you can configure, it gives you the tools to build your own custom charts from scratch, along with a set of best practices.</p>
 		<p>And in fact the syntax looks pretty similar to jQuery too. So if you like method chaining, you'll love it</p>
     <p>D3 is also designed to enforce separation of concerns between data and presentation, just like the web was designed to do with HTML & CSS. I know that's not a popular idea lately, what with CSS in JS and all, but I reckon it's still a useful model in the right context. Fight me.</p>
   </aside>
@@ -877,7 +877,7 @@
 	<img class="plain" src="img/react.svg" alt="React logo" width=350 />
 	<h1>D3 + React</h1>
 	<aside class="notes">
-		<p>I mentioned that D3 plays well with other tools, and that includes React. But when using them together, you need to make a big decision about which to use for updating the DOM.</p>
+		<p>I mentioned that D3 plays well with other tools, and that includes React, and other JavaScript frameworks. But when using them together, you need to make a big decision about which to use for updating the DOM.</p>
 		<p>D3 is still perfectly fine to use for layout calculations even if you use React for all the DOM rendering, and in fact, out of D3's 30 different modules, 22 of them don’t have any API methods that come in direct contact with the DOM!</p>
 	</aside>
 </section>
@@ -914,7 +914,7 @@
 	<aside class="notes">
 		<p>So why not choose a hybrid approach? What I like to do is to combine both approaches: Let React render static components, but use D3 for axes, and anything that needs complex animations. You can mix and match the syntax together, and see what works for you.</p>
 		<p class="meta">Slow</p>
-		<p>If you want to use D3 for DOM rendering in a React component, you just need to pass a container ref to your D3 code, and run it in componentDidMount and componentDidUpdate. There's a great article by Elijah Meeks with more details about how to do it, which I'll tweet a link to after this talk.</p>
+		<p>If you want to use D3 for DOM rendering in a React component, you just need to pass a container ref to your D3 code, and run it in componentDidMount and componentDidUpdate. There's a great article by Elijah Meeks with more details about how to do it, which I'll post a link to at the end of this slide deck.</p>
 	</aside>
 </section>
 
@@ -933,7 +933,7 @@
 		<a class="social" style="left:-1.85em" href="http://github.com/richardwestenra"> <i class="icon-github"></i> github.com/<b>richardwestenra</b></a>
 		<a class="social" style="left:0em" href="mailto:richard@richardwestenra.com"> <i class="icon-email"></i> richard@<b>richardwestenra</b>.com</a>
 		<a class="social" style="left:2.17em" href="http://richardwestenra.com"> <i class="icon-home"></i> <b>richardwestenra</b>.com</a>
-		<small>Slides: <a href="https://richardwestenra.com/painting-with-data-talk">richardwestenra.com/painting-with-data-talk</a></small>
+		<small>Slides: <a href="https://richardwestenra.com/painting-with-data-talk?showNotes">richardwestenra.com/painting-with-data-talk?showNotes</a></small>
 	</div>
 	<aside class="notes">
 		<p>Thanks!</p>

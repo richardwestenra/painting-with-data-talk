@@ -67,7 +67,8 @@
   display: block;
   position: relative;
   font-size: 0.65em;
-  margin: 0.5em 0; }
+  margin: 0.5em 0;
+  color: white; }
   .reveal section .social i {
     margin-right: 0.1em; }
   .reveal section .social b {
@@ -497,8 +498,6 @@
   max-width: 80%;
   margin: 0 auto;
   padding: 1em; }
-  .reveal .box a {
-    color: white; }
   .reveal .box small {
     margin: 1em 0 0; }
 
