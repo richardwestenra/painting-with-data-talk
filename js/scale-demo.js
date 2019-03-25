@@ -1,5 +1,6 @@
 function ScaleDemo(){
   let play = false;
+  let height = window.innerHeight;
   const el = {
     window: d3.select(window),
     body: d3.select('body'),
@@ -14,33 +15,44 @@ function ScaleDemo(){
     .attr('class', 'scale-line')
     .style('opacity', 0);
 
-  const hue = d => Math.round(d3.scaleLinear()
-    .domain([0, window.innerHeight])
-    .range([0, 360])(d));
+  const hue = (y) => Math.round(d3.scaleLinear()
+    .domain([0, height])
+    .range([0, 360])(y));
 
   const colour = d => `hsl(${hue(d)}, 70%, 70%)`;
 
-  function update(d){
-    el.body.style('background', colour(d));
-    el.inputValue.text(d);
-    el.outputValue.text(hue(d));
-    el.outputColour.text(colour(d));
+  function update(y){
+    el.body.style('background', colour(y));
+    el.inputValue.text(y);
+    el.outputValue.text(hue(y));
+    el.outputColour.text(colour(y));
+    el.domain.text(`[0, ${height}]`);
+    el.range.text(`[${hue(0)}, ${hue(height)}]`);
+    const lineY = (y / height) * window.innerHeight;
+    el.line.style('opacity', 1)
+      .style('transform', `translateY(${lineY}px)`);
   }
 
-  el.window.on('mousemove',function () {
+  el.window.on('mousemove', function() {
     if (play) {
       const { y } = d3.event;
       update(y);
-      el.line.style('opacity', 1)
-        .style('transform', `translateY(${y}px)`);
+      height = window.innerHeight;
     }
   });
+	el.window.on('message', function() {
+    if (play) {
+      var data = JSON.parse(d3.event.data);
+      if (data.method === 'triggerMouse') {
+        height = data.height;
+        update(data.y);
+      }
+		}
+	});
 
 
   this.start = function() {
     play = true;
-    el.domain.text(`[0, ${window.innerHeight}]`);
-    el.range.text(`[${hue(0)}, ${hue(window.innerHeight)}]`);
     update(0);
   };
 

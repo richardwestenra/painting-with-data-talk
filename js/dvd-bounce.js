@@ -104,25 +104,26 @@ function DVDBounce() {
   canvas.style.opacity = 0;
 
   // Update/redraw on window resize
-  const handleResize = () => {
+  this.handleResize = () => {
     if (req) {
       width = window.innerWidth;
       height = window.innerHeight;
       updateCanvasSize(canvas);
       object = createObject();
     }
+    return this;
   };
-  window.addEventListener('resize', handleResize);
 
+  window.addEventListener('resize', this.handleResize);
   window.addEventListener('keydown', e => {
     if (e.keyCode === 82) { // R
-      handleResize();
+      this.handleResize();
     }
   });
-	window.addEventListener('message', function(event) {
+	window.addEventListener('message', event => {
 		var data = JSON.parse(event.data);
 		if (data.method ==='triggerKey' && data.args.includes(82)) { // R
-      handleResize();
+      this.handleResize();
 		}
 	});
   
@@ -139,15 +140,17 @@ function DVDBounce() {
   this.start = function() {
     if (!req) {
       // Update canvas dimensions if not already running
-      handleResize();
+      this.handleResize();
     }
     req = requestAnimationFrame(run);
     canvas.style.opacity = 1;
+    return this;
   };
 
   this.stop = function() {
     canvas.style.opacity = 0;
     cancelAnimationFrame(req);
     req = false;
+    return this;
   };
 }

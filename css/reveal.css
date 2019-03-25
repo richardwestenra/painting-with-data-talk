@@ -1308,16 +1308,16 @@ body {
 .reveal .speaker-notes {
   display: none;
   position: absolute;
-  width: 70%;
+  width: 60%;
   max-height: 15%;
-  left: 15%;
+  left: 20%;
   bottom: 26px;
   padding: 10px;
   z-index: 1;
   font-size: 18px;
   line-height: 1.4;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   overflow: auto;
   box-sizing: border-box;
   text-align: left;

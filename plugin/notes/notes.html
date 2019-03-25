@@ -389,6 +389,7 @@
 
 						setupIframes( data );
 						setupKeyboard();
+						setupMouse();
 						setupNotes();
 						setupTimer();
 					}
@@ -436,10 +437,30 @@
 				 */
 				function setupKeyboard() {
 					document.addEventListener( 'keydown', function( event ) {
-						currentSlide.contentWindow.postMessage( JSON.stringify({ method: 'triggerKey', args: [ event.keyCode ] }), '*' );
-						window.opener.postMessage( JSON.stringify({ method: 'triggerKey', args: [ event.keyCode ] }), '*' );
+						const message = JSON.stringify({
+							method: 'triggerKey',
+							args: [ event.keyCode ],
+						});
+						currentSlide.contentWindow.postMessage(message, '*');
+						window.opener.postMessage(message, '*');
 					} );
+				}
 
+				/**
+				 * Forward mouse events to the current slide window.
+				 * This enables mouse events to work even if focus
+				 * isn't set on the current slide iframe.
+				 */
+				function setupMouse() {
+					window.addEventListener('mousemove', function(event) {
+						const message = JSON.stringify({
+							method: 'triggerMouse',
+							height: window.innerHeight,
+							y: event.y
+						});
+						currentSlide.contentWindow.postMessage(message, '*');
+						window.opener.postMessage(message, '*');
+					} );
 				}
 
 				/**

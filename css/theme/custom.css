@@ -197,39 +197,45 @@
   margin: 0; }
   .reveal .chart-chooser-apps a {
     display: block;
-    font-size: 0.8em; }
+    font-size: 0.8em;
+    color: white; }
   .reveal .chart-chooser-apps li {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    animation: toggle 7s infinite; }
+    animation: toggle 14s infinite; }
     .reveal .chart-chooser-apps li:nth-child(1) {
-      animation-delay: -0s; }
+      animation-delay: 0s; }
     .reveal .chart-chooser-apps li:nth-child(2) {
-      animation-delay: -1s; }
-    .reveal .chart-chooser-apps li:nth-child(3) {
       animation-delay: -2s; }
-    .reveal .chart-chooser-apps li:nth-child(4) {
-      animation-delay: -3s; }
-    .reveal .chart-chooser-apps li:nth-child(5) {
+    .reveal .chart-chooser-apps li:nth-child(3) {
       animation-delay: -4s; }
-    .reveal .chart-chooser-apps li:nth-child(6) {
-      animation-delay: -5s; }
-    .reveal .chart-chooser-apps li:nth-child(7) {
+    .reveal .chart-chooser-apps li:nth-child(4) {
       animation-delay: -6s; }
+    .reveal .chart-chooser-apps li:nth-child(5) {
+      animation-delay: -8s; }
+    .reveal .chart-chooser-apps li:nth-child(6) {
+      animation-delay: -10s; }
+    .reveal .chart-chooser-apps li:nth-child(7) {
+      animation-delay: -12s; }
 
 @keyframes toggle {
+  0% {
+    transform: translateX(50px) rotate(2deg); }
   5.7142857143%,
   14.2857142857% {
     visibility: visible;
-    opacity: 1; }
+    opacity: 1;
+    transform: translateX(0) rotate(0); }
   0%,
   20%,
   100% {
     visibility: hidden;
-    opacity: 0; } }
+    opacity: 0; }
+  18.5714285714% {
+    transform: translateX(-50px) rotate(-2deg); } }
 
 .reveal .svg-demo {
   background: #444;
@@ -450,8 +456,10 @@
 
 .reveal .speaker-notes {
   padding: 10px 30px;
-  max-height: 25%;
+  max-height: 30%;
   font-size: 20px; }
+  .reveal .speaker-notes p.meta {
+    opacity: 0.5; }
 
 .reveal .d3-apis b {
   white-space: nowrap;

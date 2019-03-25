@@ -44,7 +44,7 @@
     }
 
     if (id === 'canvas') {
-      dvdBounce.dontClear().start();
+      dvdBounce.dontClear().start().handleResize();
     } else if (id === 'canvas-clear') {
       dvdBounce.clear().start();
     } else {
