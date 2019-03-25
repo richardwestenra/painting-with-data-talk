@@ -71,7 +71,7 @@
   .reveal section .social i {
     margin-right: 0.1em; }
   .reveal section .social b {
-    color: #c4f5f0;
+    color: #98eee6;
     font-weight: normal; }
 
 .reveal .flex {
@@ -497,6 +497,8 @@
   max-width: 80%;
   margin: 0 auto;
   padding: 1em; }
+  .reveal .box a {
+    color: white; }
   .reveal .box small {
     margin: 1em 0 0; }
 
@@ -506,6 +508,22 @@
 
 .reveal .mountain-text {
   text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1), 3px 4px 20px rgba(0, 0, 0, 0.1); }
+
+.reveal .resources {
+  font-size: 0.5em; }
+  .reveal .resources li {
+    margin: 0.5em 0; }
+    .reveal .resources li li {
+      margin: 0.2em 0; }
+
+.reveal .sources {
+  font-size: 0.4em; }
+  .reveal .sources li {
+    margin: 0.5em 0;
+    max-width: 800px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
 
 .fullscreen {
   position: absolute;

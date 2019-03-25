@@ -62,8 +62,6 @@
       mountains.updateHue(4).start();
     } else if (id === 'mountains-2') {
       mountains.updateHue(6).start();
-    } else if (id === 'mountains-3') {
-      mountains.updateHue(12).start();
     } else {
       mountains.stop();
     }

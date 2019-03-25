@@ -119,7 +119,7 @@ $selectionBackgroundColor: turquoise;
       }
 
       b {
-        color: lighten($linkColorHover, 10%);
+        color: $linkColorHover;
         font-weight: normal;
       }
     }
@@ -630,6 +630,10 @@ $selectionBackgroundColor: turquoise;
     margin: 0 auto;
     padding: 1em;
 
+    a {
+      color: white;
+    }
+
     small {
       margin: 1em 0 0;
     }
@@ -644,6 +648,26 @@ $selectionBackgroundColor: turquoise;
 
   .mountain-text {
     text-shadow: 4px 4px 0 rgba(black, 0.1), 3px 4px 20px rgba(black, 0.1);
+  }
+
+  .resources {
+    font-size: 0.5em;
+    li {
+      margin: 0.5em 0;
+      li {
+        margin: 0.2em 0;
+      }
+    }
+  }
+  .sources {
+    font-size: 0.4em;
+    li {
+      margin: 0.5em 0;
+      max-width: 800px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 }
 
