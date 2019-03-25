@@ -48,9 +48,9 @@
 		<span class="twitter-handle">@richardwestenra</span>
 
 
-<canvas class="fullscreen" id="voronoi"></canvas>
-<canvas class="fullscreen" id="dvd"></canvas>
-<div class="fullscreen" id="darksky"></div>
+<canvas id="voronoi" class="fullscreen"></canvas>
+<canvas id="dvd" class="fullscreen"></canvas>
+<div id="darksky" class="fullscreen"></div>
 
 <div class="reveal">
 <div class="slides">
@@ -100,7 +100,6 @@
 	<section data-background="img/henchmen.jpg" data-background-size="contain">
 		<aside class="notes">
 			<p>Here are some of my friendly coworkers. You can see we're a diverse team.</p>
-			<p>We could do with better representation in leadership, but we're working on it.</p>
 			<p class="meta">DOWN 👇</p>
 		</aside>
 	</section>
@@ -121,14 +120,14 @@
 
 <section data-background="img/StudioAI.jpg" data-background-size="contain" data-background-color="black">
 	<aside class="notes">
-		<p>And my job is usually to take this data, and help translate that into an interactive tool or product, that will help them explore it, or explain their insights to clients and stakeholders.</p>
+		<p>And my job is usually to take this data, and help translate that into an interactive chart-based tool or product, that will help them explore it, or explain their insights to clients and stakeholders.</p>
 		<p>So I’m going to talk to you today about how to make great charts. But before I get to that, let’s begin with a story. I want you to imagine for a minute, that you’re in Victorian London.</p>
 	</aside>
 </section>
 
-<section data-background="img/Leadenhall_Street.jpg" data-background-size="cover" data-background-position="center bottom">
+<section data-background="img/Leadenhall_Street.jpg" data-background-size="contain">
 	<aside class="notes">
-		<p>It’s 1854. The British Empire is fighting against Russia in the Crimea, and Londoners are stoked about reading Charles Dickens.</p>
+		<p>It’s 1854. The British Empire is fighting Russia in the Crimea. London is the largest city in the world, and has become a global political, financial and trading capital. Unfortunately, wealth inequality is out of control, as documented by Charles Dickens, who is so popular that he's become an international celebrity.</p>
 		<p class="meta">SLOW</p>
 	</aside>
 </section>
@@ -136,8 +135,8 @@
 <section data-background="img/cholera.jpg" data-background-size="contain" data-background-color="white">
 	<aside class="notes">
 		<p>Meanwhile, London is suffering one of its worst ever cholera outbreaks. The disease has ripped through Soho, killing over 600 people, and causing many of the local residents to flee the area.</p>
-		<p>At the time there were two competing theories on the cause of cholera’s spread: Some people argued that it was spread by a noxious form of bad air or “miasma”, that originated in rotting decaying matter.</p>
-		<p>Meanwhile, others held that it was spread through some sort of unidentified microscopic organism, or “germ”. If you’ve heard of germ theory but haven’t heard of miasma theory then at this point you might have an idea which side was right, but please don’t spoil it for your neighbours if they haven't figured it out yet.</p>
+		<p>At the time there were two competing theories on the cause of cholera’s spread: Some people argued that it was spread by rank-smelling air or “miasma”, that came out of rotten, decaying matter.</p>
+		<p>Meanwhile, others said that it was spread through some sort of unidentified microscopic organism, or “germ”. If you’ve heard of germ theory but haven’t heard of miasma theory then at this point you might have an idea which side was right, but please don’t spoil it for your neighbours if they haven't figured it out yet.</p>
 		<p>Now every good story needs to have a hero, and this one is no exception. He was an English physician, and a skeptic of miasma theory. His name was John Snow.</p>
 	</aside>
 </section>
@@ -152,13 +151,13 @@
 <section data-background="img/john-snow.jpg" data-background-size="contain" data-background-color="white">
 	<aside class="notes">
 		<p>Yep that’s the guy.</p>
-		<p>John Snow didn't understand exactly how cholera was transmitted, but his observation of the evidence led him to discount the theory of foul air. He had a theory that it was spread through the water supply.</p>
+		<p>John Snow didn't understand exactly how cholera was transmitted, but he knew how to read the evidence, and he didn't like the foul air theory. He reckoned that it was spread through the water supply.</p>
 	</aside>
 </section>
 
 <section data-background="img/cholera-map.png" data-background-size="contain" data-background-color="white">
 	<aside class="notes">
-		<p>By talking to local residents and studying the pattern of how the disease spread, he identified the source of the outbreak as the public water pump on Broad Street - just a few minutes’ walk from our offices at Picadilly Circus, down in the bottom right corner of the map.</p>
+		<p>By chatting to local residents and studying the pattern of how the disease spread, he identified the source of the outbreak as the public water pump on Broad Street - just a few minutes’ walk from our offices at Picadilly Circus, down in the bottom right corner of the map.</p>
 		<p>John Snow tried to warn everyone about this pump, but they told him, “You know nothing John Snow”.</p>
 	</aside>
 </section>
@@ -180,7 +179,7 @@
 
 <section data-background="img/john-snow-pub.jpg" data-background-position="center top">
 	<aside class="notes">
-		<p>Firstly, not to drink water from public taps in Soho. If you’re in any doubt about this, you should know that not one of the employees at the brewery just up the street from the pump contracted cholera, because they were paid in beer, so they didn’t drink the water. So if in doubt, don’t drink water, drink beer.</p>
+		<p>Firstly, not to drink water from public taps in Soho. If you’re in any doubt about this, you should know that <i>not one</i> of the employees at the brewery just up the street from the pump contracted cholera. That's because they were paid in beer, so they didn’t drink the water. So if in doubt, don’t drink water, drink beer.</p>
 		<p>There’s actually a pub on the location of the former pump called the John Snow, so you can drink your beer there instead if you visit London.</p>
 	</aside>
 </section>
@@ -327,7 +326,12 @@
 	</aside>
 </section>
 
-<section data-background="img/snapchat.gif">
+<section data-id="snapchat">
+	<p class="snapchat-title">
+		<b>Every second</b><br>
+		<b>8,796 photos</b><br>
+		<b>are shared on Snapchat.</b>
+	</p>
 	<aside class="notes">
 		<p>In 2015, I was working with a creative team making interactive web content. And we did a piece about this hot new app called Snapchat. At the time, it was growing very quickly, and it was amazing to think there might be nearly 9 thousand photos being shared per second. We wanted to impress upon people just how many photos this was, so we visualised it by using Snapchat logo or an emoji to represent each photo.</p>
 		<p>I thought it was effective, and it did okay on Reddit, but that many photos per second was a lot for most computer’s GPUs to handle. I mean if you think about it, it's more than 500,000 RPM!</p>
@@ -965,6 +969,7 @@
 <script src="js/update.js"></script>
 <script src="js/dvd-bounce.js"></script>
 <script src="js/webgl.js"></script>
+<script src="js/snapchat.js"></script>
 <script src="js/slides.js"></script>
 
 <script>

@@ -5,6 +5,7 @@
   const scaleDemo = new ScaleDemo();
   const dvdBounce = new DVDBounce();
   const webglDemo = new WebGLDemo();
+  const snapchat = new Snapchat();
 
   voronoi.start();
 
@@ -17,6 +18,12 @@
       voronoi.start();
     } else {
       voronoi.stop();
+    }
+
+    if (id === 'snapchat') {
+      snapchat.start();
+    } else {
+      snapchat.stop();
     }
 
     if (id === 'darksky') {

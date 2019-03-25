@@ -36,6 +36,7 @@ function WebGLDemo() {
 
     //add to the DOM
     renderer.domElement.classList.add('fullscreen');
+    renderer.domElement.id = 'webgl-demo';
     renderer.domElement.style.opacity = 0;
     document.body.prepend(renderer.domElement);
 

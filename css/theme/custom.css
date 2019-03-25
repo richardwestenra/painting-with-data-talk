@@ -260,6 +260,32 @@
   to {
     transform: scale(1.2); } }
 
+.reveal .snapchat-title {
+  margin-top: -1em;
+  font-size: 0.8em;
+  line-height: 1.3em; }
+  .reveal .snapchat-title b {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0.4em 0.6em;
+    font-weight: 500;
+    font-family: "Futura", "Ubuntu", Impact, sans-serif; }
+    .reveal .snapchat-title b:nth-of-type(1) {
+      background: black;
+      color: white;
+      transform: rotate(-1.5deg); }
+    .reveal .snapchat-title b:nth-of-type(2) {
+      font-weight: 600;
+      background: white;
+      color: black;
+      text-transform: uppercase;
+      font-size: 1.6em;
+      transform: rotate(0deg); }
+    .reveal .snapchat-title b:nth-of-type(3) {
+      background: black;
+      color: white;
+      transform: rotate(1.5deg); }
+
 .reveal .css-bar {
   margin-top: 30px;
   list-style: none;
@@ -495,6 +521,9 @@
   filter: blur(10px) grayscale(30%) brightness(0.4);
   margin: -12px;
   opacity: 0; }
+
+#snapchat {
+  background: #EFE200; }
 
 .scale-line {
   position: absolute;

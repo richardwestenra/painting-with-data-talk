@@ -425,6 +425,7 @@ function Mountains() {
   // A virtual canvas for pre-rendering, to improve perf
   // (See https://www.html5rocks.com/en/tutorials/canvas/performance/#toc-pre-render)
   const [m_canvas, m_context] = createCanvas();
+  canvas.id = 'mountains';
   canvas.classList.add('fullscreen');
 
   // Reformat the data to just key:value pairs for use with dat.gui
