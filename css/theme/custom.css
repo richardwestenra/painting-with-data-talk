@@ -516,13 +516,13 @@
       margin: 0.2em 0; }
 
 .reveal .sources {
-  font-size: 0.4em; }
+  text-align: center;
+  font-size: 0.5em;
+  margin: auto;
+  max-width: 700px; }
   .reveal .sources li {
-    margin: 0.5em 0;
-    max-width: 800px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
+    display: inline-block;
+    margin: 0.5em 1em; }
 
 .fullscreen {
   position: absolute;
