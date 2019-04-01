@@ -481,6 +481,21 @@
     .reveal .chartlib:nth-child(16).visible {
       transform: rotate(-5deg) translateY(0); }
 
+.reveal .libraries {
+  width: 100%;
+  font-size: 1em; }
+  .reveal .libraries th, .reveal .libraries td {
+    padding: 0.45em 0;
+    white-space: nowrap;
+    border-bottom-color: rgba(255, 255, 255, 0.3); }
+  .reveal .libraries th + th, .reveal .libraries td + td {
+    text-align: center; }
+
+.reveal .summary {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  margin: -2em 0 1.8em; }
+
 .reveal .speaker-notes {
   padding: 10px 30px;
   max-height: 30%;

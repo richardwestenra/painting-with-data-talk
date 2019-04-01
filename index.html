@@ -792,85 +792,89 @@
 	</aside>
 </section>
 
-<section>
-  <h2>Pros of using<br> charting libraries:</h2>
-  <ul class="list">
-    <li class="fragment">Quick to use</li>
-    <li class="fragment">Simpler to learn</li>
-    <li class="fragment">More readable, usually</li>
-  </ul>
-	<aside class="notes">
-		<p>In general, and obviously it depends on the library, but the advantages of using a charting library is that:</p>
-		<p class="meta">DOWN</p>
-		<p>1. You can get something built quickly</p>
-		<p class="meta">DOWN</p>
-		<p>2. Less upfront time investment</p>
-		<p class="meta">DOWN</p>
-		<p>3. Usually more readable and reusable than writing raw D3, though obviously it depends on the library</p>
-	</aside>
-</section>
-
-<section>
-  <h2>Cons of using<br> charting libraries:</h2>
-  <ul class="list">
-    <li class="fragment">Variable performance</li>
-    <li class="fragment">Limited features & restrictive APIs</li>
-  </ul>
-	<aside class="notes">
-		<p>On the other hand they have some disadvantages too:</p>
-		<p class="meta">DOWN</p>
-		<p>1. They're not always performant enough: Sometimes because of excessive download size, and sometimes in terms of animation performance. I've found they can be a bit janky at times if you're doing something complex.</p>
-		<p class="meta">DOWN</p>
-		<p>2. Less control: Abstractions may not fit your use case. Because they're usually fairly opinionated, they don't always do everything you want them to. Often I find that it's not until a chart is nearly done that I discover the limitations of a given library's API, and realise that it it's not able to implement certain quirks of the design I've been given. So then I have to start all over again in something else.</p>
-		<p>So what I sometimes do, is make a prototype in a charting library, then once I'm happy with the direction we've chosen but I'm starting to hit the limits of the library, I'll build a more fleshed-out version in D3 once I've got more time to invest.</p>
-	</aside>
-</section>
-
 <section data-background="img/d3.jpg" data-background-size="contain" data-background-color="white" data-background-position="center bottom">
   <aside class="notes">
-		<p>But some of you might be wondering what D3 is, and why I didn't include it in the list. D3 is a data visualisation library too. But unlike the others, it's much more low-level. It's a bit more like jQuery or Underscore than a true charting library, in the sense that, rather than giving you ready-built charts or chart components that you can configure, it gives you the tools to build your own custom charts from scratch, along with a set of best practices.</p>
-		<p>And in fact the syntax looks pretty similar to jQuery too. So if you like method chaining, you'll love it</p>
-    <p>D3 is also designed to enforce separation of concerns between data and presentation, just like the web was designed to do with HTML & CSS. I know that's not a popular idea lately, what with CSS in JS and all, but I reckon it's still a useful model in the right context. Fight me.</p>
+		<p>But some of you might be wondering what D3 is, and why I didn't include it in the list. D3 is a data visualisation library too. But unlike the others, it's much more low-level. It's a bit more like jQuery or Underscore than a chart library, in the sense that, rather than giving you ready-built charts or chart components that you can configure, it gives you the tools to build your own custom charts from scratch, which encourage a set of best practices.</p>
+		<p>And in fact the syntax looks pretty similar to jQuery too. So if you like method chaining, you'll love it!</p>
+    <p>D3 is designed to enforce separation of concerns between data and presentation, just like the web was designed to do with HTML & CSS. I know that's not a popular idea lately, what with CSS in JS and all, but I reckon it's still a useful model in the right context. Fight me.</p>
   </aside>
 </section>
 
 <section>
-  <h2>Pros of using D3:</h2>
-  <ul class="list">
-    <li class="fragment">Powerful</li>
-    <li class="fragment">Flexible</li>
-    <li class="fragment">Performant</li>
-    <li class="fragment">Popular and well-established</li>
-  </ul>
+		<table class="libraries">
+			<colgroup>
+				<col width="40%" />
+				<col width="30%" />
+				<col width="30%" />
+			</colgroup>
+			<tbody>
+				<tr>
+					<th></th>
+					<th>D3</th>
+					<th>Charting libraries</th>
+				</tr>
+				<tr class="fragment">
+					<td>Development time</td>
+					<td>🐌</td>
+					<td>⚡️</td>
+				</tr>
+				<tr class="fragment">
+					<td>Flexibility</td>
+					<td>💃</td>
+					<td>👴🏻</td>
+				</tr>
+				<tr class="fragment">
+					<td>Learning curve</td>
+					<td>😖</td>
+					<td>😌</td>
+				</tr>
+				<tr class="fragment">
+					<td>Performance</td>
+					<td>🏎</td>
+					<td>🚗</td>
+				</tr>
+				<tr class="fragment">
+					<td>Code readability</td>
+					<td>🙅‍</td>
+					<td>🤷‍</td>
+				</tr>
+				<tr class="fragment">
+					<td>Popularity</td>
+					<td>👯‍</td>
+					<td>📭</td>
+				</tr>
+			</tbody>
+		</table>
 	<aside class="notes">
-		<p>There are several advantages to using D3 over other charting libraries:</p>
-		<p class="meta">DOWN _ _ _ _ Slow!</p>
-		<p>1. D3 gives you full control over how things look, and has so many different tools and algorithms that you can mix and match to create really cool effects. I've been working with d3 for about 4 years and I still regularly come across things where I'm like, whoa, D3 can do that?</p>
-		<p>It's also very large. Lots of different APIs. Huge file size if you import the whole thing, but it's modular, as of version 4, so you can just import the bits you want.</p>
+		<p>So instead of asking “which library should I use”, the real question is, “should I use D3, or another charting library”? And this one really depends on your situation, because each has a set of pros and cons.</p>
 		<p class="meta">DOWN</p>
-		<p>2. Works seamlessly with existing web technologies. Plays well with other tools. Can manipulate any part of the DOM, or use it with SVG, Canvas, WebGL, or whatever.</p>
+		<p>For instance, making a chart with a charting library is typically much quicker than writing something from scratch with D3. That’s the whole point: They’re an abstraction that saves you having to repeat the same basic steps every time you make a new chart.</p>
 		<p class="meta">DOWN</p>
-		<p>3. D3's animations are usually really smooth, even with transitions involving hundreds of different objects.</p>
+		<p>But when it comes to power and flexibility, that’s when D3 can really dance around the competition. It gives you full control over how things look, and has so many different tools and algorithms that you can mix and match to create really cool effects. I've been working with D3 for many years and I still regularly come across things where I'm like, whoa, D3 can do that?</p>
+		<p>It also works seamlessly with existing web technologies, and can be used in conjunction with other tools and frameworks. You can manipulate any part of the DOM, or use it with SVG, Canvas, WebGL, or whatever.</p>
+		<p>By contrast, most charting libraries are fairly opinionated, so they don't always do everything you want them to. If you have a specific design in mind, then the abstractions they’ve chosen may not fit your use case.</p>
+		<p>I often find that it's not until I’ve nearly finished building a chart, that I discover the limitations of a given library's API, and realise that it it's not able to implement certain quirks of the design I've been given. So then I have to start all over again in something else.</p>
+		<p>So what I sometimes do is make a basic prototype in a charting library, then build a more fleshed-out version in D3 once I've got more time to invest.</p>
 		<p class="meta">DOWN</p>
-		<p>4. Large community, lots of examples, tutorials, stackoverflow questions, demos.</p>
+		<p>But when it comes to the learning curve, that’s definitely a downside for D3. Most charting libraries are designed to be fairly easy to get started - often you just need to modify an example config, and it’s usually pretty intuitive.</p>
+		<p>Whereas D3 can take a bit longer to get your head around. I found D3’s data binding and element creation especially tricky to understand when I was making my first chart: First, you need to create a new Selection, to select all the DOM elements on the page, which don’t exist yet. Then you bind data to them, even though they still don’t exist. Then you ‘enter’ them, which means specifically selecting the ones that exist in the data, but not in the DOM. Then you append DOM nodes to the selection. It did my head in.</p>
+		<p class="meta">DOWN</p>
+		<p>Now when it comes to performance, that’s a mixed bag. I’ve found that some of the charting libraries have been a little bit janky when it comes to some kinds of animations, but it really depends how far you’re pushing it beyond what it was designed to do. D3 is generally great for animation, and makes it surprisingly easy to do some really cool transition effects like staggered delays.</p>
+		<p>In terms of download size, it really depends on the library, and how much stuff they include. If you only need one bar chart layout but you have to include the whole library, that’s obviously not ideal. Now D3 is very large, it has dozens of different APIs, and if you download the whole thing it’s about half a megabyte unminified. But as of version 4, it's now completely modular, so you can just import the bits you want. Win.</p>
+		<p class="meta">DOWN</p>
+		<p>Code readability is a bit of a wash, again it depends. D3’s imperative chained functions are definitely a lot more complex to get your head around than something like React, which means you need to put more thought into documenting your code. Most libraries are gonna beat D3 on this one.</p>
+		<p class="meta">DOWN</p>
+		<p>Finally, D3 is far more popular than any other charting library, at least if you’re going by stars on Github. It has a large community, lots of examples, tutorials, stackoverflow questions, demos and even a few books written about it.</p>
 	</aside>
 </section>
 
 <section>
-  <h2>Cons of using D3:</h2>
-  <ul class="list">
-    <li class="fragment">Steeper learning curve</li>
-    <li class="fragment">More complex</li>
-    <li class="fragment">Takes longer to make a basic chart</li>
-  </ul>
+	<p class="summary">In summary</pc>
+	<h3>For prototypes and basic charts,<br> use a charting library.</h3>
+	<br>
+	<h3>For bespoke, complex charts,<br> choose D3.</h3>
 	<aside class="notes">
-		<p>On the other hand, there are some downsides:</p>
-		<p class="meta">DOWN</p>
-		<p>1. It can take a longer to get your head around it, especially the data binding which is a bit counterintuitive.</p>
-		<p class="meta">DOWN</p>
-		<p>2. The code can be a bit more complex to read, which means you need to put more thought into documenting it.</p>
-		<p class="meta">DOWN</p>
-		<p>3. If you just want to do a standard chart type like a bar or line chart, D3 will definitely take longer. I find that it's best to use it in situations where you're given a specific design that you need to implement as closely as possible.</p>
+		<p>In summary: If you just want to do a standard chart type like a bar or line chart and you're not fussy about the details, D3 will definitely take longer. I prefer to use it in situations where you're given a specific design that you need to implement as closely as possible.</p>
 	</aside>
 </section>
 
@@ -922,7 +926,8 @@
 <section data-id="mountains" data-transition="zoom">
 	<h1 class="mountain-text">Have fun with it!</h1>
   <aside class="notes">
-		<p>Finally, you don't have to use your new D3, SVG and Canvas skills for just charts. D3 has loads of interesting algorithms to play with, and you can get creative with them, and mix and match differnt layouts and scaling functions to create interesting effects in different contexts. They're great for adding little playful flourishes to your websites, or talk slides.</p>
+		<p>Finally, you don't have to use your new D3, SVG and Canvas knowledge for just making charts. D3 is not just a data visualisation library! It's also a data analysis library, a data formatting library, an SVG shape library, an animation library, and a DOM manipulation library.</p>
+		<p>It has dozens of different modules and algorithms to play with, and you can get really creative with them, and mix and match different layouts and scaling functions to create interesting effects in different contexts. They're great for adding little playful flourishes to your websites, or talk slides.</p>
 	</aside>
 </section>
 
@@ -939,7 +944,7 @@
 	<aside class="notes">
 		<p>Thanks!</p>
 		<p>If you have any questions, please come chat to me afterwards, or get in touch online using any of my imaginative usernames.</p>
-		<p>Also I've added some links to handy resources on the last slide of this talk, and which I tweeted out a link to just before this talk.</p>
+		<p>Also I've added some links to handy resources on the last slide of this talk, and I'll tweet out a link.</p>
 	</aside>
 </section>
 
