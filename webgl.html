@@ -22,7 +22,7 @@
 <body>
 <pre>
 <code>
-var cubeRotation = 0.0;
+var rotation = 0.0;
 
 main();
 
@@ -103,7 +103,7 @@ function main() {
   // objects we'll be drawing.
   const buffers = initBuffers(gl);
 
-  const texture = loadTexture(gl, 'cubetexture.png');
+  const texture = loadTexture(gl, 'texture.png');
 
   var then = 0;
 
@@ -123,12 +123,11 @@ function main() {
 //
 // initBuffers
 //
-// Initialize the buffers we'll need. For this demo, we just
-// have one object -- a simple three-dimensional cube.
+// Initialize the buffers we'll need. For this demo, we just have one object.
 //
 function initBuffers(gl) {
 
-  // Create a buffer for the cube's vertex positions.
+  // Create a buffer for the object's vertex positions.
 
   const positionBuffer = gl.createBuffer();
 
@@ -137,7 +136,7 @@ function initBuffers(gl) {
 
   gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
 
-  // Now create an array of positions for the cube.
+  // Now create an array of positions for the object.
 
   const positions = [
     // Front face
@@ -402,11 +401,11 @@ function drawScene(gl, programInfo, buffers, texture, deltaTime) {
                  [-0.0, 0.0, -6.0]);  // amount to translate
   mat4.rotate(modelViewMatrix,  // destination matrix
               modelViewMatrix,  // matrix to rotate
-              cubeRotation,     // amount to rotate in radians
+              rotation,     // amount to rotate in radians
               [0, 0, 1]);       // axis to rotate around (Z)
   mat4.rotate(modelViewMatrix,  // destination matrix
               modelViewMatrix,  // matrix to rotate
-              cubeRotation * .7,// amount to rotate in radians
+              rotation * .7,// amount to rotate in radians
               [0, 1, 0]);       // axis to rotate around (X)
 
   const normalMatrix = mat4.create();
@@ -515,7 +514,7 @@ function drawScene(gl, programInfo, buffers, texture, deltaTime) {
 
   // Update the rotation for the next draw
 
-  cubeRotation += deltaTime;
+  rotation += deltaTime;
 }
 
 //
