@@ -101,7 +101,7 @@ function DVDBounce() {
 
   // The canvas rendered to the page:
   const [canvas, context] = createCanvas();
-  canvas.style.opacity = 0;
+  canvas.classList.remove('demo--visible');
 
   // Update/redraw on window resize
   this.handleResize = () => {
@@ -143,12 +143,12 @@ function DVDBounce() {
       this.handleResize();
     }
     req = requestAnimationFrame(run);
-    canvas.style.opacity = 1;
+    canvas.classList.add('demo--visible');
     return this;
   };
 
   this.stop = function() {
-    canvas.style.opacity = 0;
+    canvas.classList.remove('demo--visible');
     cancelAnimationFrame(req);
     req = false;
     return this;

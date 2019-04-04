@@ -35,9 +35,9 @@ function WebGLDemo() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     //add to the DOM
-    renderer.domElement.classList.add('fullscreen');
+    renderer.domElement.classList.add('fullscreen', 'demo');
     renderer.domElement.id = 'webgl-demo';
-    renderer.domElement.style.opacity = 0;
+    renderer.domElement.classList.add('demo--visible');
     document.body.prepend(renderer.domElement);
 
     //increase the steps to make squares bigger. must be divisible by the size
@@ -120,11 +120,11 @@ function WebGLDemo() {
 
   this.start = function() {
     animate();
-    renderer.domElement.style.opacity = 1;
+    renderer.domElement.classList.add('demo--visible');
   };
 
   this.stop = function() {
-    renderer.domElement.style.opacity = 0;
+    renderer.domElement.classList.remove('demo--visible');
     cancelAnimationFrame(req);
     req = false;
   };

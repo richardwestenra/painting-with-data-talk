@@ -1,35 +1,5 @@
 // This is some old code of mine from 2015, please don't judge it too harshly
 function Snapchat() {
-  //--- Helper functions ---//
-
-  // Round to the nearest 2 large digits (e.g. 12345 => 12000)
-  function roundLarge(x) {
-    for(var i=1000000; i>=10; i=i/10){
-      if (x>(i*10)) {
-        return Math.round(x/i)*i;
-      }
-    }
-    return Math.round(x);
-  }
-  // Round to SI prefixes
-  function si(x) {
-    var n = { 'M': 1000000, 'K': 1000};
-    for(var key in n){
-      if (x>n[key]) {
-        return roundLarge(x) / n[key] + key;
-      }
-    }
-    return Math.round(x);
-  }
-  // Add 'thousands' commas to numbers, for extra prettiness:
-  function numberWithCommas(x) {
-    return Math.round(x).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  }
-  // Get random item from array:
-  function sample(arr){
-    return arr[ Math.floor( Math.random() * arr.length ) ];
-  }
-
   //--- Create Canvas ---//
 
   var canvas = document.createElement('canvas'),
@@ -48,8 +18,8 @@ function Snapchat() {
   window.addEventListener('resize', resizeCanvas);
 
   canvas.id = 'snapchat';
-  canvas.classList.add('fullscreen');
-  canvas.style.opacity = 0;
+  canvas.classList.add('fullscreen', 'demo');
+  canvas.classList.remove('demo--visible');
   document.body.prepend(canvas);
 
   //--- Global variables ---//
@@ -143,6 +113,11 @@ function Snapchat() {
           img: Math.random()>0.4 ? images[0] : sample(images),
           t: 0 // time since birth
       });
+  }
+
+  // Get random item from array:
+  function sample(arr){
+    return arr[ Math.floor( Math.random() * arr.length ) ];
   }
 
   function drawImage(x,y,r,a,img) {
@@ -267,11 +242,11 @@ function Snapchat() {
 
   this.start = function() {
     req = requestAnimationFrame(run);
-    canvas.style.opacity = 1;
+    canvas.classList.add('demo--visible');
   };
 
   this.stop = function() {
-    canvas.style.opacity = 0;
+    canvas.classList.remove('demo--visible');
     cancelAnimationFrame(req);
     req = false;
   };

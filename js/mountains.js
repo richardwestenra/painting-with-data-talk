@@ -426,7 +426,7 @@ function Mountains() {
   // (See https://www.html5rocks.com/en/tutorials/canvas/performance/#toc-pre-render)
   const [m_canvas, m_context] = createCanvas();
   canvas.id = 'mountains';
-  canvas.classList.add('fullscreen');
+  canvas.classList.add('fullscreen', 'demo');
 
   // Reformat the data to just key:value pairs for use with dat.gui
   const configValues = Object.keys(config).reduce((obj, key) => {
@@ -439,7 +439,7 @@ function Mountains() {
 
   this.start = function() {
     req = requestAnimationFrame(run);
-    canvas.style.opacity = 1;
+    canvas.classList.add('demo--visible');
     return this;
   };
 
@@ -456,7 +456,7 @@ function Mountains() {
   this.stop = function() {
     cancelAnimationFrame(req);
     req = false;
-    canvas.style.opacity = 0;
+    canvas.classList.remove('demo--visible');
     return this;
   };
 }

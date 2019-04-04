@@ -27,9 +27,9 @@
     }
 
     if (id === 'darksky') {
-      darksky.style.opacity = 1;
+      darksky.classList.add('demo--visible');
     } else {
-      darksky.style.opacity = 0;
+      darksky.classList.remove('demo--visible');
     }
 
     if (id === 'scale-demo') {
@@ -61,7 +61,7 @@
     if (id === 'mountains') {
       mountains.updateHue(4).start();
     } else if (id === 'mountains-2') {
-      mountains.updateHue(6).start();
+      mountains.updateHue(8).start();
     } else {
       mountains.stop();
     }

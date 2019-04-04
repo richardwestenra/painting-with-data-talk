@@ -72,10 +72,6 @@ function Voronoi () {
   
   const hcl = (h, c, l) => d3.hcl(h, c, l).toString();
 
-  function getRandomColour(hue, saturation, lightness){
-    return `hsl(${hue},${saturation}%,${lightness}%)`;
-  }
-
   function drawCell(cell) {
     if (!cell) return false;
     context.moveTo(cell[0][0], cell[0][1]);
@@ -115,11 +111,11 @@ function Voronoi () {
   this.start = function() {
     play = true;
     window.requestAnimationFrame(step);
-    canvasD3.style('opacity', 1);
+    canvasD3.classed('demo--visible', true);
   };
 
   this.stop = function() {
     play = false;
-    canvasD3.style('opacity', 0);
+    canvasD3.classed('demo--visible', false);
   };
 }

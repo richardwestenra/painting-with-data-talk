@@ -544,15 +544,21 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  transition: opacity ease 0.4s; }
+  bottom: 0; }
+
+.demo {
+  transition: all ease 0.4s;
+  opacity: 0;
+  visibility: hidden; }
+  .demo--visible {
+    opacity: 1;
+    visibility: visible; }
 
 #darksky {
   background: url(../../img/dark-sky.gif) center;
   background-size: cover;
   filter: blur(10px) grayscale(30%) brightness(0.4);
-  margin: -12px;
-  opacity: 0; }
+  margin: -12px; }
 
 #snapchat {
   background: #EFE200; }

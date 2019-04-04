@@ -695,7 +695,17 @@ $selectionBackgroundColor: turquoise;
   left: 0;
   right: 0;
   bottom: 0;
-  transition: opacity ease 0.4s;
+}
+
+.demo {
+  transition: all ease 0.4s;
+  opacity: 0;
+  visibility: hidden;
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 #darksky {
@@ -703,7 +713,6 @@ $selectionBackgroundColor: turquoise;
   background-size: cover;
   filter: blur(10px) grayscale(30%) brightness(0.4);
   margin: -12px;
-  opacity: 0;
 }
 
 #snapchat {
