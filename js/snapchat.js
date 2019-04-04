@@ -62,7 +62,7 @@ function Snapchat() {
       var img = new Image();
       img.src = d;
       img.onload = function() {
-        if(++loadedImages >= arrLen) {
+        if(++loadedImages >= arrLen && callback) {
           callback();
         }
       };
