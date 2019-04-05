@@ -1013,7 +1013,18 @@
 			{ src: 'plugin/markdown/marked.js' },
 			{ src: 'plugin/markdown/markdown.js' },
 			{ src: 'plugin/notes/notes.js', async: true },
-			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() {
+				hljs.initHighlightingOnLoad();
+				// Add button to allow users to close speaker notes 
+				d3.select('.speaker-notes')
+					.append('button')
+					.html('&times')
+					.attr('aria-label', 'Close speaker notes')
+					.attr('class', 'speaker-notes__close')
+					.on('click', () => {
+						window.location.search = '';
+					});
+			} }
 		]
 	});
 </script>
