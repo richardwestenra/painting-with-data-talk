@@ -29,11 +29,12 @@
 		<meta property="og:site_name" content="Richard Westenra" />
 		<meta property="article:published_time" content="2018-10-08T19:00:00+01:00" />
 
+		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/monokai.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -1013,18 +1014,7 @@
 			{ src: 'plugin/markdown/marked.js' },
 			{ src: 'plugin/markdown/markdown.js' },
 			{ src: 'plugin/notes/notes.js', async: true },
-			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() {
-				hljs.initHighlightingOnLoad();
-				// Add button to allow users to close speaker notes 
-				d3.select('.speaker-notes')
-					.append('button')
-					.html('&times')
-					.attr('aria-label', 'Close speaker notes')
-					.attr('class', 'speaker-notes__close')
-					.on('click', () => {
-						window.location.search = '';
-					});
-			} }
+			{ src: 'plugin/highlight/highlight.js', async: true }
 		]
 	});
 </script>
