@@ -741,6 +741,11 @@
 		dom.speakerNotes = createSingletonNode( dom.wrapper, 'div', 'speaker-notes', null );
 		dom.speakerNotes.setAttribute( 'data-prevent-swipe', '' );
 		dom.speakerNotes.setAttribute( 'tabindex', '0' );
+		dom.speakerNotes.addEventListener('click', function(e) {
+			if(e.target.className === 'speaker-notes__close') {
+				window.location.search = '';
+			}
+		});
 
 		// Overlay graphic which is displayed during the paused mode
 		dom.pauseOverlay = createSingletonNode( dom.wrapper, 'div', 'pause-overlay', config.controls ? '<button class="resume-button">Resume presentation</button>' : null );
@@ -3339,9 +3344,21 @@
 		if( config.showNotes && dom.speakerNotes && currentSlide && !isPrintingPDF() ) {
 
 			dom.speakerNotes.innerHTML = getSlideNotes() || '<span class="notes-placeholder">No notes on this slide.</span>';
+			dom.speakerNotes.appendChild(getCloseNotesButton());
 
 		}
 
+	}
+	
+	function getCloseNotesButton() {
+		var notesButton = document.createElement('button');
+		notesButton.innerHTML = '&times';
+		notesButton.setAttribute('aria-label', 'Close speaker notes');
+		notesButton.classList.add('speaker-notes__close');
+		notesButton.addEventListener('click', () => {
+			window.location.search = '';
+		});
+		return notesButton;
 	}
 
 	/**
