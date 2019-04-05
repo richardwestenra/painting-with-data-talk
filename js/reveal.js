@@ -3355,7 +3355,7 @@
 		notesButton.innerHTML = '&times';
 		notesButton.setAttribute('aria-label', 'Close speaker notes');
 		notesButton.classList.add('speaker-notes__close');
-		notesButton.addEventListener('click', () => {
+		notesButton.addEventListener('click', function() {
 			window.location.search = '';
 		});
 		return notesButton;
