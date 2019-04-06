@@ -37,7 +37,6 @@ function WebGLDemo() {
     //add to the DOM
     renderer.domElement.classList.add('fullscreen', 'demo');
     renderer.domElement.id = 'webgl-demo';
-    renderer.domElement.classList.add('demo--visible');
     document.body.prepend(renderer.domElement);
 
     //increase the steps to make squares bigger. must be divisible by the size
