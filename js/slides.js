@@ -10,6 +10,7 @@
   voronoi.start();
 
   const darksky = document.getElementById('darksky');
+  const unsure = document.getElementById('unsure');
 
   Reveal.addEventListener('slidechanged', function(e) {
     var id = e.currentSlide.getAttribute('data-id');
@@ -30,6 +31,12 @@
       darksky.classList.add('demo--visible');
     } else {
       darksky.classList.remove('demo--visible');
+    }
+
+    if (id === 'unsure') {
+      unsure.classList.add('demo--visible');
+    } else {
+      unsure.classList.remove('demo--visible');
     }
 
     if (id === 'scale-demo') {
